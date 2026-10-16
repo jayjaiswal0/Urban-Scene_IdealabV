@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>UMCP - Urban Mobility Coordination Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-primary-container":"#eeefff","surface-dim":"#cbdbf5","primary":"#004ac6","status-info":"#0284C7","surface-canvas":"#F8FAFC","error-container":"#ffdad6","secondary-container":"#dae2fd","background":"#f8f9ff","status-pending":"#F59E0B","surface-bright":"#f8f9ff","tertiary-fixed-dim":"#93ccff","on-secondary-fixed":"#131b2e","on-tertiary":"#ffffff","primary-fixed-dim":"#b4c5ff","on-secondary":"#ffffff","surface-card":"#FFFFFF","primary-fixed":"#dbe1ff","on-tertiary-fixed":"#001d31","inverse-surface":"#213145","status-urgent":"#EF4444","on-secondary-fixed-variant":"#3f465c","secondary-fixed":"#dae2fd","border-default":"#E2E8F0","surface-container":"#e5eeff","tertiary":"#005a89","on-tertiary-container":"#e7f2ff","surface-tint":"#0053db","tertiary-fixed":"#cce5ff","on-surface":"#0b1c30","status-active":"#10B981","outline-variant":"#c3c6d7","primary-container":"#2563eb","on-tertiary-fixed-variant":"#004b73","on-error":"#ffffff","on-secondary-container":"#5c647a","inverse-on-surface":"#eaf1ff","on-error-container":"#93000a","outline":"#737686","on-background":"#0b1c30","surface-variant":"#d3e4fe","secondary":"#565e74","on-surface-variant":"#434655","surface-container-high":"#dce9ff","on-primary-fixed":"#00174b","on-primary":"#ffffff","surface-container-lowest":"#ffffff","surface-container-highest":"#d3e4fe","secondary-fixed-dim":"#bec6e0","tertiary-container":"#0073ae","error":"#ba1a1a","inverse-primary":"#b4c5ff","surface-container-low":"#eff4ff","border-subtle":"#EDF2F7","on-primary-fixed-variant":"#003ea8","surface":"#f8f9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-md":"1rem","space-2xl":"3rem","margin":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1rem","gutter":"1.5rem","gutter-mobile":"1rem","space-lg":"1.5rem"},"fontFamily":{"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"body-md":["0.9375rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","fontWeight":"400"}],"display-lg-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-md":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"display-lg":["3.5rem",{"lineHeight":"4.25rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.02em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface-canvas font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-card z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-6 flex items-center justify-between border-b border-border-subtle"><div class="flex items-center gap-3"><img alt="UMCP Brand Mark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UZW6pmxdik_y1YDjEVfSYFSDmxthAF7ZPJ44RQ3yAzgmr2rKoS8fIe7etOHFwzaps66MpCYMrmQYBCgIgEc9aGd07ka_7nLodUXUPpqqQfjJmPgfhcAOIsuQaJzfB7vf4BA9p6BcNGtc18U6hIoLgV6RRaFeCirnHV6TqlpAQpbqWR7M1aBQte2QM3nV010d2AJpt_gr9miR18gyWTRfX8tt8dQN6fh2HzLOBrvA1Ee1Kh0KYdjxfbdkkg"/><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-surface font-bold tracking-tight leading-tight">UMCP</span><span class="font-label-sm text-label-sm text-secondary tracking-normal">Mira-Bhayandar</span></div></div><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-4 py-4 space-y-6"><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Public &amp; Common</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="public-portal" href="#"><span class="material-symbols-outlined text-xl">public</span><span>Public Portal</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="mobility-map" href="#"><span class="material-symbols-outlined text-xl">map</span><span>Mobility Map</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="parking-directory" href="#"><span class="material-symbols-outlined text-xl">local_parking</span><span>Parking Directory</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Citizen Portal</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="citizen-overview" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span>Citizen Overview</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="report-an-issue" href="#"><span class="material-symbols-outlined text-xl">campaign</span><span>Report an Issue</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-reports" href="#"><span class="material-symbols-outlined text-xl">assignment</span><span>My Reports</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Authority Portals</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="municipal-works" href="#"><span class="material-symbols-outlined text-xl">domain</span><span>Municipal Works</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="traffic-coordination" href="#"><span class="material-symbols-outlined text-xl">traffic</span><span>Traffic Coordination</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="incident-verification" href="#"><span class="material-symbols-outlined text-xl">verified</span><span>Incident Verification</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Account</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings-security" href="#"><span class="material-symbols-outlined text-xl">settings</span><span>Settings &amp; Security</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors font-label-md text-label-md" data-path="sign-out" href="#"><span class="material-symbols-outlined text-xl">logout</span><span>Sign Out</span></a></nav></div></div><div class="p-4 border-t border-border-subtle bg-surface-container-lowest"><div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-status-active"></span><div class="flex-1 min-w-0"><p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">MBMC Transit Hub Live</p><p class="font-label-sm text-label-sm text-secondary truncate">System Online 99.8%</p></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-card/90 backdrop-blur-xl border-b border-border-subtle z-40 px-6 flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-6 flex-1 max-w-xl"><div class="relative w-full max-w-xs"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-canvas border border-border-default font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search routes, transit wards, notices..." type="text"/></div><div class="hidden xl:flex items-center p-1 bg-surface-canvas rounded-lg border border-border-subtle"><button class="px-2.5 py-1 rounded bg-surface-card shadow-sm text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Desktop view" type="button"><span class="material-symbols-outlined text-base">desktop_windows</span><span class="hidden 2xl:inline">Desktop</span></button><button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Tablet view" type="button"><span class="material-symbols-outlined text-base">tablet_mac</span><span class="hidden 2xl:inline">Tablet</span></button><button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Mobile view" type="button"><span class="material-symbols-outlined text-base">smartphone</span><span class="hidden 2xl:inline">Mobile</span></button></div></div><div class="flex items-center gap-3"><button class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-[0_2px_8px_rgba(37,99,235,0.2)]" type="button"><span class="material-symbols-outlined text-lg">add_circle</span><span>Report Issue</span></button><div class="relative"><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-urgent ring-2 ring-surface-card"></span></button></div><div class="h-6 w-px bg-border-subtle"></div><div class="flex items-center gap-3 pl-1"><div class="flex items-center gap-2 cursor-pointer p-1 rounded-lg hover:bg-surface-canvas transition-colors"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-default" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ0YOXttYssDW66-eOBkrVyw4Ii3Uom0c6fWRwaasxPd5zVASDGmkF-VBsEqON8gCI2CHfBuXdIAmMKJ-CGwFyjVp8DNdbZiq9fKpBmn6kWiLJdfFRRMNTbi8W5Vv9KKA6k1rJC-TNo98cQDusQlACvBIu2D_hwVD9yiDcXH8m4xps_bUFH9Pl9hE3DCrJzBJ_7UsyfqVV5rD0DwdkkAji-URRKS4aBsHfgFVkY2CcpZ_nQmZlXhPWxQ"/><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md text-on-surface font-semibold">Aditya Patil</span><span class="material-symbols-outlined text-sm text-outline">expand_more</span></div><span class="font-label-sm text-label-sm text-primary font-medium">Municipal Authority</span></div></div></div></div></header><main class="relative pt-16 w-full min-h-screen bg-surface-canvas px-gutter py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Breadcrumb & Page Header -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-6">
+<div class="flex flex-col gap-1.5">
+<nav class="flex items-center gap-2 font-label-md text-label-md text-secondary">
+<span class="hover:text-primary transition-colors cursor-pointer">Citizen Portal</span>
+<span class="material-symbols-outlined text-sm text-outline">chevron_right</span>
+<span class="text-on-surface font-semibold">Notifications</span>
+</nav>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Notifications &amp; Civic Advisories</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          3 New
+        </span>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-3xl">
+        Real-time updates regarding your submitted road reports, municipal ward repairs, neighborhood traffic diversions, and transit alerts across Mira-Bhayandar.
+      </p>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-2.5 self-start lg:self-auto">
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-card hover:bg-surface-container-low text-on-surface font-label-md text-label-md shadow-sm transition-all" id="markAllBtn" type="button">
+<span class="material-symbols-outlined text-lg text-secondary">done_all</span>
+<span>Mark All as Read</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-card hover:bg-surface-container-low text-on-surface font-label-md text-label-md shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-lg text-secondary">tune</span>
+<span>Notification Settings</span>
+</button>
+</div>
+</div>
+<!-- Filter Category Pills Strip -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 mb-6 scrollbar-none">
+<button class="filter-chip flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all shrink-0" data-filter="all">
+<span>All Updates</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-on-primary font-label-sm text-label-sm">6</span>
+</button>
+<button class="filter-chip flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-card hover:bg-surface-container-low text-on-surface font-label-md text-label-md shadow-sm transition-all shrink-0" data-filter="reports">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Report Updates</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">3</span>
+</button>
+<button class="filter-chip flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-card hover:bg-surface-container-low text-on-surface font-label-md text-label-md shadow-sm transition-all shrink-0" data-filter="advisories">
+<span class="w-2 h-2 rounded-full bg-status-pending"></span>
+<span>Ward Advisories</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">2</span>
+</button>
+<button class="filter-chip flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-card hover:bg-surface-container-low text-on-surface font-label-md text-label-md shadow-sm transition-all shrink-0" data-filter="transit">
+<span class="w-2 h-2 rounded-full bg-status-info"></span>
+<span>Transit Alerts</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">1</span>
+</button>
+</div>
+<!-- Main 12-Column Responsive Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Notification Feed (8 Cols) -->
+<div class="xl:col-span-8 flex flex-col gap-4">
+<!-- Notifications Shell Card -->
+<div class="bg-surface-card rounded-2xl shadow-sm overflow-hidden">
+<!-- Top Tab Navigation Strip -->
+<div class="flex items-center justify-between px-6 py-4 bg-surface-card">
+<div class="flex items-center gap-1 sm:gap-2">
+<button class="tab-btn px-3.5 py-1.5 rounded-lg font-label-md text-label-md bg-surface-container-low text-primary font-semibold transition-colors" data-tab="all">
+              All Notifications <span class="ml-1 opacity-80">(6)</span>
+</button>
+<button class="tab-btn px-3.5 py-1.5 rounded-lg font-label-md text-label-md text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" data-tab="unread">
+              Unread <span class="ml-1 px-1.5 py-0.5 rounded-full bg-status-urgent/10 text-status-urgent font-bold">3</span>
+</button>
+<button class="tab-btn px-3.5 py-1.5 rounded-lg font-label-md text-label-md text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" data-tab="archived">
+              Archived
+            </button>
+</div>
+<div class="hidden sm:flex items-center gap-1 text-secondary text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-base">sync</span>
+<span>Synced 2m ago</span>
+</div>
+</div>
+<!-- Notification Feed List -->
+<div class="flex flex-col space-y-3 p-4 sm:p-6 bg-surface-canvas/60">
+<!-- Notification 1: Unread / High Priority Report Milestone -->
+<article class="notification-item unread relative flex flex-col sm:flex-row gap-4 p-4 sm:p-5 rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-all group overflow-hidden" data-type="reports">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-primary-fixed text-primary">
+<span class="material-symbols-outlined text-2xl">home_repair_service</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed/60 text-primary font-label-sm text-label-sm font-semibold">
+                    Report Milestone
+                  </span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">#UMCP-2024-791</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>14 minutes ago</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
+                Repair Crew Dispatched for Report #UMCP-2024-791
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                MBMC Works Squad 02 (Drainage Siphon Truck #4) has arrived at Kanakia Road Flyover Pier #12. Silt removal operations are now underway.
+              </p>
+<!-- Inline Progress Snapshot -->
+<div class="mt-2 p-3 rounded-lg bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-xl">local_shipping</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Ward 3 Field Squad Active</span>
+<span class="font-label-sm text-label-sm text-secondary">Foreman: Ramesh K. (+91 98210 xxxxx)</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-card text-on-surface font-label-sm text-label-sm shadow-xs font-semibold">
+                  Status: In Progress (40%)
+                </span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors flex items-center gap-1">
+<span>View Report Details</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="mark-single-read px-3 py-1.5 rounded-lg hover:bg-surface-container-low text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" type="button">
+                    Mark as Read
+                  </button>
+</div>
+<button class="p-1 text-outline hover:text-on-surface transition-colors rounded" title="More options" type="button">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Notification 2: Unread / Ward Advisory -->
+<article class="notification-item unread relative flex flex-col sm:flex-row gap-4 p-4 sm:p-5 rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-all group overflow-hidden" data-type="advisories">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-status-pending"></div>
+<div class="shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-status-pending/10 text-status-pending">
+<span class="material-symbols-outlined text-2xl">traffic</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-pending/15 text-status-pending font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-pending"></span>
+                    Ward Advisory
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary">Mira Road East</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>2 hours ago</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-status-pending transition-colors">
+                Ward 7 Planned Stormwater Maintenance Notice
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Scheduled underground storm pipe rehabilitation between Beverly Park Gate 3 and Station Road from 11:00 PM tonight. Minor lane narrowing expected.
+              </p>
+<!-- Map Mini-Teaser Card -->
+<div class="mt-2 rounded-lg overflow-hidden bg-surface-container-low p-3 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-status-pending text-2xl">alt_route</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Recommended Bypass Route</span>
+<span class="font-label-sm text-label-sm text-secondary">Via Silver Park Link Road (+4 mins estimated)</span>
+</div>
+</div>
+<button class="shrink-0 px-3 py-1 rounded bg-surface-card hover:bg-surface-canvas text-on-surface font-label-sm text-label-sm shadow-xs transition-colors">
+                  Open Route Map
+                </button>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">directions</span>
+<span>View Alternate Route</span>
+</button>
+<button class="mark-single-read px-3 py-1.5 rounded-lg hover:bg-surface-container-low text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" type="button">
+                    Dismiss
+                  </button>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Affects 1.2 km corridor</span>
+</div>
+</div>
+</article>
+<!-- Notification 3: Unread / Verification Required -->
+<article class="notification-item unread relative flex flex-col sm:flex-row gap-4 p-4 sm:p-5 rounded-xl bg-surface-card shadow-sm hover:shadow-md transition-all group overflow-hidden" data-type="reports">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-status-active"></div>
+<div class="shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-status-active/10 text-status-active">
+<span class="material-symbols-outlined text-2xl">verified</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-active/15 text-status-active font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-active animate-ping"></span>
+                    Action Needed
+                  </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">#UMCP-2024-632</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Yesterday at 06:30 PM</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-status-active transition-colors">
+                Resolution Verification Required: #UMCP-2024-632
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Municipal Electrical Dept marked Streetlight Outage at Beverly Park 5th Lane as repaired. Please inspect and confirm closure to credit your civic contributor score.
+              </p>
+<!-- Photo Proof Preview Container -->
+<div class="mt-2 p-3 rounded-lg bg-surface-container-low flex items-center gap-4">
+<div class="relative w-16 h-12 rounded-lg overflow-hidden shrink-0 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of a newly installed LED municipal streetlight pole illuminating a clean paved suburban street at dusk with clear electrical work inspection tag visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAir2tXLhfJAyMeJsR7kwq8FbPaN3NHME1mzpUxensrQcPnL2anslxkMgy1cARKIqsuLV6lhskuNQIlJPnR9MUEsu67m-qV-KYUC01lDTCIy799m6xBkPLlgAxAyVeXz_QOnqj47W2QTwzCFTtEgvnU-04DH8niaZnQJsb-wDjchUzNsqF_iMxJ2lghlRfQ9OvZU4wY6S_NgPoIpoFmPEu6H_F0fagDncu-QarsSr6kSD_Kej5foY74g"/>
+<span class="absolute bottom-0.5 right-0.5 px-1 py-0.2 rounded bg-black/70 text-white font-label-sm text-label-sm text-[9px]">Proof</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Work Order Completed by Crew #E-14</span>
+<span class="font-label-sm text-label-sm text-secondary">Field Image verified by Ward Inspector G. Desai</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-lg bg-status-active text-on-primary hover:opacity-90 font-label-md text-label-md transition-all shadow-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Verify Repair (+25 pts)</span>
+</button>
+<button class="mark-single-read px-3 py-1.5 rounded-lg hover:bg-surface-container-low text-secondary hover:text-on-surface font-label-md text-label-md transition-colors" type="button">
+                    Later
+                  </button>
+</div>
+<span class="font-label-sm text-label-sm text-status-pending font-medium">Expires in 48h</span>
+</div>
+</div>
+</article>
+<!-- Notification 4: Read / System Acknowledgement -->
+<article class="notification-item relative flex flex-col sm:flex-row gap-4 p-4 sm:p-5 rounded-xl bg-surface-card/70 hover:bg-surface-card transition-all group overflow-hidden" data-type="reports">
+<div class="shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl">description</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+                    System Acknowledgement
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">#UMCP-2024-884</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Nov 14, 2024 at 09:40 AM</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">
+                Report Registered: #UMCP-2024-884
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Your geotagged submission regarding Pothole at Shanti Nagar has been received with immutable tracking hash <span class="font-mono text-xs px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-semibold">#MBMC-884-TKT</span>.
+              </p>
+<div class="flex items-center justify-between pt-1">
+<button class="text-primary hover:underline font-label-md text-label-md inline-flex items-center gap-1" type="button">
+<span>Track Ticket Status</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+<span class="font-label-sm text-label-sm text-secondary">Assigned to Road Maintenance Div</span>
+</div>
+</div>
+</article>
+<!-- Notification 5: Read / Public Transit -->
+<article class="notification-item relative flex flex-col sm:flex-row gap-4 p-4 sm:p-5 rounded-xl bg-surface-card/70 hover:bg-surface-card transition-all group overflow-hidden" data-type="transit">
+<div class="shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-status-info/10 text-status-info">
+<span class="material-symbols-outlined text-2xl">directions_bus</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-status-info/15 text-status-info font-label-sm text-label-sm font-semibold">
+                    Public Transit
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary">MBMT Route #10</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Nov 12, 2024</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-status-info transition-colors">
+                MBMT Feeder Route #10 Temporary Diversion
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Due to emergency road resurfacing on Station Road, MBMT Bus #10 will bypass Kanakia Market stop. Normal route resumes at 05:00 PM.
+              </p>
+<div class="flex items-center justify-between pt-1">
+<button class="text-status-info hover:underline font-label-md text-label-md inline-flex items-center gap-1" type="button">
+<span>View Updated MBMT Timetable</span>
+<span class="material-symbols-outlined text-sm">schedule</span>
+</button>
+<span class="font-label-sm text-label-sm text-status-active font-semibold">Resolved</span>
+</div>
+</div>
+</article>
+<!-- Notification 6: Read / Ward Community -->
+<article class="notification-item relative flex flex-col sm:flex-row gap-4 p-4 sm:p-5 rounded-xl bg-surface-card/70 hover:bg-surface-card transition-all group overflow-hidden" data-type="advisories">
+<div class="shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl">water_drop</span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+                    Ward Advisory
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary">Ward 4 Water Supply</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Nov 10, 2024</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                Quarterly Valve Flushing Completed in Sector 2
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                High-pressure water distribution mains flushing concluded successfully. Normal pressure restored across all multi-story apartment complexes.
+              </p>
+</div>
+</article>
+</div>
+<!-- Pagination / Footer Strip -->
+<div class="p-4 sm:px-6 bg-surface-card flex flex-col sm:flex-row items-center justify-between gap-3 text-secondary font-label-md text-label-md">
+<span>Showing 6 of 24 notifications this month</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors disabled:opacity-50" disabled="">Previous</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Preferences, Quiet Hours & Helpline (4 Cols) -->
+<div class="xl:col-span-4 flex flex-col gap-5">
+<!-- Notification Channels Card -->
+<div class="bg-surface-card rounded-2xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="p-2 rounded-xl bg-primary-fixed text-primary">
+<span class="material-symbols-outlined text-xl">contact_mail</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Delivery Channels</h3>
+<p class="font-label-sm text-label-sm text-secondary">Active delivery endpoints</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-status-active/10 text-status-active font-label-sm text-label-sm font-semibold">Live</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- SMS Channel -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">sms</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">SMS Instant Alerts</span>
+<span class="font-body-sm text-body-sm text-secondary">+91 98765 43210</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-card text-status-active font-label-sm text-label-sm font-semibold shadow-xs">Active</span>
+</div>
+<!-- WhatsApp Channel -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-status-active text-xl">chat</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">WhatsApp Bot Updates</span>
+<span class="font-body-sm text-body-sm text-secondary">MBMC Citizen Bot</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-card text-status-active font-label-sm text-label-sm font-semibold shadow-xs">Active</span>
+</div>
+<!-- Email Channel -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-xl">mail</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Email Digest</span>
+<span class="font-body-sm text-body-sm text-secondary">Daily Digest (08:00 AM)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-card text-secondary font-label-sm text-label-sm font-semibold shadow-xs">Daily</span>
+</div>
+</div>
+<a class="text-primary hover:underline font-label-md text-label-md flex items-center justify-between pt-1 group" href="#">
+<span>Configure Preferences &amp; Frequency</span>
+<span class="material-symbols-outlined text-base group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Do Not Disturb / Quiet Hours Card -->
+<div class="bg-surface-card rounded-2xl p-5 shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-center gap-2.5">
+<div class="p-2 rounded-xl bg-status-pending/15 text-status-pending">
+<span class="material-symbols-outlined text-xl">bedtime</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Quiet Hours Active</h3>
+<p class="font-label-sm text-label-sm text-secondary">10:00 PM - 07:00 AM IST</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Standard civic updates and maintenance schedules are muted during quiet hours. <span class="font-semibold text-status-urgent">Civic Emergency Hazards</span> (flash flood, gas leak, bridge closure) will bypass quiet rules.
+        </p>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-secondary">Status: Enforced Daily</span>
+<button class="px-2.5 py-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors">
+            Modify Window
+          </button>
+</div>
+</div>
+<!-- Civic Helpline Card -->
+<div class="bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-2xl p-5 shadow-md flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="p-2 rounded-xl bg-white/20 text-white">
+<span class="material-symbols-outlined text-2xl">support_agent</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-white/80 uppercase tracking-wider block font-semibold">MBMC Control Room</span>
+<h3 class="font-headline-sm text-headline-sm text-white font-bold">24x7 Civic Helpline</h3>
+</div>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-status-active animate-ping"></span>
+</div>
+<p class="font-body-sm text-body-sm text-white/90">
+          Need immediate dispatch for hazardous road caving, open utility pits, or transit paralysis?
+        </p>
+<div class="p-3 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-white/70">Toll-Free Control Desk</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-white">1800-22-3450</span>
+</div>
+<a class="px-3.5 py-2 rounded-lg bg-white text-primary font-label-md text-label-md font-bold shadow-md hover:bg-white/90 transition-all flex items-center gap-1" href="tel:1800223450">
+<span class="material-symbols-outlined text-base">call</span>
+<span>Call Now</span>
+</a>
+</div>
+</div>
+<!-- Contributor Civic Score Badge Mini-Card -->
+<div class="bg-surface-card rounded-2xl p-5 shadow-sm flex items-center gap-4">
+<div class="p-3 rounded-xl bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">award_star</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Level 3 Contributor</span>
+<span class="material-symbols-outlined text-primary text-base">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Verify 1 pending issue to reach <span class="font-semibold text-on-surface">Level 4 Citizen Champion</span>.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    // Interactive Tab filtering
+    const tabs = document.querySelectorAll('.tab-btn');
+    const items = document.querySelectorAll('.notification-item');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-surface-container-low', 'text-primary', 'font-semibold');
+          t.classList.add('text-secondary');
+        });
+        tab.classList.add('bg-surface-container-low', 'text-primary', 'font-semibold');
+        tab.classList.remove('text-secondary');
+
+        const tabType = tab.getAttribute('data-tab');
+        items.forEach(item => {
+          if (tabType === 'all') {
+            item.style.display = 'flex';
+          } else if (tabType === 'unread') {
+            if (item.classList.contains('unread')) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          } else if (tabType === 'archived') {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Category Filter Chips
+    const filterChips = document.querySelectorAll('.filter-chip');
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        filterChips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary');
+          c.classList.add('bg-surface-card', 'text-on-surface');
+        });
+        chip.classList.add('bg-primary-container', 'text-on-primary');
+        chip.classList.remove('bg-surface-card', 'text-on-surface');
+
+        const cat = chip.getAttribute('data-filter');
+        items.forEach(item => {
+          if (cat === 'all') {
+            item.style.display = 'flex';
+          } else {
+            if (item.getAttribute('data-type') === cat) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+
+    // Mark single notification read
+    const singleReadButtons = document.querySelectorAll('.mark-single-read');
+    singleReadButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const parentItem = e.target.closest('.notification-item');
+        if (parentItem) {
+          parentItem.classList.remove('unread');
+          const leftBar = parentItem.querySelector('.absolute.left-0');
+          if (leftBar) leftBar.remove();
+          parentItem.classList.add('bg-surface-card/70');
+          btn.textContent = 'Read';
+          btn.disabled = true;
+          btn.classList.add('opacity-50');
+        }
+      });
+    });
+
+    // Mark all as read
+    const markAllBtn = document.getElementById('markAllBtn');
+    if (markAllBtn) {
+      markAllBtn.addEventListener('click', () => {
+        items.forEach(item => {
+          item.classList.remove('unread');
+          const leftBar = item.querySelector('.absolute.left-0');
+          if (leftBar) leftBar.remove();
+          item.classList.add('bg-surface-card/70');
+        });
+        singleReadButtons.forEach(btn => {
+          btn.textContent = 'Read';
+          btn.disabled = true;
+          btn.classList.add('opacity-50');
+        });
+        markAllBtn.innerHTML = '<span class="material-symbols-outlined text-lg text-status-active">check</span><span>All Caught Up</span>';
+        markAllBtn.disabled = true;
+      });
+    }
+  })();
+</script></main></div></body></html>

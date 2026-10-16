@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>UMCP - Urban Mobility Coordination Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-primary-container":"#eeefff","surface-dim":"#cbdbf5","primary":"#004ac6","status-info":"#0284C7","surface-canvas":"#F8FAFC","error-container":"#ffdad6","secondary-container":"#dae2fd","background":"#f8f9ff","status-pending":"#F59E0B","surface-bright":"#f8f9ff","tertiary-fixed-dim":"#93ccff","on-secondary-fixed":"#131b2e","on-tertiary":"#ffffff","primary-fixed-dim":"#b4c5ff","on-secondary":"#ffffff","surface-card":"#FFFFFF","primary-fixed":"#dbe1ff","on-tertiary-fixed":"#001d31","inverse-surface":"#213145","status-urgent":"#EF4444","on-secondary-fixed-variant":"#3f465c","secondary-fixed":"#dae2fd","border-default":"#E2E8F0","surface-container":"#e5eeff","tertiary":"#005a89","on-tertiary-container":"#e7f2ff","surface-tint":"#0053db","tertiary-fixed":"#cce5ff","on-surface":"#0b1c30","status-active":"#10B981","outline-variant":"#c3c6d7","primary-container":"#2563eb","on-tertiary-fixed-variant":"#004b73","on-error":"#ffffff","on-secondary-container":"#5c647a","inverse-on-surface":"#eaf1ff","on-error-container":"#93000a","outline":"#737686","on-background":"#0b1c30","surface-variant":"#d3e4fe","secondary":"#565e74","on-surface-variant":"#434655","surface-container-high":"#dce9ff","on-primary-fixed":"#00174b","on-primary":"#ffffff","surface-container-lowest":"#ffffff","surface-container-highest":"#d3e4fe","secondary-fixed-dim":"#bec6e0","tertiary-container":"#0073ae","error":"#ba1a1a","inverse-primary":"#b4c5ff","surface-container-low":"#eff4ff","border-subtle":"#EDF2F7","on-primary-fixed-variant":"#003ea8","surface":"#f8f9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-md":"1rem","space-2xl":"3rem","margin":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1rem","gutter":"1.5rem","gutter-mobile":"1rem","space-lg":"1.5rem"},"fontFamily":{"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"body-md":["0.9375rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","fontWeight":"400"}],"display-lg-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-md":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"display-lg":["3.5rem",{"lineHeight":"4.25rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.02em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface-canvas font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-card z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-6 flex items-center justify-between border-b border-border-subtle"><div class="flex items-center gap-3"><img alt="UMCP Brand Mark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UZW6pmxdik_y1YDjEVfSYFSDmxthAF7ZPJ44RQ3yAzgmr2rKoS8fIe7etOHFwzaps66MpCYMrmQYBCgIgEc9aGd07ka_7nLodUXUPpqqQfjJmPgfhcAOIsuQaJzfB7vf4BA9p6BcNGtc18U6hIoLgV6RRaFeCirnHV6TqlpAQpbqWR7M1aBQte2QM3nV010d2AJpt_gr9miR18gyWTRfX8tt8dQN6fh2HzLOBrvA1Ee1Kh0KYdjxfbdkkg"/><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-surface font-bold tracking-tight leading-tight">UMCP</span><span class="font-label-sm text-label-sm text-secondary tracking-normal">Mira-Bhayandar</span></div></div><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-4 py-4 space-y-6"><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Public &amp; Common</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="public-portal" href="#"><span class="material-symbols-outlined text-xl">public</span><span>Public Portal</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="mobility-map" href="#"><span class="material-symbols-outlined text-xl">map</span><span>Mobility Map</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="parking-directory" href="#"><span class="material-symbols-outlined text-xl">local_parking</span><span>Parking Directory</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Citizen Portal</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="citizen-overview" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span>Citizen Overview</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="report-an-issue" href="#"><span class="material-symbols-outlined text-xl">campaign</span><span>Report an Issue</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-reports" href="#"><span class="material-symbols-outlined text-xl">assignment</span><span>My Reports</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Authority Portals</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="municipal-works" href="#"><span class="material-symbols-outlined text-xl">domain</span><span>Municipal Works</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="traffic-coordination" href="#"><span class="material-symbols-outlined text-xl">traffic</span><span>Traffic Coordination</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="incident-verification" href="#"><span class="material-symbols-outlined text-xl">verified</span><span>Incident Verification</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Account</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings-security" href="#"><span class="material-symbols-outlined text-xl">settings</span><span>Settings &amp; Security</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors font-label-md text-label-md" data-path="sign-out" href="#"><span class="material-symbols-outlined text-xl">logout</span><span>Sign Out</span></a></nav></div></div><div class="p-4 border-t border-border-subtle bg-surface-container-lowest"><div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-status-active"></span><div class="flex-1 min-w-0"><p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">MBMC Transit Hub Live</p><p class="font-label-sm text-label-sm text-secondary truncate">System Online 99.8%</p></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-card/90 backdrop-blur-xl border-b border-border-subtle z-40 px-6 flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-6 flex-1 max-w-xl"><div class="relative w-full max-w-xs"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-canvas border border-border-default font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search routes, transit wards, notices..." type="text"/></div><div class="hidden xl:flex items-center p-1 bg-surface-canvas rounded-lg border border-border-subtle"><button class="px-2.5 py-1 rounded bg-surface-card shadow-sm text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Desktop view" type="button"><span class="material-symbols-outlined text-base">desktop_windows</span><span class="hidden 2xl:inline">Desktop</span></button><button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Tablet view" type="button"><span class="material-symbols-outlined text-base">tablet_mac</span><span class="hidden 2xl:inline">Tablet</span></button><button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Mobile view" type="button"><span class="material-symbols-outlined text-base">smartphone</span><span class="hidden 2xl:inline">Mobile</span></button></div></div><div class="flex items-center gap-3"><button class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-[0_2px_8px_rgba(37,99,235,0.2)]" type="button"><span class="material-symbols-outlined text-lg">add_circle</span><span>Report Issue</span></button><div class="relative"><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-urgent ring-2 ring-surface-card"></span></button></div><div class="h-6 w-px bg-border-subtle"></div><div class="flex items-center gap-3 pl-1"><div class="flex items-center gap-2 cursor-pointer p-1 rounded-lg hover:bg-surface-canvas transition-colors"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-default" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ0YOXttYssDW66-eOBkrVyw4Ii3Uom0c6fWRwaasxPd5zVASDGmkF-VBsEqON8gCI2CHfBuXdIAmMKJ-CGwFyjVp8DNdbZiq9fKpBmn6kWiLJdfFRRMNTbi8W5Vv9KKA6k1rJC-TNo98cQDusQlACvBIu2D_hwVD9yiDcXH8m4xps_bUFH9Pl9hE3DCrJzBJ_7UsyfqVV5rD0DwdkkAji-URRKS4aBsHfgFVkY2CcpZ_nQmZlXhPWxQ"/><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md text-on-surface font-semibold">Aditya Patil</span><span class="material-symbols-outlined text-sm text-outline">expand_more</span></div><span class="font-label-sm text-label-sm text-primary font-medium">Municipal Authority</span></div></div></div></div></header><main class="relative pt-16 w-full min-h-screen bg-surface-canvas px-gutter py-space-lg"><div class="flex flex-col w-full">
+<!-- Subtle decorative ambient glow (scoped inside container) -->
+<div class="relative w-full overflow-hidden mb-6">
+<div class="absolute -top-16 -right-16 w-96 h-96 bg-primary-container/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-24 -left-16 w-80 h-80 bg-status-info/5 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Page Header & Civic Navigation -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-secondary font-label-sm text-label-sm tracking-wide">
+<span>Citizen Portal</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary font-semibold">Parking Information &amp; Availability</span>
+<span class="inline-flex items-center gap-1.5 ml-2 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-active"></span>
+          Pilot Telemetry Active
+        </span>
+</div>
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-4">
+<div class="max-w-3xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+            Municipal Parking &amp; Smart Bays Directory
+          </h1>
+<p class="mt-1 font-body-md text-body-md text-secondary leading-relaxed">
+            Find verified municipal off-street parking facilities, multi-level car parks (MLCP), and on-street smart bays across Mira-Bhayandar. Real-time availability simulated for civic prototype.
+          </p>
+</div>
+<!-- Quick Civic Contact & Tariff Rule Tooltip -->
+<div class="flex items-center gap-3 shrink-0">
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-card hover:bg-surface-container-low text-on-surface font-label-md text-label-md shadow-sm transition-all duration-200" href="#rules-policy">
+<span class="material-symbols-outlined text-base text-primary">policy</span>
+<span>Civic Parking Bylaws</span>
+</a>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-[0_4px_12px_rgba(37,99,235,0.2)] transition-all duration-200" onclick="refreshTelemetryMock()" type="button">
+<span class="material-symbols-outlined text-base">sync</span>
+<span>Sync Live Sensor Hub</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-time Civic Metrics Strip (4 Stat Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<!-- Stat 1: Total Civic Bays -->
+<div class="relative p-5 rounded-2xl bg-surface-card shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Total City Bays</span>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">local_parking</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">1,450 Spots</span>
+</div>
+<div class="mt-2 flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="inline-flex items-center text-status-active font-semibold">
+<span class="material-symbols-outlined text-sm">check_circle</span> 12 Locations
+        </span>
+<span>• Across 6 municipal wards</span>
+</div>
+</div>
+<!-- Stat 2: Live Available Bays -->
+<div class="relative p-5 rounded-2xl bg-surface-card shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Live Available Bays</span>
+<div class="w-10 h-10 rounded-xl bg-emerald-50 text-status-active flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">sensors</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold" id="live-total-spots">412 Free</span>
+<span class="font-label-md text-label-md text-status-active font-semibold bg-emerald-50 px-2 py-0.5 rounded-full">28% Vacant</span>
+</div>
+<div class="mt-2 font-label-sm text-label-sm text-secondary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-status-active animate-ping"></span>
+<span>Simulated active telemetry update</span>
+</div>
+</div>
+<!-- Stat 3: EV Fast Chargers -->
+<div class="relative p-5 rounded-2xl bg-surface-card shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">EV Fast Chargers</span>
+<div class="w-10 h-10 rounded-xl bg-sky-50 text-status-info flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">ev_station</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">24 Available</span>
+<span class="font-label-sm text-label-sm text-secondary">of 30 units</span>
+</div>
+<div class="mt-2 font-label-sm text-label-sm text-status-info font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">bolt</span>
+<span>Up to 60 kW CCS-2 DC chargers</span>
+</div>
+</div>
+<!-- Stat 4: Standard Civic Tariff -->
+<div class="relative p-5 rounded-2xl bg-surface-card shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Standard Civic Tariff</span>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">payments</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">₹20 / hr</span>
+<span class="font-label-sm text-label-sm text-secondary">4-Wheelers</span>
+</div>
+<div class="mt-2 font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">two_wheeler</span>
+<span>Two-wheelers capped at ₹10/hr</span>
+</div>
+</div>
+</div>
+<!-- Search & Category Filters Bar -->
+<div class="bg-surface-card rounded-2xl p-4 shadow-sm mb-6 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+<div class="relative flex-1 max-w-xl">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface-canvas font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="parkingSearchInput" onkeyup="filterFacilities(this.value)" placeholder="Search by landmark, metro station, or market (e.g. Mira Road Station, Maxus, Kanakia)..." type="text"/>
+</div>
+<!-- Segmented Tab Filters -->
+<div class="flex flex-wrap items-center gap-1.5 p-1 bg-surface-canvas rounded-xl">
+<button class="filter-btn active-tab px-3.5 py-1.5 rounded-lg text-label-md font-label-md font-semibold bg-surface-card text-primary shadow-sm transition-all duration-150" onclick="setFilter('all', this)">
+        All Facilities (12)
+      </button>
+<button class="filter-btn px-3.5 py-1.5 rounded-lg text-label-md font-label-md font-medium text-secondary hover:text-on-surface transition-all duration-150" onclick="setFilter('mlcp', this)">
+        Multi-Level Car Parks (4)
+      </button>
+<button class="filter-btn px-3.5 py-1.5 rounded-lg text-label-md font-label-md font-medium text-secondary hover:text-on-surface transition-all duration-150" onclick="setFilter('twowheeler', this)">
+        Two-Wheeler Hubs (6)
+      </button>
+<button class="filter-btn px-3.5 py-1.5 rounded-lg text-label-md font-label-md font-medium text-secondary hover:text-on-surface transition-all duration-150" onclick="setFilter('ev', this)">
+        EV Charging (5)
+      </button>
+</div>
+</div>
+<!-- Main 2-Column Responsive Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT / MAIN COLUMN: Facility Cards List (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6" id="facilityListContainer">
+<!-- FACILITY CARD 1: Mira Road Railway Station West MLCP -->
+<article class="facility-card bg-surface-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200" data-facility-type="mlcp ev twowheeler" data-search-terms="mira road railway station west mlcp multi level fast tag">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-2">
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-container-low text-primary">
+                MBMC Municipal Facility
+              </span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-sky-50 text-status-info flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">bolt</span> EV Charging Ready
+              </span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-emerald-50 text-status-active flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-active"></span> FastTag Enabled
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">
+              Mira Road Railway Station West Multi-Level Car Park
+            </h2>
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-sm text-primary">location_on</span>
+<span>Station Road West, Opp Platform 1 Exit, Mira Road</span>
+</div>
+</div>
+<!-- Spot Capacity Metric Gauge -->
+<div class="sm:text-right shrink-0 bg-surface-canvas sm:bg-transparent p-3 sm:p-0 rounded-xl">
+<div class="font-headline-sm text-headline-sm font-bold text-status-active flex items-center sm:justify-end gap-1.5">
+<span>68</span>
+<span class="font-label-md text-label-md text-secondary font-normal">/ 250 available</span>
+</div>
+<span class="inline-block mt-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-emerald-50 text-status-active">
+              Normal Availability
+            </span>
+</div>
+</div>
+<!-- Progress Gauge Line -->
+<div class="mt-4 w-full bg-surface-canvas rounded-full h-2.5 overflow-hidden">
+<div class="bg-status-active h-2.5 rounded-full transition-all duration-500" style="width: 27.2%;"></div>
+</div>
+<div class="mt-1 flex justify-between font-label-sm text-label-sm text-secondary">
+<span>72.8% Capacity Filled</span>
+<span>182 occupied bays</span>
+</div>
+<!-- Facility Details: Rates & Amenities Grid -->
+<div class="mt-5 pt-4 bg-surface-canvas/60 rounded-xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">directions_car</span>
+<span><strong>4-Wheelers:</strong> ₹30 for first 2 hrs (₹15/hr addl)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">two_wheeler</span>
+<span><strong>2-Wheelers:</strong> ₹15 for 4 hrs (₹5/hr addl)</span>
+</div>
+</div>
+</div>
+<!-- Badges & Features Tags -->
+<div class="mt-4 flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">videocam</span> CCTV 24x7 Surveillance
+          </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">accessible</span> Wheelchair Accessible Lift
+          </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">roofing</span> Covered Weatherproof
+          </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">local_gas_station</span> 4x 60kW DC EV Guns
+          </span>
+</div>
+<!-- Card Footprint & Action Controls -->
+<div class="mt-6 pt-4 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Operating 24 Hours • Security Ward 03</span>
+</div>
+<div class="flex items-center gap-2.5">
+<button class="px-4 py-2 rounded-lg bg-surface-canvas hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-colors" onclick="showTariffModal('Mira Road Railway Station West Multi-Level Car Park', '₹30 first 2 hrs', '₹15 first 4 hrs')" type="button">
+              View Tariff Matrix
+            </button>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-base">directions</span>
+<span>Navigate via Maps</span>
+</a>
+</div>
+</div>
+</article>
+<!-- FACILITY CARD 2: Kanakia Cinemax Commercial Zone Civic Parking -->
+<article class="facility-card bg-surface-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200" data-facility-type="surface twowheeler" data-search-terms="kanakia cinemax commercial zone civic parking beverly park">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-2">
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-amber-50 text-status-pending">
+                Smart Surface Bay
+              </span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-container-low text-primary">
+                High Commercial Density
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">
+              Kanakia Cinemax Commercial Zone Civic Parking
+            </h2>
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-sm text-primary">location_on</span>
+<span>Beverly Park Main Road, Sector 6, Mira Road</span>
+</div>
+</div>
+<!-- Spot Capacity Metric Gauge -->
+<div class="sm:text-right shrink-0 bg-surface-canvas sm:bg-transparent p-3 sm:p-0 rounded-xl">
+<div class="font-headline-sm text-headline-sm font-bold text-status-pending flex items-center sm:justify-end gap-1.5">
+<span>14</span>
+<span class="font-label-md text-label-md text-secondary font-normal">/ 80 available</span>
+</div>
+<span class="inline-block mt-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-amber-50 text-status-pending">
+              Filling Fast — 82% occupied
+            </span>
+</div>
+</div>
+<!-- Progress Gauge Line -->
+<div class="mt-4 w-full bg-surface-canvas rounded-full h-2.5 overflow-hidden">
+<div class="bg-status-pending h-2.5 rounded-full transition-all duration-500" style="width: 82.5%;"></div>
+</div>
+<div class="mt-1 flex justify-between font-label-sm text-label-sm text-secondary">
+<span>66 occupied bays</span>
+<span>Last bay logged 2 mins ago</span>
+</div>
+<!-- Facility Details: Rates & Amenities Grid -->
+<div class="mt-5 pt-4 bg-surface-canvas/60 rounded-xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">payments</span>
+<span><strong>Cars &amp; Taxis:</strong> ₹20/hr flat rate</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">qr_code_scanner</span>
+<span><strong>Two-Wheelers:</strong> ₹10/hr (Instant UPI / QR)</span>
+</div>
+</div>
+</div>
+<!-- Badges & Features Tags -->
+<div class="mt-4 flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">shield</span> Attendant On Duty
+          </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">contactless</span> UPI Tap-and-Go
+          </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">storefront</span> Direct Mall Access
+          </span>
+</div>
+<!-- Card Footprint & Action Controls -->
+<div class="mt-6 pt-4 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Operating 08:00 AM – 11:30 PM • Zone Ward 05</span>
+</div>
+<div class="flex items-center gap-2.5">
+<button class="px-4 py-2 rounded-lg bg-surface-canvas hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-colors" onclick="showTariffModal('Kanakia Cinemax Commercial Zone Civic Parking', '₹20/hr flat rate', '₹10/hr flat rate')" type="button">
+              View Tariff
+            </button>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-base">directions</span>
+<span>Navigate via Maps</span>
+</a>
+</div>
+</div>
+</article>
+<!-- FACILITY CARD 3: Bhayandar East Municipal Market & Transit Hub Lot -->
+<article class="facility-card bg-surface-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200" data-facility-type="mlcp ev twowheeler" data-search-terms="bhayandar east municipal market transit hub lot supercharger">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-2">
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-container-low text-primary">
+                High Capacity Lot
+              </span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-sky-50 text-status-info flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">bolt</span> EV Supercharger (2 bays)
+              </span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-emerald-50 text-status-active">
+                Automated Boom Barrier
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">
+              Bhayandar East Municipal Market &amp; Transit Hub Lot
+            </h2>
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-sm text-primary">location_on</span>
+<span>Market Road, 200m from Bhayandar East Railway Station</span>
+</div>
+</div>
+<!-- Spot Capacity Metric Gauge -->
+<div class="sm:text-right shrink-0 bg-surface-canvas sm:bg-transparent p-3 sm:p-0 rounded-xl">
+<div class="font-headline-sm text-headline-sm font-bold text-status-active flex items-center sm:justify-end gap-1.5">
+<span>112</span>
+<span class="font-label-md text-label-md text-secondary font-normal">/ 320 available</span>
+</div>
+<span class="inline-block mt-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-emerald-50 text-status-active">
+              Ample Capacity
+            </span>
+</div>
+</div>
+<!-- Progress Gauge Line -->
+<div class="mt-4 w-full bg-surface-canvas rounded-full h-2.5 overflow-hidden">
+<div class="bg-status-active h-2.5 rounded-full transition-all duration-500" style="width: 35%;"></div>
+</div>
+<div class="mt-1 flex justify-between font-label-sm text-label-sm text-secondary">
+<span>65% Occupied (208 in use)</span>
+<span>Includes 140 two-wheeler slots</span>
+</div>
+<!-- Facility Details: Rates & Amenities Grid -->
+<div class="mt-5 pt-4 bg-surface-canvas/60 rounded-xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">credit_card</span>
+<span><strong>Hourly Rate:</strong> ₹25/hr | Daily Pass: ₹120</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">electric_moped</span>
+<span><strong>Two-Wheeler Monthly Pass:</strong> ₹350 / month</span>
+</div>
+</div>
+</div>
+<!-- Badges & Features Tags -->
+<div class="mt-4 flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">sensor_door</span> ANPR License Plate Recognition
+          </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">umbrella</span> Covered Two-Wheeler Shed
+          </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">commute</span> Multi-modal Bus Transfer
+          </span>
+</div>
+<!-- Card Footprint & Action Controls -->
+<div class="mt-6 pt-4 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Operating 24 Hours • Security Ward 01</span>
+</div>
+<div class="flex items-center gap-2.5">
+<button class="px-4 py-2 rounded-lg bg-surface-canvas hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-colors" onclick="showTariffModal('Bhayandar East Municipal Market &amp; Transit Hub Lot', '₹25/hr (₹120 Day Pass)', '₹10/hr (₹350 Mo Pass)')" type="button">
+              Tariff &amp; Passes
+            </button>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-base">directions</span>
+<span>Navigate via Maps</span>
+</a>
+</div>
+</div>
+</article>
+<!-- FACILITY CARD 4: Maxus Mall Vicinity Municipal Public Parking -->
+<article class="facility-card bg-surface-card rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200" data-facility-type="surface" data-search-terms="maxus mall vicinity municipal public parking 150 feet road flyover">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-2">
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-container-low text-primary">
+                Surface Lot
+              </span>
+<span class="px-2.5 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-red-50 text-status-urgent flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-urgent animate-pulse"></span> Nearly Full
+              </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">
+              Maxus Mall Vicinity Municipal Public Parking
+            </h2>
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-body-sm mt-1">
+<span class="material-symbols-outlined text-sm text-primary">location_on</span>
+<span>150 Feet Road, Near Maxus Flyover, Bhayandar West</span>
+</div>
+</div>
+<!-- Spot Capacity Metric Gauge -->
+<div class="sm:text-right shrink-0 bg-surface-canvas sm:bg-transparent p-3 sm:p-0 rounded-xl">
+<div class="font-headline-sm text-headline-sm font-bold text-status-urgent flex items-center sm:justify-end gap-1.5">
+<span>4</span>
+<span class="font-label-md text-label-md text-secondary font-normal">/ 60 available</span>
+</div>
+<span class="inline-block mt-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-semibold bg-red-50 text-status-urgent">
+              Congestion High (93%)
+            </span>
+</div>
+</div>
+<!-- Progress Gauge Line -->
+<div class="mt-4 w-full bg-surface-canvas rounded-full h-2.5 overflow-hidden">
+<div class="bg-status-urgent h-2.5 rounded-full transition-all duration-500" style="width: 93.3%;"></div>
+</div>
+<div class="mt-1 flex justify-between font-label-sm text-label-sm text-secondary">
+<span>56 occupied bays</span>
+<span class="text-status-urgent font-medium">Diversion suggested for 4-wheelers</span>
+</div>
+<!-- Facility Details: Rates & Amenities Grid -->
+<div class="mt-5 pt-4 bg-surface-canvas/60 rounded-xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-on-surface font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">attach_money</span>
+<span><strong>Civic Tariff:</strong> ₹25/hr standard</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-status-pending">warning</span>
+<span><strong>Notice:</strong> Heavy shopper traffic during 18:00–21:00</span>
+</div>
+</div>
+</div>
+<!-- Badges & Features Tags -->
+<div class="mt-4 flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">receipt</span> Digital e-Receipt Validated
+          </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-canvas text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">badge</span> Authorized MBMC Uniformed Staff
+          </span>
+</div>
+<!-- Card Footprint & Action Controls -->
+<div class="mt-6 pt-4 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Operating 09:00 AM – 11:00 PM • Zone Ward 02</span>
+</div>
+<div class="flex items-center gap-2.5">
+<button class="px-4 py-2 rounded-lg bg-amber-50 hover:bg-amber-100 text-status-pending font-label-md text-label-md transition-colors flex items-center gap-1" onclick="filterFacilities('Bhayandar East')" type="button">
+<span class="material-symbols-outlined text-base">alt_route</span>
+<span>Check Alternative Lots</span>
+</button>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-base">directions</span>
+<span>Navigate</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Visual Context: Satellite Map Preview Card with data-location -->
+<div class="p-6 rounded-2xl bg-surface-card shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Interactive Zone Map View</h3>
+<p class="font-body-sm text-body-sm text-secondary">Geospatial overview of smart sensors along Mira-Bhayandar corridor</p>
+</div>
+<span class="px-3 py-1 rounded-full text-label-sm font-label-sm font-semibold bg-surface-container-low text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">layers</span> Ward Map v2.4
+          </span>
+</div>
+<div class="w-full h-72 bg-cover bg-center rounded-xl relative overflow-hidden flex flex-col justify-end p-4 shadow-inner" data-location="Mira Road Railway Station, Mira Bhayandar, Maharashtra, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDyGMWBwDq0LdtaS5JtjEtsVMb-n-PELN2lTJ7coJmeP4yXCNgfb8DkWwrPOwdEELWCNssJCik3xXUeJlbz1X_O_WiVJ0FrqMw8TAoiDZbnQ4NDgd8XjUFtHc3HDmtg9wz0hJYIMDffbE6FpLE1HzoIFgt9Tm2z2WZ2ZnR3Bu4l2tORVmduYzoZxOIF9HQn4GGP6shLsvE38IFUGkTeJc-jHZYyVQpzkFVyKd0If5tYtTZ60u6XxolEPQ')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex items-center justify-between text-on-primary">
+<div>
+<p class="font-label-md text-label-md font-bold">Western Railway Transit Hub Area</p>
+<p class="font-label-sm text-label-sm text-on-primary/80">3 Active MLCPs • 5 Surface Smart Bays • 2 Bus Depot Interchanges</p>
+</div>
+<a class="px-3 py-1.5 rounded-lg bg-surface-card/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold hover:bg-surface-card transition-all" href="#">
+              Expand Full Map
+            </a>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT / SIDE COLUMN: Civic Guidance & Policies (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Simulated Telemetry Notice Box -->
+<div class="p-5 rounded-2xl bg-gradient-to-br from-surface-container-low to-surface-card shadow-sm">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">memory</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface">Simulated Telemetry Pilot</h3>
+<p class="mt-1 font-body-sm text-body-sm text-secondary leading-relaxed">
+<strong>Demo Prototype Data:</strong> Occupancy figures reflect simulated IoT sensor feeds from MBMC municipal parking pilot nodes deployed at railway corridors and market clusters.
+            </p>
+<div class="mt-3 flex items-center gap-2 text-label-sm font-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-sm">wifi_tethering</span>
+<span>Updated: Just now (auto-refreshes every 60s)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- MBMC Authorized Civic Parking Policy Card -->
+<div class="p-6 rounded-2xl bg-surface-card shadow-sm" id="rules-policy">
+<div class="flex items-center gap-2.5 mb-4">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Authorized Civic Policy</h3>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-4 leading-relaxed">
+          The Mira Bhayandar Municipal Corporation protects commuter rights. Familiarize yourself with authorized guidelines:
+        </p>
+<ul class="space-y-3.5">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-status-active text-lg shrink-0 mt-0.5">check_circle</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong>Digital Receipt Mandate:</strong> Pay only after receiving an automated machine-generated slip or verified MBMC QR token. Hand-written slips are unauthorized.
+            </div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-status-active text-lg shrink-0 mt-0.5">check_circle</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong>Anti-Towing Safeguard:</strong> Vehicles within designated white bays cannot be towed unless obstructing civic emergencies or red hydrant bands.
+            </div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-status-active text-lg shrink-0 mt-0.5">check_circle</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong>Zero Night Surcharge:</strong> Overnight parking rates remain flat across all 4 MBMC multi-level facilities without hidden surcharges.
+            </div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-status-active text-lg shrink-0 mt-0.5">check_circle</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong>Grace Period (15 Mins):</strong> Drop-off and pick-up within 15 minutes is free at all station MLCP facilities.
+            </div>
+</li>
+</ul>
+<!-- Visual Civic Verification Seal -->
+<div class="mt-5 p-3 rounded-xl bg-surface-canvas flex items-center gap-3">
+<img class="w-10 h-10 object-contain rounded-full shadow-sm" data-alt="Official round emblem stamp of Mira Bhayandar Municipal Corporation MBMC transit assurance logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXuMK32cEcggGvlPNrBgcU0-_YZiQf3p3rd703O9h5zUx5xoPq2dqnH9l2w-fwZa5putgfYGwZmbgxqv_PRDnKia0y_kdtWegsVpo-wdfkb1UW28uCAM1_dkaNor_VynFf5OlrBxrPt5huqNYktYrXQZd0OjJ8Ver-FIMUsBlbuy1ir8NA0Ygmc1HmZpbFJz30OIHlkPpZOAemtug1FkGW8cU3f3va-UHkZ5a8z0TjPkAaXMaI66jO8A"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">MBMC Traffic Regulatory Division</span>
+<span class="font-label-sm text-label-sm text-secondary">Gazette Ref: MBMC-TRF/2024-B8</span>
+</div>
+</div>
+</div>
+<!-- EV Fast Charging Hub Highlight Card -->
+<div class="p-6 rounded-2xl bg-surface-card shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2 text-status-info font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-lg">bolt</span>
+<span>EV Green Grid Sub-system</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm font-bold bg-sky-50 text-status-info">₹14 / kWh</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">High-Speed Civic Chargers</h4>
+<p class="mt-1 font-body-sm text-body-sm text-secondary">
+          Integrated with MahaVitaran civic power grid. Compatible with all CCS Type-2 electric four-wheelers and two-wheeler fast adapters.
+        </p>
+<!-- Inline Visual Mini-Gauge: Charger Availability -->
+<div class="mt-4 p-3 rounded-xl bg-surface-canvas flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-sky-100 text-status-info flex items-center justify-center font-bold">
+              80%
+            </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">24 Chargers Ready</p>
+<p class="font-label-sm text-label-sm text-secondary">6 units undergoing maintenance</p>
+</div>
+</div>
+<a class="font-label-sm text-label-sm font-bold text-primary hover:underline" href="#">Locate Guns</a>
+</div>
+</div>
+<!-- Parking Violation / Grievance Escalation Card -->
+<div class="p-6 rounded-2xl bg-surface-card shadow-sm">
+<div class="flex items-center gap-2.5 mb-2 text-status-urgent">
+<span class="material-symbols-outlined text-xl">report_problem</span>
+<h4 class="font-label-lg text-label-lg font-bold">Report Unauthorized Overcharging</h4>
+</div>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+          Contractor demanding excess fee, refusing digital receipt, or unauthorized private towing? File an instant citizen grievance with geo-tagged photographic evidence.
+        </p>
+<div class="mt-4">
+<a class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-error/10 hover:bg-error/15 text-error font-label-md text-label-md font-semibold transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">campaign</span>
+<span>Lodge Parking Complaint</span>
+</a>
+</div>
+<div class="mt-3 text-center">
+<span class="font-label-sm text-label-sm text-secondary">Civic Helpline 24x7: <strong>1800-22-3844</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Modal Container for Tariff Matrix (Hidden by default, triggered via JS) -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-sm flex items-center justify-center p-4" id="tariffModal">
+<div class="bg-surface-card rounded-2xl max-w-lg w-full p-6 shadow-2xl transition-all">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Civic Schedule</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5" id="modalFacilityTitle">Facility Tariff</h3>
+</div>
+<button class="p-1 rounded-lg text-secondary hover:bg-surface-container-low transition-colors" onclick="closeTariffModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="mt-4 space-y-3 font-body-sm text-body-sm">
+<div class="p-3 rounded-xl bg-surface-canvas flex justify-between items-center">
+<span class="text-secondary font-medium">Four-Wheeler Rate</span>
+<span class="font-bold text-on-surface" id="modalCarRate">₹30 / 2 hrs</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-canvas flex justify-between items-center">
+<span class="text-secondary font-medium">Two-Wheeler Rate</span>
+<span class="font-bold text-on-surface" id="modalBikeRate">₹15 / 4 hrs</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-canvas flex justify-between items-center">
+<span class="text-secondary font-medium">Daily Pass (24 hrs)</span>
+<span class="font-bold text-on-surface">₹120 flat</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-canvas flex justify-between items-center">
+<span class="text-secondary font-medium">Lost Ticket Penalty</span>
+<span class="font-bold text-status-urgent">₹150 + accrued fees</span>
+</div>
+</div>
+<div class="mt-6 flex justify-end">
+<button class="px-5 py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-colors" onclick="closeTariffModal()" type="button">
+          Close Matrix
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Vanilla Micro-Interactions Script -->
+<script>
+  function filterFacilities(query) {
+    const q = query.toLowerCase().trim();
+    const cards = document.querySelectorAll('.facility-card');
+    cards.forEach(card => {
+      const searchTerms = card.getAttribute('data-search-terms') || '';
+      if (!q || searchTerms.includes(q)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  function setFilter(category, buttonElement) {
+    // Style active tab
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.remove('bg-surface-card', 'text-primary', 'shadow-sm', 'font-semibold');
+      btn.classList.add('text-secondary', 'font-medium');
+    });
+    buttonElement.classList.add('bg-surface-card', 'text-primary', 'shadow-sm', 'font-semibold');
+    buttonElement.classList.remove('text-secondary', 'font-medium');
+
+    // Filter cards
+    const cards = document.querySelectorAll('.facility-card');
+    cards.forEach(card => {
+      const types = card.getAttribute('data-facility-type') || '';
+      if (category === 'all' || types.includes(category)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  function showTariffModal(title, carRate, bikeRate) {
+    document.getElementById('modalFacilityTitle').innerText = title;
+    document.getElementById('modalCarRate').innerText = carRate;
+    document.getElementById('modalBikeRate').innerText = bikeRate;
+    document.getElementById('tariffModal').classList.remove('hidden');
+  }
+
+  function closeTariffModal() {
+    document.getElementById('tariffModal').classList.add('hidden');
+  }
+
+  function refreshTelemetryMock() {
+    const liveEl = document.getElementById('live-total-spots');
+    if (liveEl) {
+      const randomSpots = Math.floor(400 + Math.random() * 25);
+      liveEl.innerText = randomSpots + ' Free';
+    }
+  }
+</script></main></div></body></html>

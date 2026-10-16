@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>UMCP - Urban Mobility Coordination Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-primary-container":"#eeefff","surface-dim":"#cbdbf5","primary":"#004ac6","status-info":"#0284C7","surface-canvas":"#F8FAFC","error-container":"#ffdad6","secondary-container":"#dae2fd","background":"#f8f9ff","status-pending":"#F59E0B","surface-bright":"#f8f9ff","tertiary-fixed-dim":"#93ccff","on-secondary-fixed":"#131b2e","on-tertiary":"#ffffff","primary-fixed-dim":"#b4c5ff","on-secondary":"#ffffff","surface-card":"#FFFFFF","primary-fixed":"#dbe1ff","on-tertiary-fixed":"#001d31","inverse-surface":"#213145","status-urgent":"#EF4444","on-secondary-fixed-variant":"#3f465c","secondary-fixed":"#dae2fd","border-default":"#E2E8F0","surface-container":"#e5eeff","tertiary":"#005a89","on-tertiary-container":"#e7f2ff","surface-tint":"#0053db","tertiary-fixed":"#cce5ff","on-surface":"#0b1c30","status-active":"#10B981","outline-variant":"#c3c6d7","primary-container":"#2563eb","on-tertiary-fixed-variant":"#004b73","on-error":"#ffffff","on-secondary-container":"#5c647a","inverse-on-surface":"#eaf1ff","on-error-container":"#93000a","outline":"#737686","on-background":"#0b1c30","surface-variant":"#d3e4fe","secondary":"#565e74","on-surface-variant":"#434655","surface-container-high":"#dce9ff","on-primary-fixed":"#00174b","on-primary":"#ffffff","surface-container-lowest":"#ffffff","surface-container-highest":"#d3e4fe","secondary-fixed-dim":"#bec6e0","tertiary-container":"#0073ae","error":"#ba1a1a","inverse-primary":"#b4c5ff","surface-container-low":"#eff4ff","border-subtle":"#EDF2F7","on-primary-fixed-variant":"#003ea8","surface":"#f8f9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-md":"1rem","space-2xl":"3rem","margin":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1rem","gutter":"1.5rem","gutter-mobile":"1rem","space-lg":"1.5rem"},"fontFamily":{"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"body-md":["0.9375rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","fontWeight":"400"}],"display-lg-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-md":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"display-lg":["3.5rem",{"lineHeight":"4.25rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.02em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface-canvas font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-card z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-6 flex items-center justify-between border-b border-border-subtle"><div class="flex items-center gap-3"><img alt="UMCP Brand Mark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UZW6pmxdik_y1YDjEVfSYFSDmxthAF7ZPJ44RQ3yAzgmr2rKoS8fIe7etOHFwzaps66MpCYMrmQYBCgIgEc9aGd07ka_7nLodUXUPpqqQfjJmPgfhcAOIsuQaJzfB7vf4BA9p6BcNGtc18U6hIoLgV6RRaFeCirnHV6TqlpAQpbqWR7M1aBQte2QM3nV010d2AJpt_gr9miR18gyWTRfX8tt8dQN6fh2HzLOBrvA1Ee1Kh0KYdjxfbdkkg"/><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-surface font-bold tracking-tight leading-tight">UMCP</span><span class="font-label-sm text-label-sm text-secondary tracking-normal">Mira-Bhayandar</span></div></div><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-4 py-4 space-y-6"><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Authority Portals</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="municipal-authority-dashboard" href="#">Municipal Authority Dashboard</a><a class="flex items-center px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="municipal-issue-management" href="#">Municipal Issue Management</a><a class="flex items-center px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="municipal-maintenance-task-details" href="#">Municipal Maintenance Task Details</a><a class="flex items-center px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="traffic-incident-verification" href="#">Traffic Incident Verification</a><a class="flex items-center px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="emergency-services-dashboard" href="#">Emergency Services Dashboard</a><a class="flex items-center px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="analytics" href="#">Analytics</a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Administration</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a aria-current="page" class="flex items-center px-3.5 py-2.5 transition-colors bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]" data-path="administration-dashboard" href="#">Administration Dashboard</a><a class="flex items-center px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="user-and-role-management" href="#">User &amp; Role Management</a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Support &amp; General</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="contact-and-support-desk" href="#">Contact and Support Desk</a></nav></div></div><div class="p-4 border-t border-border-subtle bg-surface-container-lowest"><div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-status-active"></span><div class="flex-1 min-w-0"><p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">MBMC Transit Hub Live</p><p class="font-label-sm text-label-sm text-secondary truncate">Authority Ops 99.9%</p></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-card/90 backdrop-blur-xl border-b border-border-subtle z-40 px-6 flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-6 flex-1 max-w-xl"><div class="relative w-full max-w-xs"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-canvas border border-border-default font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search tasks, incidents, authorities..." type="text"/></div></div><div class="flex items-center gap-3"><div class="relative"><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-urgent ring-2 ring-surface-card"></span></button></div><div class="h-6 w-px bg-border-subtle"></div><div class="flex items-center gap-3 pl-1"><div class="flex items-center gap-2 cursor-pointer p-1 rounded-lg hover:bg-surface-canvas transition-colors"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-default" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ0YOXttYssDW66-eOBkrVyw4Ii3Uom0c6fWRwaasxPd5zVASDGmkF-VBsEqON8gCI2CHfBuXdIAmMKJ-CGwFyjVp8DNdbZiq9fKpBmn6kWiLJdfFRRMNTbi8W5Vv9KKA6k1rJC-TNo98cQDusQlACvBIu2D_hwVD9yiDcXH8m4xps_bUFH9Pl9hE3DCrJzBJ_7UsyfqVV5rD0DwdkkAji-URRKS4aBsHfgFVkY2CcpZ_nQmZlXhPWxQ"/><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md text-on-surface font-semibold">Aditya Patil</span><span class="material-symbols-outlined text-sm text-outline">expand_more</span></div><span class="font-label-sm text-label-sm text-primary font-medium">Municipal Authority</span></div></div></div></div></header><main class="relative pt-16 w-full min-h-screen bg-surface-canvas px-gutter py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Context Header -->
+<div class="mb-space-lg flex flex-col gap-2">
+<!-- Breadcrumb -->
+<div class="flex items-center gap-2 font-label-md text-label-md text-secondary">
+<span class="hover:text-primary transition-colors cursor-pointer">System</span>
+<span class="material-symbols-outlined text-sm text-outline">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Administration</span>
+<span class="material-symbols-outlined text-sm text-outline">chevron_right</span>
+<span class="text-on-surface font-semibold">Overview</span>
+</div>
+<!-- Title & Meta Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mt-1">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Administration &amp; System Governance</h1>
+<p class="font-body-md text-body-md text-secondary mt-1 max-w-4xl">
+          Central platform health, role access provisioning, API gateway status, and security audit log overview for Mira-Bhayandar municipal administrators.
+        </p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-status-active/10 text-status-active font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-status-active animate-pulse"></span>
+          Cluster Synchronized
+        </span>
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-card hover:bg-surface-container transition-all shadow-sm font-label-md text-label-md text-on-surface" id="refreshStatsBtn">
+<span class="material-symbols-outlined text-lg">sync</span>
+<span>Sync Diagnostics</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Top KPI Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter mb-space-xl">
+<!-- KPI 1 -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:scale-125 transition-transform"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Total Registered Users</span>
+<div class="p-2 rounded-xl bg-primary-fixed/40 text-primary">
+<span class="material-symbols-outlined text-xl">group</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-display-lg text-headline-lg text-on-surface font-bold leading-none">14,820</div>
+<p class="font-body-sm text-body-sm text-secondary mt-2 flex items-center gap-1.5">
+<span class="font-medium text-on-surface">14,200</span> Citizens •
+          <span class="font-medium text-on-surface">480</span> Officers •
+          <span class="font-medium text-on-surface">140</span> Ops
+        </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span class="text-status-active font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +3.8% MoM
+        </span>
+<span>MBMC Identity Auth</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-status-active/5 rounded-full blur-xl group-hover:scale-125 transition-transform"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Active Platform Nodes</span>
+<div class="p-2 rounded-xl bg-status-active/10 text-status-active">
+<span class="material-symbols-outlined text-xl">lan</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-display-lg text-headline-lg text-on-surface font-bold leading-none">8 Wards</div>
+<p class="font-body-sm text-body-sm text-secondary mt-2 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-status-active"></span>
+<span>99.94% Core Fleet &amp; Infra Uptime</span>
+</p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span class="text-on-surface font-semibold">Ward 1 to Ward 8 Mesh</span>
+<span>Latency 18ms</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-status-pending/5 rounded-full blur-xl group-hover:scale-125 transition-transform"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Staff Provisioning</span>
+<div class="p-2 rounded-xl bg-status-pending/10 text-status-pending">
+<span class="material-symbols-outlined text-xl">pending_actions</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-display-lg text-headline-lg text-on-surface font-bold leading-none">6 Requests</div>
+<p class="font-body-sm text-body-sm text-secondary mt-2">
+          New field officer access petitions awaiting sign-off
+        </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-status-pending font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> Oldest: 3h ago
+        </span>
+<button class="text-primary hover:underline font-semibold">Review queue</button>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-tertiary-fixed/30 rounded-full blur-xl group-hover:scale-125 transition-transform"></div>
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Security Audit Status</span>
+<div class="p-2 rounded-xl bg-secondary-container text-on-secondary-fixed">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+</div>
+</div>
+<div class="mt-4">
+<div class="font-display-lg text-headline-lg text-on-surface font-bold leading-none">Compliant</div>
+<p class="font-body-sm text-body-sm text-secondary mt-2">
+          ISO 27001 / Zero privilege breaches logged
+        </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span class="text-status-active font-semibold">Certified Valid</span>
+<span>Auto-Audit 04:00 IST</span>
+</div>
+</div>
+</div>
+<!-- Two-Column Asymmetrical Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- LEFT COLUMN: Infrastructure & User Hierarchy (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- User Distribution by Operational Tier -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">User Distribution by Operational Tier</h2>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Role hierarchy and privilege scope across Mira-Bhayandar civic divisions</p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase bg-surface-container-low px-2.5 py-1 rounded-full font-semibold self-start sm:self-auto">
+            RBAC Enforced
+          </span>
+</div>
+<!-- Role Tier Visual Cards -->
+<div class="space-y-3 mt-2">
+<!-- Tier 1 & 2 -->
+<div class="p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low/70 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center font-label-md text-label-md text-primary font-bold">T1/2</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">Citizens &amp; Verified Commuters</h4>
+<p class="font-body-sm text-body-sm text-secondary">Public complaint dispatch, bus tracking telemetry, transit payments</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-lg text-label-lg text-on-surface font-bold">14,200</div>
+<div class="font-label-sm text-label-sm text-secondary">95.8% of base</div>
+</div>
+</div>
+<!-- Progress indicator -->
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full transition-all duration-700" style="width: 95.8%"></div>
+</div>
+</div>
+<!-- Tier 3 -->
+<div class="p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low/70 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center font-label-md text-label-md text-tertiary font-bold">T3</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">Field Officers &amp; Inspectors</h4>
+<p class="font-body-sm text-body-sm text-secondary">On-ground pothole resolution, drainage inspection, geocoding validation</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-lg text-label-lg text-on-surface font-bold">480</div>
+<div class="font-label-sm text-label-sm text-secondary">3.2% of base</div>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary h-2 rounded-full transition-all duration-700" style="width: 25%"></div>
+</div>
+</div>
+<!-- Tier 4 -->
+<div class="p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low/70 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-status-info/15 flex items-center justify-center font-label-md text-label-md text-status-info font-bold">T4</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">Traffic &amp; Emergency Dispatchers</h4>
+<p class="font-body-sm text-body-sm text-secondary">Route diverts, emergency corridor prioritization, bus schedule alterations</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-lg text-label-lg text-on-surface font-bold">140</div>
+<div class="font-label-sm text-label-sm text-secondary">0.9% of base</div>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-status-info h-2 rounded-full transition-all duration-700" style="width: 14%"></div>
+</div>
+</div>
+<!-- Tier 5 -->
+<div class="p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low/70 transition-colors">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-status-pending/20 flex items-center justify-center font-label-md text-label-md text-on-secondary-fixed font-bold">T5</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">Municipal Super Administrators</h4>
+<p class="font-body-sm text-body-sm text-secondary">Identity lifecycle, cryptographic rotation, schema provisioning, policy enforcement</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-lg text-label-lg text-on-surface font-bold">8</div>
+<div class="font-label-sm text-label-sm text-secondary">Root accounts</div>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-on-secondary-fixed h-2 rounded-full transition-all duration-700" style="width: 4%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Municipal Data Infrastructure Status -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Municipal Data Infrastructure Status</h2>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Low-latency public mobility backbones &amp; municipal service gateways</p>
+</div>
+<span class="material-symbols-outlined text-outline">dns</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md mt-2">
+<!-- Service 1 -->
+<div class="p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-colors flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-active"></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">GIS Geocoding Engine</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-status-active bg-status-active/10 font-label-sm text-label-sm font-semibold">Operational</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">Response Time</span>
+<p class="font-label-lg text-label-lg font-bold text-on-surface">42ms</p>
+</div>
+<!-- Sparkline SVG -->
+<svg class="w-20 h-6 text-status-active" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 80 24">
+<polyline points="0,18 15,14 30,16 45,9 60,11 75,6"></polyline>
+</svg>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-colors flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-active"></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">MBMT Telemetry Stream</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-status-active bg-status-active/10 font-label-sm text-label-sm font-semibold">Operational</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">Avg Bus Ping</span>
+<p class="font-label-lg text-label-lg font-bold text-on-surface">110ms</p>
+</div>
+<svg class="w-20 h-6 text-status-active" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 80 24">
+<polyline points="0,12 15,16 30,10 45,15 60,8 75,9"></polyline>
+</svg>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-colors flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-active"></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Citizen SMS/WhatsApp</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-status-active bg-status-active/10 font-label-sm text-label-sm font-semibold">Operational</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">Delivery SLA</span>
+<p class="font-label-lg text-label-lg font-bold text-on-surface">99.8%</p>
+</div>
+<svg class="w-20 h-6 text-status-active" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 80 24">
+<polyline points="0,15 15,14 30,14 45,8 60,6 75,7"></polyline>
+</svg>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="p-space-md rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-colors flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-active"></span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Municipal DB Cluster</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-status-active bg-status-active/10 font-label-sm text-label-sm font-semibold">Normal</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">Primary Replica</span>
+<p class="font-label-lg text-label-lg font-bold text-on-surface">Read/Write OK</p>
+</div>
+<svg class="w-20 h-6 text-status-active" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 80 24">
+<polyline points="0,10 15,10 30,11 45,9 60,8 75,8"></polyline>
+</svg>
+</div>
+</div>
+</div>
+<!-- Municipal Authority Operations Center context banner -->
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-center gap-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Mira-Bhayandar civic administration and municipal corporation server command room with operators viewing transit topology on screens in crisp architectural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXuBVgzN6Km8sAH1jNK-be6n1npKrJuUNk5tFS0dMhyi7mwDQn4S676PRqTLWo-FPuNdMzPxfh4BN0WcTIfFdwOeOvxNREXlsDYpDJX-I_LG1GH7biEJueNFh7XiGV9J62AA1-ImSGtKuHpmqxVNJ3i1S6QsFShnChjGHRfK3Uz11-uACKaF1hOGNOvqmIDt9xJdQo0J247nq7bEyEWx698i3pxp2hov4cLQut_0c1G5wsnHQ7cfS6pA"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Mira-Bhayandar Municipal Command Data Link</span>
+<span class="px-2 py-0.2 rounded bg-surface-card text-primary font-label-sm text-label-sm font-semibold">Encrypted</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary truncate">Direct fiber connection with Maharashtra State Data Centre &amp; Traffic Central Control Room.</p>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-card hover:bg-surface-container text-on-surface font-label-md text-label-md shadow-sm shrink-0 transition-colors">
+            Diagnostics
+          </button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Activity Log & Quick Admin Actions (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Quick System Configuration Actions -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">System Governance Actions</h2>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Elevated administrator workflows and controls</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+<button class="p-3.5 rounded-xl bg-surface-canvas hover:bg-primary-container hover:text-on-primary transition-all text-left group shadow-sm flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary transition-colors text-2xl">manage_accounts</span>
+<div class="mt-3">
+<span class="font-label-lg text-label-lg font-bold block text-on-surface group-hover:text-on-primary">Manage System Roles</span>
+<span class="font-label-sm text-label-sm text-secondary group-hover:text-on-primary/80 mt-0.5 block">Configure permissions &amp; RBAC</span>
+</div>
+</button>
+<button class="p-3.5 rounded-xl bg-surface-canvas hover:bg-primary-container hover:text-on-primary transition-all text-left group shadow-sm flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary transition-colors text-2xl">tune</span>
+<div class="mt-3">
+<span class="font-label-lg text-label-lg font-bold block text-on-surface group-hover:text-on-primary">Configure SLA Rules</span>
+<span class="font-label-sm text-label-sm text-secondary group-hover:text-on-primary/80 mt-0.5 block">Escalation timeframes by ward</span>
+</div>
+</button>
+<button class="p-3.5 rounded-xl bg-surface-canvas hover:bg-primary-container hover:text-on-primary transition-all text-left group shadow-sm flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary transition-colors text-2xl">shield</span>
+<div class="mt-3">
+<span class="font-label-lg text-label-lg font-bold block text-on-surface group-hover:text-on-primary">Security Access Logs</span>
+<span class="font-label-sm text-label-sm text-secondary group-hover:text-on-primary/80 mt-0.5 block">Inspect token &amp; session flows</span>
+</div>
+</button>
+<button class="p-3.5 rounded-xl bg-surface-canvas hover:bg-primary-container hover:text-on-primary transition-all text-left group shadow-sm flex flex-col justify-between" id="backupTriggerBtn">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary transition-colors text-2xl">backup</span>
+<div class="mt-3">
+<span class="font-label-lg text-label-lg font-bold block text-on-surface group-hover:text-on-primary">Initiate Snapshot</span>
+<span class="font-label-sm text-label-sm text-secondary group-hover:text-on-primary/80 mt-0.5 block">Manual state checkpoint</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Recent Administrative Activity Log -->
+<div class="bg-surface-card rounded-2xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Activity Log</h2>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Immutable audit trail of administrator and system actions</p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-active"></span> Live
+          </span>
+</div>
+<!-- Activity Feed List -->
+<div class="space-y-4 mt-2">
+<!-- Event 1 -->
+<div class="flex gap-3.5 items-start">
+<div class="w-8 h-8 rounded-full bg-primary-fixed/50 text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm">badge</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Role Elevation Approved</span>
+<span class="font-label-sm text-label-sm text-secondary shrink-0">12m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Role elevation granted for Officer S. K. Patil to <span class="font-semibold text-on-surface">Ward 14 Lead Dispatcher</span>.
+              </p>
+<div class="font-label-sm text-label-sm text-secondary mt-1 flex items-center gap-2">
+<span>By: SuperAdmin_Aditya</span> • <span>Ticket #SEC-8921</span>
+</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex gap-3.5 items-start">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm">tune</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">SLA Threshold Config Updated</span>
+<span class="font-label-sm text-label-sm text-secondary shrink-0">1h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Reduced resolution window to <span class="font-semibold text-on-surface">4 hours</span> for Drainage Work Orders in Monsoon Red Zones.
+              </p>
+<div class="font-label-sm text-label-sm text-secondary mt-1 flex items-center gap-2">
+<span>By: Municipal_Commissioner_Office</span>
+</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex gap-3.5 items-start">
+<div class="w-8 h-8 rounded-full bg-status-active/15 text-status-active flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm">key</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Policy Token Rotation</span>
+<span class="font-label-sm text-label-sm text-secondary shrink-0">3h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Security policy automated cryptographic token rotation completed across all 8 Ward API Gateways.
+              </p>
+<div class="font-label-sm text-label-sm text-secondary mt-1 flex items-center gap-2">
+<span>System Daemon</span> • <span>SHA-256 Validated</span>
+</div>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="flex gap-3.5 items-start">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm">download</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Transparency Ledger Export</span>
+<span class="font-label-sm text-label-sm text-secondary shrink-0">5h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Exported civic transparency ledger for state urban department compliance quarterly review.
+              </p>
+<div class="font-label-sm text-label-sm text-secondary mt-1 flex items-center gap-2">
+<span>Admin: R. Deshmukh</span> • <span>Audit ID: LEDG-1104</span>
+</div>
+</div>
+</div>
+</div>
+<!-- View Full Ledger Button -->
+<div class="mt-space-lg pt-3">
+<button class="w-full py-2.5 rounded-xl bg-surface-canvas hover:bg-surface-container font-label-md text-label-md text-primary font-semibold transition-colors flex items-center justify-center gap-1.5">
+<span>View Full Compliance Ledger</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Snapshot Notification Toast (Hidden by default, triggered by JS) -->
+<div class="fixed bottom-6 right-6 bg-inverse-surface text-inverse-on-surface px-5 py-3.5 rounded-xl shadow-xl flex items-center gap-3 transition-opacity duration-300 opacity-0 pointer-events-none z-50" id="snapshotToast">
+<span class="material-symbols-outlined text-status-active">check_circle</span>
+<div>
+<p class="font-label-md text-label-md font-bold">Snapshot Initiated Successfully</p>
+<p class="font-label-sm text-label-sm text-inverse-on-surface/80">Backup checkpoint #MBMC-SS-2025-08 stored to secured vault.</p>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for demonstration
+  const backupBtn = document.getElementById('backupTriggerBtn');
+  const toast = document.getElementById('snapshotToast');
+  const syncBtn = document.getElementById('refreshStatsBtn');
+
+  if (backupBtn && toast) {
+    backupBtn.addEventListener('click', () => {
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 4000);
+    });
+  }
+
+  if (syncBtn) {
+    syncBtn.addEventListener('click', () => {
+      const icon = syncBtn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.classList.add('animate-spin');
+        setTimeout(() => {
+          icon.classList.remove('animate-spin');
+        }, 1200);
+      }
+    });
+  }
+</script></main></div></body></html>

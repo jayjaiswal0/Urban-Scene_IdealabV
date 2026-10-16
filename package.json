@@ -1,0 +1,13 @@
+{
+  "name": "stitch-urban-mobility-coordination-platform",
+  "version": "1.0.0",
+  "description": "Urban Mobility Coordination Platform (UMCP) — Stitch UI Preservation & Full-Stack Application",
+  "private": true,
+  "scripts": {
+    "seed": "npm --prefix server run seed",
+    "server": "npm --prefix server start",
+    "client": "npm --prefix client run dev",
+    "build:client": "npm --prefix client run build",
+    "test:flow": "node server/src/utils/testFlow.js"
+  }
+}

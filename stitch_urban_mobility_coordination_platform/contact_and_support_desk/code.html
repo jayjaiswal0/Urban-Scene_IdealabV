@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"secondary-fixed-dim":"#bec6e0","background":"#f8f9ff","surface-variant":"#d3e4fe","on-background":"#0b1c30","on-error-container":"#93000a","on-primary-fixed-variant":"#003ea8","on-primary-container":"#eeefff","inverse-on-surface":"#eaf1ff","surface-tint":"#0053db","tertiary-fixed-dim":"#93ccff","inverse-primary":"#b4c5ff","surface-container-high":"#dce9ff","on-secondary-fixed":"#131b2e","status-urgent":"#EF4444","on-primary-fixed":"#00174b","on-primary":"#ffffff","status-info":"#0284C7","surface-container-lowest":"#ffffff","surface-canvas":"#F8FAFC","inverse-surface":"#213145","surface-bright":"#f8f9ff","surface-card":"#FFFFFF","surface-container-low":"#eff4ff","error":"#ba1a1a","on-tertiary-container":"#e7f2ff","tertiary-fixed":"#cce5ff","on-surface":"#0b1c30","tertiary":"#005a89","primary-fixed":"#dbe1ff","status-pending":"#F59E0B","surface":"#f8f9ff","surface-container-highest":"#d3e4fe","on-error":"#ffffff","outline":"#737686","primary-container":"#2563eb","on-tertiary":"#ffffff","surface-dim":"#cbdbf5","error-container":"#ffdad6","status-active":"#10B981","on-tertiary-fixed-variant":"#004b73","on-secondary-container":"#5c647a","primary-fixed-dim":"#b4c5ff","on-secondary":"#ffffff","border-subtle":"#EDF2F7","primary":"#004ac6","secondary-container":"#dae2fd","border-default":"#E2E8F0","on-secondary-fixed-variant":"#3f465c","on-tertiary-fixed":"#001d31","surface-container":"#e5eeff","secondary-fixed":"#dae2fd","on-surface-variant":"#434655","secondary":"#565e74","tertiary-container":"#0073ae","outline-variant":"#c3c6d7"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","space-md":"1rem","space-2xl":"3rem","space-sm":"0.5rem","margin-mobile":"1rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-xl":"2rem","space-lg":"1.5rem","margin":"2rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},"fontSize":{"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"headline-lg-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","fontWeight":"400"}],"body-md":["0.9375rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}],"display-lg-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"display-lg":["3.5rem",{"lineHeight":"4.25rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-md":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest border-r border-border-default z-50 flex flex-col justify-between shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><div class="flex flex-col h-full"><div class="h-16 px-space-lg flex items-center justify-between border-b border-border-subtle bg-surface-container-lowest"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">directions_bus</span></div><div class="flex flex-col"><span class="font-label-lg text-label-lg font-bold text-on-surface tracking-tight leading-tight">UMCP</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium leading-tight">Mira-Bhayandar</span></div></div><button class="p-1 text-on-surface-variant hover:text-on-surface rounded hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[18px]">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-3 py-4 space-y-6"><nav data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><div class="px-3 pb-2"><p class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant/70 tracking-wider">Public &amp; Common</p></div><div class="space-y-0.5"><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="public-portal" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">home_work</span><span>Public Portal</span></a><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="mobility-map" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">map</span><span>Mobility Map</span></a><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="parking-directory" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">local_parking</span><span>Parking Directory</span></a></div></nav><nav data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><div class="px-3 pb-2"><p class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant/70 tracking-wider">Citizen Portal</p></div><div class="space-y-0.5"><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="citizen-overview" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">dashboard</span><span>Citizen Overview</span></a><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="report-an-issue" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">add_alert</span><span>Report an Issue</span></a><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="my-reports" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">assignment</span><span>My Reports</span></a><a class="group flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="notifications" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">notifications</span><span>Notifications</span></div><span class="px-1.5 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary-container">3</span></a></div></nav><nav data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><div class="px-3 pb-2"><p class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant/70 tracking-wider">Authority Portals</p></div><div class="space-y-0.5"><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="municipal-works" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">engineering</span><span>Municipal Works</span></a><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="traffic-coordination" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">traffic</span><span>Traffic Coordination</span></a><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="incident-verification" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">fact_check</span><span>Incident Verification</span></a></div></nav><nav data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><div class="px-3 pb-2"><p class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant/70 tracking-wider">Account</p></div><div class="space-y-0.5"><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="my-profile" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">account_circle</span><span>My Profile</span></a><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">settings</span><span>Settings</span></a><a aria-current="page" class="group flex items-center gap-3 px-3 py-2 rounded-lg transition-all bg-primary-container text-on-primary-container font-semibold shadow-sm" data-path="contact-and-support" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-surface">support_agent</span><span>Contact &amp; Support</span></a><a class="group flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all font-label-lg text-label-lg" data-path="sign-out" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-on-error-container">logout</span><span>Sign Out</span></a></div></nav></div><div class="p-3 border-t border-border-subtle bg-surface-container-low/50"><div class="flex items-center gap-3 p-2 rounded-lg bg-surface-container-lowest border border-border-subtle"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md font-semibold text-on-surface truncate">Aditya Patil</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Municipal Auth.</span></div></div></div></div></aside><div class="pl-64 min-h-screen flex flex-col bg-surface-canvas"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-border-default z-40 flex items-center justify-between px-space-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.03)]"><div class="flex items-center gap-4 flex-1 max-w-lg"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span><input class="w-full h-10 pl-9 pr-4 bg-surface rounded-lg border border-border-default text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-transparent transition-all" placeholder="Search routes, permits, wards, or coordinates..." type="text"/></div></div><div class="flex items-center gap-4"><div class="hidden md:flex items-center p-1 bg-surface-container-low rounded-lg border border-border-subtle"><button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest transition-colors" title="Desktop View"><span class="material-symbols-outlined text-[18px]">desktop_windows</span></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest transition-colors" title="Tablet View"><span class="material-symbols-outlined text-[18px]">tablet</span></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest transition-colors" title="Mobile View"><span class="material-symbols-outlined text-[18px]">smartphone</span></button></div><a class="inline-flex items-center gap-2 h-10 px-4 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-semibold hover:bg-primary transition-all shadow-sm" data-path="report-an-issue" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>Report Issue</span></a><div class="h-6 w-px bg-border-default"></div><button class="relative p-2 text-on-surface-variant hover:text-on-surface rounded-lg hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-urgent ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-2.5 pl-2 cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Aditya Patil</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Municipal Authority</span></div><span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span></div></div></header><main class="relative pt-16 flex-1 w-full px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- Breadcrumb & Page Head Section -->
+<div class="flex flex-col gap-2 mb-6">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 uppercase tracking-wider">Account</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[14px]">chevron_right</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Contact and Support</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Contact &amp; Civic Support Desk</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Need assistance with a civic report, technical issue, or municipal inquiry? Connect with the UMCP helpdesk.
+        </p>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto bg-surface-container-low px-3 py-1.5 rounded-full">
+<span class="w-2.5 h-2.5 rounded-full bg-status-active animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">All Regional Desks Operational</span>
+</div>
+</div>
+</div>
+<!-- Main 12-Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Left Column (7 cols): Support Enquiry Form -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="bg-surface-card rounded-xl shadow-sm p-6 sm:p-8 relative overflow-hidden">
+<!-- Subtle civic pattern ornament -->
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-surface-container-high/40 pointer-events-none blur-2xl"></div>
+<div class="flex items-start justify-between pb-6 mb-6">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">contact_support</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Submit a Support Inquiry</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Typical response time within <strong class="text-on-surface font-semibold">4 working hours</strong>. All tickets are tracked via unified municipal dispatch.
+            </p>
+</div>
+<span class="hidden sm:inline-flex items-center gap-1 font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full font-semibold">
+<span class="material-symbols-outlined text-[14px]">shield</span> Priority Routing
+          </span>
+</div>
+<form class="flex flex-col gap-5" id="supportInquiryForm">
+<!-- Row 1: Name & Email -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface" for="fullName">
+                Your Full Name <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-[18px]">person</span>
+<input class="w-full h-10 pl-9 pr-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-card focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="fullName" required="" type="text" value="Ananya Sharma"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface" for="emailAddress">
+                Registered Email Address <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-[18px]">mail</span>
+<input class="w-full h-10 pl-9 pr-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-card focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="emailAddress" required="" type="email" value="ananya.sharma@example.com"/>
+</div>
+</div>
+</div>
+<!-- Row 2: Category & Ticket Ref -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface" for="category">
+                Enquiry Category <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-[18px]">category</span>
+<select class="w-full h-10 pl-9 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-card focus:outline-none focus:ring-2 focus:ring-primary-container transition-all appearance-none cursor-pointer" id="category">
+<option value="sla">Report Assistance &amp; SLA Inquiries</option>
+<option value="bug">Technical Platform Bug</option>
+<option value="account">Account &amp; Verification Help</option>
+<option value="ward">Incorrect Ward Assignment</option>
+<option value="feedback">Civic Feedback &amp; Suggestions</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-[18px] pointer-events-none">unfold_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="refId">
+<span>Related Report Reference ID</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70 font-normal">Optional</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-[18px]">tag</span>
+<input class="w-full h-10 pl-9 pr-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-card focus:outline-none focus:ring-2 focus:ring-primary-container transition-all placeholder:text-on-surface-variant/50" id="refId" placeholder="#UMCP-2024-791" type="text" value="#UMCP-2024-791"/>
+</div>
+</div>
+</div>
+<!-- Row 3: Subject -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface" for="subject">
+              Subject <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/60 text-[18px]">edit_note</span>
+<input class="w-full h-10 pl-9 pr-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-card focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="subject" required="" type="text" value="Question regarding SLA timeline for waterlogging ticket"/>
+</div>
+</div>
+<!-- Row 4: Detailed Message -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface" for="detailedMessage">
+                Detailed Message <span class="text-error">*</span>
+</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Markdown supported</span>
+</div>
+<textarea class="w-full p-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-card focus:outline-none focus:ring-2 focus:ring-primary-container transition-all resize-y placeholder:text-on-surface-variant/50" id="detailedMessage" placeholder="Describe your question or issue in detail..." required="" rows="5">Hello support team, I submitted an urgent report for heavy waterlogging on Shanti Nagar Main Road yesterday (ticket #UMCP-2024-791). The status currently says 'Triage In Progress'. Could you please verify if the field inspection crew from Mira-Bhayandar Ward 14 has been scheduled today?</textarea>
+</div>
+<!-- Row 5: Attachment Drop Area -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between">
+<span>Attachment</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant/70">Optional • Max 5MB (PNG, JPG, PDF)</span>
+</label>
+<div class="group relative flex flex-col items-center justify-center p-5 rounded-lg bg-surface-container-low hover:bg-surface-container-high/60 transition-all cursor-pointer text-center" id="dropZone">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary mb-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">
+                Click to browse or drag &amp; drop evidence files
+              </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Attach screenshot, site photo, or municipal correspondence
+              </p>
+<input class="absolute inset-0 opacity-0 cursor-pointer" id="fileInput" type="file"/>
+</div>
+</div>
+<!-- Submission Options & Actions -->
+<div class="pt-3 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<label class="flex items-center gap-2.5 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary-container bg-surface-container-low focus:ring-primary-container accent-primary-container cursor-pointer" id="emailConfirmation" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Send confirmation copy &amp; tracking ID to my email</span>
+</label>
+<button class="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg font-semibold hover:bg-primary transition-all shadow-sm active:scale-[0.98]" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Submit Civic Inquiry</span>
+</button>
+</div>
+</form>
+<!-- Dynamic Success Toast (Hidden initially) -->
+<div class="hidden mt-4 p-4 rounded-lg bg-status-active/10 text-on-surface flex items-start gap-3" id="submitToast">
+<span class="material-symbols-outlined text-status-active text-[22px] shrink-0 mt-0.5">check_circle</span>
+<div class="flex flex-col gap-0.5">
+<p class="font-label-lg text-label-lg font-bold text-on-surface">Inquiry Ticket #UMCP-HELP-9821 Created!</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A receipt has been dispatched to ananya.sharma@example.com. Ward 14 officers have been tagged.</p>
+</div>
+</div>
+</div>
+<!-- Trust Indicator Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="bg-surface-card rounded-lg p-3.5 shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary-container/60 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">First Response</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">&lt; 4 Hours Guaranteed</span>
+</div>
+</div>
+<div class="bg-surface-card rounded-lg p-3.5 shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">encrypted</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">Data Privacy</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">DPDP Civic Protected</span>
+</div>
+</div>
+<div class="bg-surface-card rounded-lg p-3.5 shadow-sm flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">share_location</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">Direct Ward Dispatch</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Mira-Bhayandar (MBMC)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (5 cols): Helplines, Ward Info & FAQs -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Card 1: 24x7 Direct Civic Helplines -->
+<div class="bg-surface-card rounded-xl shadow-sm p-6 relative overflow-hidden">
+<div class="flex items-center justify-between pb-4 mb-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-status-urgent/10 text-status-urgent flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">fmd_bad</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">24×7 Direct Helplines</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Immediate civic emergencies &amp; fast telemetry</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-status-urgent/10 text-status-urgent font-bold tracking-wide">
+            EMERGENCY
+          </span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Line 1: Disaster Management -->
+<div class="p-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-status-urgent/15 text-status-urgent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">crisis_alert</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Disaster Management Cell</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Flooding, fallen trees &amp; major cave-ins</span>
+</div>
+</div>
+<a class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-xs hover:bg-primary-container hover:text-on-primary-container transition-all" href="tel:1800223450">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>1800-22-3450</span>
+</a>
+</div>
+<!-- Line 2: Traffic Branch -->
+<div class="p-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-status-pending/20 text-status-pending flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">traffic</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Traffic Control Room</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Gridlocks, diversion inquiries &amp; jams</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<a class="px-2.5 py-1.5 rounded-lg bg-status-urgent text-on-primary font-label-md text-label-md font-bold shadow-xs hover:opacity-95 transition-opacity" href="tel:112" title="National Emergency">
+                112
+              </a>
+<a class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors" href="tel:02228112000">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>022-2811-XXXX</span>
+</a>
+</div>
+</div>
+<!-- Line 3: WhatsApp Chatbot -->
+<div class="p-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-status-active/20 text-status-active flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Civic WhatsApp Bot</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Instant ticket status &amp; bus ETA queries</span>
+</div>
+</div>
+<a class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-status-active text-on-primary font-label-md text-label-md font-semibold hover:opacity-95 transition-all shadow-xs" href="https://wa.me/919876500100" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">sms</span>
+<span>Chat Now</span>
+</a>
+</div>
+<!-- Line 4: General Email -->
+<div class="p-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">alternate_email</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Email Escalations</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Official administrative correspondence</span>
+</div>
+</div>
+<a class="text-primary hover:underline font-label-sm text-label-sm font-semibold truncate max-w-[150px] sm:max-w-none" href="mailto:support@umcp-mbmc.gov.in">
+              support@umcp-mbmc.gov.in
+            </a>
+</div>
+</div>
+</div>
+<!-- Card 2: Ward 14 Zonal Office Directory -->
+<div class="bg-surface-card rounded-xl shadow-sm p-6 relative">
+<div class="flex items-center justify-between pb-4 mb-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">apartment</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ward 14 Zonal Office</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Assigned administrative division for your profile</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed font-bold">
+            Zone 3
+          </span>
+</div>
+<div class="flex flex-col gap-3.5">
+<!-- Office Name & Address -->
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">MBMC Ward 14 Administrative Office</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+                Beverly Park, Near Kanakia Police Station, Mira Road East, Mira-Bhayandar, Maharashtra 401107
+              </p>
+</div>
+</div>
+<!-- Working Hours & Lead Officer -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">Working Hours</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Mon – Fri: 09:30 AM – 05:30 PM</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Closed on 2nd &amp; 4th Saturdays</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">badge</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">Ward Officer</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Er. Rakesh V. Deshmukh</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">Assistant Municipal Commissioner</span>
+</div>
+</div>
+<!-- Static map preview tile for location clarity -->
+<div class="relative w-full h-28 rounded-lg overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center" data-location="Beverly Park, Near Kanakia Police Station, Mira Road East, Mira-Bhayandar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpNGYXoDyIgc6QMDdv4f1Mob99U1STw6ps1JzAHdtfJElK-4Y0X3V0PzogcwEBwKk9VxoHF92ljiJTKh6yg-cGELLaM3NrK0d8WN4mJEtBj0D_hp90O1DfNVNOuh8yfqYWZpGWrgPjPATB0k5v7oyPm_CRlnUH2yKp0U5aZu2NSXpTPhgq3T7Ljmql6cG5uGTS26Bw4lfa4kTVCrO7UcG4RSfIyxbEY6n_4aJDS8okvYhxcNKZ5Wf5uA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent flex items-end justify-between p-3">
+<span class="font-label-sm text-label-sm text-on-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">navigation</span> 1.4 km from your registered zone
+              </span>
+<a class="px-2.5 py-1 rounded bg-surface-card/90 backdrop-blur text-primary font-label-sm text-label-sm font-bold hover:bg-surface-card transition-colors" href="https://maps.google.com/?q=Beverly+Park+Mira+Road+East" rel="noopener noreferrer" target="_blank">
+                Get Directions
+              </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Frequently Asked Questions Accordion -->
+<div class="bg-surface-card rounded-xl shadow-sm p-6">
+<div class="flex items-center justify-between pb-4 mb-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">help_center</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Quick Civic FAQs</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Common inquiries answered instantaneously</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/50 text-[20px]">quiz</span>
+</div>
+<div class="flex flex-col gap-2.5" id="faqAccordion">
+<!-- FAQ Item 1 -->
+<div class="rounded-lg bg-surface-container-low transition-all overflow-hidden faq-item">
+<button aria-expanded="false" class="w-full p-3.5 text-left flex items-center justify-between gap-3 faq-toggle focus:outline-none" type="button">
+<span class="font-label-md text-label-md font-bold text-on-surface">How long before a reported road hazard is inspected?</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform transform faq-icon">expand_more</span>
+</button>
+<div class="px-3.5 pb-3.5 pt-0 hidden faq-content">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Standard SLA is <strong>24 hours for triage</strong> and <strong>48 hours for crew deployment</strong>. Severe hazards flagged by emergency control receive high-priority same-day containment.
+              </p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="rounded-lg bg-surface-container-low transition-all overflow-hidden faq-item">
+<button aria-expanded="false" class="w-full p-3.5 text-left flex items-center justify-between gap-3 faq-toggle focus:outline-none" type="button">
+<span class="font-label-md text-label-md font-bold text-on-surface">Can I edit an issue report after submission?</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform transform faq-icon">expand_more</span>
+</button>
+<div class="px-3.5 pb-3.5 pt-0 hidden faq-content">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                You can add supplementary photos or notes from your <strong>Report Details</strong> page at any time prior to municipal verification without resetting your queue priority.
+              </p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="rounded-lg bg-surface-container-low transition-all overflow-hidden faq-item">
+<button aria-expanded="false" class="w-full p-3.5 text-left flex items-center justify-between gap-3 faq-toggle focus:outline-none" type="button">
+<span class="font-label-md text-label-md font-bold text-on-surface">Who verifies that a road repair was actually completed?</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant transition-transform transform faq-icon">expand_more</span>
+</button>
+<div class="px-3.5 pb-3.5 pt-0 hidden faq-content">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Both the <strong>Ward Junior Engineer</strong> and the <strong>reporting citizen</strong> verify closure. A ticket will only shift to 'Archived Resolved' once geotagged evidence is approved or confirmed.
+              </p>
+</div>
+</div>
+</div>
+<!-- Additional link to Knowledgebase -->
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Need deeper municipal bylaws?</span>
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-bold hover:underline" href="#">
+<span>Browse Full Citizen Wiki</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple vanilla micro-interactions for FAQ accordion and form confirmation
+  document.addEventListener('DOMContentLoaded', () => {
+    // Accordion Toggle Behavior
+    const toggles = document.querySelectorAll('.faq-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const item = toggle.closest('.faq-item');
+        const content = item.querySelector('.faq-content');
+        const icon = toggle.querySelector('.faq-icon');
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+        // Toggle state
+        if (isExpanded) {
+          content.classList.add('hidden');
+          toggle.setAttribute('aria-expanded', 'false');
+          icon.classList.remove('rotate-180');
+        } else {
+          content.classList.remove('hidden');
+          toggle.setAttribute('aria-expanded', 'true');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+
+    // Form Submission Feedback
+    const form = document.getElementById('supportInquiryForm');
+    const toast = document.getElementById('submitToast');
+    if (form && toast) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span>
+          <span>Dispatching...</span>
+        `;
+
+        setTimeout(() => {
+          submitBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[18px]">done_all</span>
+            <span>Inquiry Dispatched</span>
+          `;
+          submitBtn.classList.remove('bg-primary-container', 'hover:bg-primary');
+          submitBtn.classList.add('bg-status-active');
+          toast.classList.remove('hidden');
+          toast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 800);
+      });
+    }
+
+    // Drag-and-drop file mock label update
+    const fileInput = document.getElementById('fileInput');
+    const dropZone = document.getElementById('dropZone');
+    if (fileInput && dropZone) {
+      fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+          const fileName = fileInput.files[0].name;
+          const label = dropZone.querySelector('.font-label-md');
+          if (label) {
+            label.textContent = `Attached: ${fileName}`;
+            label.classList.add('text-primary');
+          }
+        }
+      });
+    }
+  });
+</script></main></div></body></html>

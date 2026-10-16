@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-fixed-variant":"#005236","inverse-on-surface":"#283044","on-surface-variant":"#c2c6d6","surface-bright":"#31394d","on-secondary-fixed":"#002113","outline":"#8c909f","secondary":"#4edea3","primary-fixed-dim":"#adc6ff","on-primary":"#002e6a","on-tertiary-fixed":"#2a1700","surface-variant":"#2d3449","surface-tint":"#adc6ff","primary":"#adc6ff","secondary-fixed":"#6ffbbe","surface-container-lowest":"#060e20","surface-container-highest":"#2d3449","secondary-fixed-dim":"#4edea3","surface-container-low":"#131b2e","secondary-container":"#00a572","on-tertiary-fixed-variant":"#653e00","surface":"#0b1326","tertiary":"#ffb95f","inverse-primary":"#005ac2","surface-container":"#171f33","inverse-surface":"#dae2fd","tertiary-container":"#ca8100","on-primary-fixed":"#001a42","primary-container":"#4d8eff","surface-container-high":"#222a3d","on-background":"#dae2fd","on-surface":"#dae2fd","on-tertiary-container":"#3e2400","primary-fixed":"#d8e2ff","on-primary-fixed-variant":"#004395","tertiary-fixed-dim":"#ffb95f","on-tertiary":"#472a00","on-error":"#690005","error":"#ffb4ab","outline-variant":"#424754","on-secondary-container":"#00311f","error-container":"#93000a","on-primary-container":"#00285d","tertiary-fixed":"#ffddb8","on-secondary":"#003824","background":"#0b1326","on-error-container":"#ffdad6","surface-dim":"#0b1326"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"gutter-desktop":"1.5rem","margin-desktop":"2rem","space-md":"1rem","space-xl":"2.5rem",margin:"1rem","space-lg":"1.5rem","space-xs":"0.25rem",gutter:"1rem","space-sm":"0.5rem"},fontFamily:{"title-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"label-xs":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"]},fontSize:{"title-md":["16px",{lineHeight:"24px",letterSpacing:"0.005em",fontWeight:"600"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-xl-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-xl":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-xs":["10px",{lineHeight:"14px",letterSpacing:"0.06em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"0",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between overflow-y-auto"><div class="p-space-lg flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded bg-primary-container flex items-center justify-center text-on-primary-container shadow-md"><span class="material-symbols-outlined text-[20px]">hub</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">UMCP</span><span class="font-label-xs text-label-xs uppercase tracking-wider text-primary mt-space-xs">Operations Console</span></div></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><div class="px-space-sm pt-space-sm pb-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">Operations &amp; Admin</div><a class="flex items-center px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="administration-dashboard-dark-mode" href="#">Administration Dashboard</a><a class="flex items-center px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="user-and-role-management-dark-mode" href="#">User &amp; Role Management</a><a class="flex items-center px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="municipal-issue-management-dark-mode" href="#">Municipal Issue Management</a><a class="flex items-center px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="municipal-maintenance-task-details-dark-mode" href="#">Maintenance Task Details</a><div class="px-space-sm pt-space-md pb-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">Account &amp; Preferences</div><a class="flex items-center px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="my-profile-dark-mode" href="#">My Profile</a><a class="flex items-center px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="appearance-settings-dark-mode" href="#">Appearance Settings</a><a class="flex items-center px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="notifications-and-privacy-settings-dark-mode" href="#">Notifications &amp; Privacy</a><div class="px-space-sm pt-space-md pb-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">Support</div><a class="flex items-center px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="contact-and-support-desk-dark-mode" href="#">Contact &amp; Support Desk</a></nav></div><div class="p-space-lg flex flex-col gap-space-xs bg-surface-container-lowest"><div class="px-space-sm pb-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">Session</div><a class="flex items-center px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="sign-out" href="#">Sign Out</a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center gap-space-sm w-full bg-surface-container-low px-space-md py-1.5 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined text-[20px] text-outline">search</span><input class="bg-transparent border-0 outline-none w-full text-on-surface placeholder:text-outline font-body-md text-body-md" placeholder="Search telemetry nodes, alerts, route corridors..." type="text"/></div></div><div class="flex items-center gap-space-lg"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-high text-secondary"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">System Live</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="text-right hidden sm:block"><div class="font-title-md text-body-md font-semibold text-on-surface leading-tight">Aditya Patil</div><div class="font-label-xs text-label-xs text-primary">Municipal Authority</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen w-full px-space-lg py-space-lg"><div class="flex flex-col w-full gap-y-space-lg">
+<!-- Header Section with Telemetry State Indicators -->
+<div class="relative overflow-hidden bg-surface-container-low rounded-xl p-space-lg shadow-xl">
+<div class="absolute -right-24 -top-24 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg relative z-10">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-0.5 rounded bg-surface-container text-primary font-label-xs text-label-xs uppercase tracking-wider flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            DPDP &amp; ISO 27701 Enforced
+          </span>
+<span class="font-label-xs text-label-xs text-outline">SEC-POL: V4.18-PROD</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Notification Channels &amp; Privacy Governance</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Configure multi-channel emergency broadcast alerts, automated SMS/WhatsApp dispatch triggers, cryptographic audit logging, and civic data privacy controls across the metropolitan operational grid.
+        </p>
+</div>
+<!-- Quick Status Badges -->
+<div class="flex flex-wrap items-center gap-space-md self-start xl:self-center">
+<div class="bg-surface-container px-space-md py-2.5 rounded-lg flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs uppercase text-outline">Audit Stamp</span>
+<span class="font-title-md text-body-md font-semibold text-on-surface font-mono">SHA-256 Valid</span>
+</div>
+</div>
+<div class="bg-surface-container px-space-md py-2.5 rounded-lg flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">cell_tower</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs uppercase text-outline">Active Pipes</span>
+<span class="font-title-md text-body-md font-semibold text-secondary">4 of 4 Operational</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Emergency Priority Direct Notification Override Banner -->
+<div class="relative overflow-hidden bg-gradient-to-r from-surface-container-high via-surface-container to-surface-container-high rounded-xl p-space-md shadow-md">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">crisis_alert</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-on-surface">Emergency Broadcast Override Protocol</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary/20 text-tertiary font-label-xs text-label-xs uppercase font-semibold">Tier-1 Override</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Critical Life-Safety Alerts always bypass Do-Not-Disturb and custom mute windows (Level 1 &amp; Level 2 Citywide Emergencies, Flash Floods, Structural Failures).
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-center shrink-0">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="emergencyToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+<span class="font-label-md text-label-md uppercase font-semibold text-secondary" id="emergencyStatusLabel">Armed</span>
+</div>
+</div>
+</div>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Column 1: Multi-Channel Delivery Pipes (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Channel Dispatch Hub -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">sensors</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Delivery Pipes</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline uppercase font-mono">Real-Time Routing</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- WhatsApp Gateway -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-xs transition hover:bg-surface-container-high">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-secondary/15 text-secondary flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-semibold text-on-surface">WhatsApp Corridor Gateway</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">+91 98765 43210 • Bot Engine v2</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-label-xs font-semibold bg-secondary/10 text-secondary">Active</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-outline">Target: Rapid Field Incident Ack</span>
+<span class="font-label-xs text-label-xs text-on-surface font-mono">&lt; 1.2s Latency</span>
+</div>
+</div>
+<!-- Push Telemetry Desktop -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-xs transition hover:bg-surface-container-high">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-primary-container/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">desktop_windows</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Push Telemetry Desktop Alerts</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">Chrome WebPush • Ops Console UI</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-label-xs font-semibold bg-secondary/10 text-secondary">Active</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-outline">Sound Profile: Chime Level 3</span>
+<span class="font-label-xs text-label-xs text-on-surface font-mono">WebSocket Sub</span>
+</div>
+</div>
+<!-- Official Municipal SMS -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-xs transition hover:bg-surface-container-high">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-primary-container/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">sms</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Official Municipal SMS Hub</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">Gov-DND Whitelisted • DLT ID: 1107</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-label-xs font-semibold bg-secondary/10 text-secondary">Active</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-outline">Quota: 148,920 SMS / month</span>
+<span class="font-label-xs text-label-xs text-on-surface font-mono">Carrier Failover OK</span>
+</div>
+</div>
+<!-- TETRA Radio Sync -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-xs transition hover:bg-surface-container-high">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-tertiary-container/20 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">radio</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Secure TETRA Radio Sync</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">Fleet Band 380-400 MHz • Encrypted</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-label-xs font-semibold bg-tertiary/15 text-tertiary">Dispatch Only</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-xs text-label-xs text-outline">Scope: Urban Police &amp; Fire Fleet</span>
+<span class="font-label-xs text-label-xs text-on-surface font-mono">Auto-Broadcast L1</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Broadcast Telemetry Visualizer -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">equalizer</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">7-Day Outbound Volume</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">Total: 41,208</span>
+</div>
+<!-- Inline SVG Histogram Chart -->
+<div class="h-32 w-full flex items-end gap-2 pt-2 pb-1 px-1">
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full bg-surface-container-high rounded-t hover:bg-primary transition-all duration-300" style="height: 48%"></div>
+<span class="font-label-xs text-label-xs text-outline font-mono">Mon</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full bg-surface-container-high rounded-t hover:bg-primary transition-all duration-300" style="height: 64%"></div>
+<span class="font-label-xs text-label-xs text-outline font-mono">Tue</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full bg-surface-container-high rounded-t hover:bg-primary transition-all duration-300" style="height: 85%"></div>
+<span class="font-label-xs text-label-xs text-outline font-mono">Wed</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full bg-surface-container-high rounded-t hover:bg-primary transition-all duration-300" style="height: 52%"></div>
+<span class="font-label-xs text-label-xs text-outline font-mono">Thu</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full bg-surface-container-high rounded-t hover:bg-primary transition-all duration-300" style="height: 92%"></div>
+<span class="font-label-xs text-label-xs text-outline font-mono">Fri</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full bg-secondary-container/80 rounded-t hover:bg-secondary transition-all duration-300" style="height: 100%"></div>
+<span class="font-label-xs text-label-xs text-secondary font-mono">Sat</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full bg-primary-container rounded-t hover:bg-primary transition-all duration-300" style="height: 74%"></div>
+<span class="font-label-xs text-label-xs text-primary font-mono">Sun</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-space-sm pt-space-xs text-center">
+<div class="bg-surface-container p-2 rounded">
+<span class="font-label-xs text-label-xs text-outline block">Delivery SLA</span>
+<span class="font-title-md text-title-md font-semibold text-secondary">99.8%</span>
+</div>
+<div class="bg-surface-container p-2 rounded">
+<span class="font-label-xs text-label-xs text-outline block">Avg Fanout</span>
+<span class="font-title-md text-title-md font-semibold text-on-surface">340ms</span>
+</div>
+<div class="bg-surface-container p-2 rounded">
+<span class="font-label-xs text-label-xs text-outline block">Drop Count</span>
+<span class="font-title-md text-title-md font-semibold text-outline">0.02%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2: Alert Category Subscriptions & Triggers (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Category Subscriptions Card -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-sm gap-2">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Alert Category Thresholds &amp; Subscriptions</span>
+</div>
+<span class="font-label-xs text-label-xs px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">5 Channels Tracked</span>
+</div>
+<!-- Category Item 1: Road Obstructions -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">traffic</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Road Obstructions &amp; Major Potholes</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Immediate telemetry escalation for high-severity carriageway incidents.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-2 bg-surface-container-low/50 p-space-sm rounded">
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Dispatch Timing</span>
+<select class="bg-surface-container-high text-on-surface font-body-md text-body-md rounded px-space-sm py-1 outline-none">
+<option selected="">Instant Escalation (&lt; 30 sec)</option>
+<option>Batch every 5 minutes</option>
+<option>Hourly Digest</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Geographical Scope</span>
+<select class="bg-surface-container-high text-on-surface font-body-md text-body-md rounded px-space-sm py-1 outline-none">
+<option selected="">Ward 1 to Ward 8 (Urban Core)</option>
+<option>All 24 Municipal Wards</option>
+<option>Transit Corridors Only</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Category Item 2: Flood & Waterlogging -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-tertiary-container/20 flex items-center justify-center text-tertiary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">flood</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Flood &amp; Waterlogging Alerts</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary/15 text-tertiary font-label-xs text-label-xs uppercase font-semibold">Monsoon Priority</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Automated acoustic siren activation, push broadcast, and evacuation prep.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-2 bg-surface-container-low/50 p-space-sm rounded">
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Sensor Threshold</span>
+<select class="bg-surface-container-high text-on-surface font-body-md text-body-md rounded px-space-sm py-1 outline-none">
+<option selected="">&gt; 150mm Depth (Amber Siren)</option>
+<option>&gt; 300mm Depth (Red Siren &amp; SMS)</option>
+<option>Any Telemetry Inundation Trigger</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Trigger Scope</span>
+<select class="bg-surface-container-high text-on-surface font-body-md text-body-md rounded px-space-sm py-1 outline-none">
+<option selected="">Instant Siren + Multi-Pipe Push</option>
+<option>Multi-Pipe Push Only (Silent)</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Category Item 3: Transit Corridors -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">directions_bus</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Transit &amp; Bus Corridor Delays</span>
+<span class="font-body-md text-body-md text-on-surface-variant">BRTS and arterial bus headway deviations across urban interchanges.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-2 bg-surface-container-low/50 p-space-sm rounded">
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Deviation Trigger Threshold</span>
+<select class="bg-surface-container-high text-on-surface font-body-md text-body-md rounded px-space-sm py-1 outline-none">
+<option selected="">Alert if Delay &gt; 10 mins</option>
+<option>Alert if Delay &gt; 20 mins</option>
+<option>Alert on Complete Corridor Stall</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Notification Channel</span>
+<select class="bg-surface-container-high text-on-surface font-body-md text-body-md rounded px-space-sm py-1 outline-none">
+<option selected="">Dashboard Push + WhatsApp</option>
+<option>Dashboard Push Only</option>
+<option>Full Multi-Channel Broadcast</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Category Item 4: Public Works Sign-offs -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Public Works Sign-offs &amp; Citizen Confirmations</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Maintenance resolutions, contractor work verifications, and public ratings.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-2 bg-surface-container-low/50 p-space-sm rounded">
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Cadence Setting</span>
+<select class="bg-surface-container-high text-on-surface font-body-md text-body-md rounded px-space-sm py-1 outline-none">
+<option selected="">Daily Digest at 18:00 IST</option>
+<option>Twice Daily (10:00 &amp; 18:00)</option>
+<option>Real-Time Live Feed</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Target Receiver List</span>
+<select class="bg-surface-container-high text-on-surface font-body-md text-body-md rounded px-space-sm py-1 outline-none">
+<option selected="">Municipal Ward Officers &amp; QA Team</option>
+<option>Executive Directors Only</option>
+<option>Open Municipal Dashboard Feed</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Category Item 5: Security & Token Expiration -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-error/15 flex items-center justify-center text-error shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">security</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Administrative Security &amp; Token Alerts</span>
+<span class="px-1.5 py-0.2 rounded bg-error/15 text-error font-label-xs text-label-xs uppercase font-semibold">Critical SEC</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">API token expiration, abnormal sign-in attempts, and permission escalations.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-surface-variant after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-2 bg-surface-container-low/50 p-space-sm rounded">
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Transmission Mode</span>
+<div class="text-on-surface font-body-md text-body-md bg-surface-container-high px-space-sm py-1 rounded flex items-center gap-1.5 font-mono">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+                Instant SMS + Email (Enforced)
+              </div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-xs text-label-xs text-outline uppercase">Pre-Expiry Notice</span>
+<select class="bg-surface-container-high text-on-surface font-body-md text-body-md rounded px-space-sm py-1 outline-none">
+<option selected="">14 Days Prior + Daily Countdown</option>
+<option>7 Days Prior</option>
+<option>24 Hours Emergency Notice</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Privacy & Civic Data Governance Section -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-xl flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-sm gap-2">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">policy</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Privacy &amp; Civic Data Governance</h2>
+<span class="font-body-md text-body-md text-on-surface-variant">Indian Digital Personal Data Protection (DPDP) Act 2023 &amp; Municipal Privacy Framework</span>
+</div>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-body-md text-body-md transition self-start sm:self-center">
+<span class="material-symbols-outlined text-[18px]">download</span>
+        Download GDPR/DPDP Audit Export
+      </button>
+</div>
+<!-- 3-Column Policy Bento Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Module 1: Geolocation Privacy -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">location_off</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Geolocation Obfuscation</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Mitigate re-identification risks by masking coordinates on external and public-facing civic maps.
+          </p>
+<div class="flex flex-col gap-2 pt-2">
+<label class="flex items-start gap-space-sm cursor-pointer p-2 rounded bg-surface-container-low/60 hover:bg-surface-container-low">
+<input checked="" class="mt-1 text-primary focus:ring-0" name="geo_policy" type="radio"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Snap to 50m Centroid</span>
+<span class="font-label-xs text-label-xs text-outline">Obfuscate citizen exact GPS on Public Portal Displays.</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm cursor-pointer p-2 rounded bg-surface-container-low/60 hover:bg-surface-container-low">
+<input class="mt-1 text-primary focus:ring-0" name="geo_policy" type="radio"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Full Precision Vault</span>
+<span class="font-label-xs text-label-xs text-outline">Preserve Raw Precision for Field Maintenance crews only.</span>
+</div>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-secondary font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+          Differential Privacy: ε = 0.8
+        </div>
+</div>
+<!-- Module 2: Media & Photo Metadata Scrubbing -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">no_photography</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Media Metadata AI Scrubbing</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Process citizen-reported imagery and dashcam feeds before persisting into public storage pools.
+          </p>
+<div class="flex flex-col gap-2 pt-2">
+<label class="flex items-start gap-space-sm cursor-pointer p-2 rounded bg-surface-container-low/60 hover:bg-surface-container-low">
+<input checked="" class="mt-1 rounded text-primary focus:ring-0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Edge AI Face/Plate Scrub</span>
+<span class="font-label-xs text-label-xs text-outline">Scrub personal faces and vehicle plates prior to cloud ingestion.</span>
+</div>
+</label>
+<label class="flex items-start gap-space-sm cursor-pointer p-2 rounded bg-surface-container-low/60 hover:bg-surface-container-low">
+<input checked="" class="mt-1 rounded text-primary focus:ring-0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Cryptographic EXIF Attestation</span>
+<span class="font-label-xs text-label-xs text-outline">Retain tamper-evident EXIF proof for municipal contractor invoicing.</span>
+</div>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-secondary font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[14px]">memory</span>
+          YOLOv8 Edge Anonymizer Active
+        </div>
+</div>
+<!-- Module 3: Data Retention & Purge Policy -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">auto_delete</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Data Retention Timers</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Automated lifecycle purge rules for transient telemetry and state audit archives.
+          </p>
+<div class="flex flex-col gap-2 pt-2">
+<div class="p-2 rounded bg-surface-container-low/60 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Active Telemetry Cache</span>
+<span class="font-label-xs text-label-xs text-outline">Hot Redis Cluster</span>
+</div>
+<span class="font-title-md text-body-md font-mono font-semibold text-primary">90 Days</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low/60 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Municipal Audit Archive</span>
+<span class="font-label-xs text-label-xs text-outline">Cold WORM Storage</span>
+</div>
+<span class="font-title-md text-body-md font-mono font-semibold text-secondary">5 Years</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-outline font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[14px]">history</span>
+          Next Automated Cycle: In 4h 12m
+        </div>
+</div>
+</div>
+<!-- Cryptographic Audit Ledger Footnote -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm text-outline font-mono font-label-xs text-label-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Latest Immutable Block: #889,219 • Merkle Root: 0x9f4a...4c2a • Node: IN-MH-PUN-01</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span>Verified by: State Municipal Key Vault</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar / Audit Log Sign-off -->
+<div class="sticky bottom-4 z-30 bg-surface-container-high/90 backdrop-blur-xl p-space-md rounded-xl shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">fingerprint</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Aditya Patil (Municipal Authority ID: UMCP-AUTH-098)</span>
+<span class="font-label-xs text-label-xs text-outline font-mono">Session Signature: HSM-FIPS-140-2 Level 3 Active</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md w-full sm:w-auto justify-end">
+<button class="px-space-lg py-2 rounded text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition" type="button">
+        Reset Defaults
+      </button>
+<button class="flex items-center gap-space-sm px-space-lg py-2.5 rounded bg-primary-container text-on-primary-container hover:brightness-110 font-body-md text-body-md font-semibold shadow-lg transition" id="saveGovernanceBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save Changes &amp; Sign Audit Log</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for the governance page
+  const emergencyToggle = document.getElementById('emergencyToggle');
+  const emergencyStatusLabel = document.getElementById('emergencyStatusLabel');
+
+  if (emergencyToggle && emergencyStatusLabel) {
+    emergencyToggle.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        emergencyStatusLabel.textContent = 'Armed';
+        emergencyStatusLabel.classList.remove('text-outline');
+        emergencyStatusLabel.classList.add('text-secondary');
+      } else {
+        emergencyStatusLabel.textContent = 'Disarmed';
+        emergencyStatusLabel.classList.remove('text-secondary');
+        emergencyStatusLabel.classList.add('text-outline');
+      }
+    });
+  }
+
+  const saveBtn = document.getElementById('saveGovernanceBtn');
+  if (saveBtn) {
+    saveBtn.addEventListener('click', () => {
+      const originalHtml = saveBtn.innerHTML;
+      saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Signing Ledger...</span>';
+      saveBtn.disabled = true;
+
+      setTimeout(() => {
+        saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>Signed &amp; Committed!</span>';
+        saveBtn.classList.remove('bg-primary-container');
+        saveBtn.classList.add('bg-secondary-container');
+        
+        setTimeout(() => {
+          saveBtn.innerHTML = originalHtml;
+          saveBtn.classList.add('bg-primary-container');
+          saveBtn.classList.remove('bg-secondary-container');
+          saveBtn.disabled = false;
+        }, 2200);
+      }, 900);
+    });
+  }
+</script></main></div></body></html>

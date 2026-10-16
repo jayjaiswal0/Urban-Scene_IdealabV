@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>UMCP - Urban Mobility Coordination Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-primary-container":"#eeefff","surface-dim":"#cbdbf5","primary":"#004ac6","status-info":"#0284C7","surface-canvas":"#F8FAFC","error-container":"#ffdad6","secondary-container":"#dae2fd","background":"#f8f9ff","status-pending":"#F59E0B","surface-bright":"#f8f9ff","tertiary-fixed-dim":"#93ccff","on-secondary-fixed":"#131b2e","on-tertiary":"#ffffff","primary-fixed-dim":"#b4c5ff","on-secondary":"#ffffff","surface-card":"#FFFFFF","primary-fixed":"#dbe1ff","on-tertiary-fixed":"#001d31","inverse-surface":"#213145","status-urgent":"#EF4444","on-secondary-fixed-variant":"#3f465c","secondary-fixed":"#dae2fd","border-default":"#E2E8F0","surface-container":"#e5eeff","tertiary":"#005a89","on-tertiary-container":"#e7f2ff","surface-tint":"#0053db","tertiary-fixed":"#cce5ff","on-surface":"#0b1c30","status-active":"#10B981","outline-variant":"#c3c6d7","primary-container":"#2563eb","on-tertiary-fixed-variant":"#004b73","on-error":"#ffffff","on-secondary-container":"#5c647a","inverse-on-surface":"#eaf1ff","on-error-container":"#93000a","outline":"#737686","on-background":"#0b1c30","surface-variant":"#d3e4fe","secondary":"#565e74","on-surface-variant":"#434655","surface-container-high":"#dce9ff","on-primary-fixed":"#00174b","on-primary":"#ffffff","surface-container-lowest":"#ffffff","surface-container-highest":"#d3e4fe","secondary-fixed-dim":"#bec6e0","tertiary-container":"#0073ae","error":"#ba1a1a","inverse-primary":"#b4c5ff","surface-container-low":"#eff4ff","border-subtle":"#EDF2F7","on-primary-fixed-variant":"#003ea8","surface":"#f8f9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-md":"1rem","space-2xl":"3rem","margin":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1rem","gutter":"1.5rem","gutter-mobile":"1rem","space-lg":"1.5rem"},"fontFamily":{"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"body-md":["0.9375rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","fontWeight":"400"}],"display-lg-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-md":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"display-lg":["3.5rem",{"lineHeight":"4.25rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.02em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface-canvas font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-card z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-6 flex items-center justify-between border-b border-border-subtle"><div class="flex items-center gap-3"><img alt="UMCP Brand Mark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UZW6pmxdik_y1YDjEVfSYFSDmxthAF7ZPJ44RQ3yAzgmr2rKoS8fIe7etOHFwzaps66MpCYMrmQYBCgIgEc9aGd07ka_7nLodUXUPpqqQfjJmPgfhcAOIsuQaJzfB7vf4BA9p6BcNGtc18U6hIoLgV6RRaFeCirnHV6TqlpAQpbqWR7M1aBQte2QM3nV010d2AJpt_gr9miR18gyWTRfX8tt8dQN6fh2HzLOBrvA1Ee1Kh0KYdjxfbdkkg"/><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-surface font-bold tracking-tight leading-tight">UMCP</span><span class="font-label-sm text-label-sm text-secondary tracking-normal">Mira-Bhayandar</span></div></div><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-4 py-4 space-y-6"><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Public &amp; Common</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="public-portal" href="#"><span class="material-symbols-outlined text-xl">public</span><span>Public Portal</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="mobility-map" href="#"><span class="material-symbols-outlined text-xl">map</span><span>Mobility Map</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="parking-directory" href="#"><span class="material-symbols-outlined text-xl">local_parking</span><span>Parking Directory</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Citizen Portal</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="citizen-overview" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span>Citizen Overview</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="report-an-issue" href="#"><span class="material-symbols-outlined text-xl">campaign</span><span>Report an Issue</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-reports" href="#"><span class="material-symbols-outlined text-xl">assignment</span><span>My Reports</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Authority Portals</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="municipal-works" href="#"><span class="material-symbols-outlined text-xl">domain</span><span>Municipal Works</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="traffic-coordination" href="#"><span class="material-symbols-outlined text-xl">traffic</span><span>Traffic Coordination</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="incident-verification" href="#"><span class="material-symbols-outlined text-xl">verified</span><span>Incident Verification</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Account</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings-security" href="#"><span class="material-symbols-outlined text-xl">settings</span><span>Settings &amp; Security</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors font-label-md text-label-md" data-path="sign-out" href="#"><span class="material-symbols-outlined text-xl">logout</span><span>Sign Out</span></a></nav></div></div><div class="p-4 border-t border-border-subtle bg-surface-container-lowest"><div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-status-active"></span><div class="flex-1 min-w-0"><p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">MBMC Transit Hub Live</p><p class="font-label-sm text-label-sm text-secondary truncate">System Online 99.8%</p></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-card/90 backdrop-blur-xl border-b border-border-subtle z-40 px-6 flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-6 flex-1 max-w-xl"><div class="relative w-full max-w-xs"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-canvas border border-border-default font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search routes, transit wards, notices..." type="text"/></div><div class="hidden xl:flex items-center p-1 bg-surface-canvas rounded-lg border border-border-subtle"><button class="px-2.5 py-1 rounded bg-surface-card shadow-sm text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Desktop view" type="button"><span class="material-symbols-outlined text-base">desktop_windows</span><span class="hidden 2xl:inline">Desktop</span></button><button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Tablet view" type="button"><span class="material-symbols-outlined text-base">tablet_mac</span><span class="hidden 2xl:inline">Tablet</span></button><button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Mobile view" type="button"><span class="material-symbols-outlined text-base">smartphone</span><span class="hidden 2xl:inline">Mobile</span></button></div></div><div class="flex items-center gap-3"><button class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-[0_2px_8px_rgba(37,99,235,0.2)]" type="button"><span class="material-symbols-outlined text-lg">add_circle</span><span>Report Issue</span></button><div class="relative"><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-urgent ring-2 ring-surface-card"></span></button></div><div class="h-6 w-px bg-border-subtle"></div><div class="flex items-center gap-3 pl-1"><div class="flex items-center gap-2 cursor-pointer p-1 rounded-lg hover:bg-surface-canvas transition-colors"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-default" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ0YOXttYssDW66-eOBkrVyw4Ii3Uom0c6fWRwaasxPd5zVASDGmkF-VBsEqON8gCI2CHfBuXdIAmMKJ-CGwFyjVp8DNdbZiq9fKpBmn6kWiLJdfFRRMNTbi8W5Vv9KKA6k1rJC-TNo98cQDusQlACvBIu2D_hwVD9yiDcXH8m4xps_bUFH9Pl9hE3DCrJzBJ_7UsyfqVV5rD0DwdkkAji-URRKS4aBsHfgFVkY2CcpZ_nQmZlXhPWxQ"/><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md text-on-surface font-semibold">Aditya Patil</span><span class="material-symbols-outlined text-sm text-outline">expand_more</span></div><span class="font-label-sm text-label-sm text-primary font-medium">Municipal Authority</span></div></div></div></div></header><main class="relative pt-16 w-full min-h-screen bg-surface-canvas px-gutter py-space-lg"><div class="flex flex-col w-full space-y-8">
+<!-- Page Header & Action Bar -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-1.5">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Citizen Portal</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-on-surface font-semibold">My Reports</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">My Submitted Reports</h1>
+<p class="font-body-md text-body-md text-secondary max-w-3xl">
+        Track, review inspection updates, and verify municipal repair milestones for all your submitted civic reports.
+      </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-card hover:bg-surface-container-low text-on-surface font-label-md text-label-md shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-lg text-primary">download</span>
+<span>Download Summary</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md shadow-md hover:shadow-lg transition-all" type="button">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>+ New Report</span>
+</button>
+</div>
+</section>
+<!-- Metric Stat Strip (4 compact cards) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1: Total -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1">Total Submitted</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-headline-lg text-on-surface font-bold">8</span>
+<span class="font-label-md text-label-md text-secondary font-medium">Reports</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">assignment</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm">All time civic submissions</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">100% recorded</span>
+</div>
+</div>
+<!-- Card 2: Under Review -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1">Under Review</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-headline-lg text-status-pending font-bold">2</span>
+<span class="font-label-md text-label-md text-secondary font-medium">In Triage</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-status-pending">
+<span class="material-symbols-outlined text-xl">pending_actions</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Avg. review turnaround</span>
+<span class="font-label-sm text-label-sm text-status-pending font-semibold">~14h</span>
+</div>
+</div>
+<!-- Card 3: Active in Field -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1">Active in Field</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-headline-lg text-status-info font-bold">3</span>
+<span class="font-label-md text-label-md text-secondary font-medium">Tasks</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-status-info">
+<span class="material-symbols-outlined text-xl">engineering</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Municipal crews dispatched</span>
+<span class="font-label-sm text-label-sm text-status-info font-semibold">Crews deployed</span>
+</div>
+</div>
+<!-- Card 4: Resolved -->
+<div class="bg-surface-card rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1">Successfully Resolved</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-headline-lg text-status-active font-bold">3</span>
+<span class="font-label-md text-label-md text-secondary font-medium">Fixed</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-low flex items-center justify-center text-status-active">
+<span class="material-symbols-outlined text-xl">verified</span>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Citizen audit rate</span>
+<span class="font-label-sm text-label-sm text-status-active font-semibold">100% verified</span>
+</div>
+</div>
+</section>
+<!-- Filter & Search Console -->
+<section class="bg-surface-card rounded-2xl p-5 shadow-sm space-y-4">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-xl">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-surface-canvas rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container/20 transition-all" placeholder="Search by Report ID, street, or hazard type..." type="text"/>
+</div>
+<!-- Controls & Dropdowns -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative">
+<select class="h-11 pl-3.5 pr-8 bg-surface-canvas rounded-xl font-label-md text-label-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-primary-container/20 transition-all cursor-pointer">
+<option>All Wards (Ward 1 - 8)</option>
+<option>Ward 1 (Mira Road East)</option>
+<option>Ward 3 (Beverly Park)</option>
+<option>Ward 4 (Kanakia Sector)</option>
+<option>Ward 7 (Bhayandar West)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-base">expand_more</span>
+</div>
+<div class="relative">
+<select class="h-11 pl-3.5 pr-8 bg-surface-canvas rounded-xl font-label-md text-label-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-primary-container/20 transition-all cursor-pointer">
+<option>Newest First</option>
+<option>Oldest First</option>
+<option>Highest SLA Priority</option>
+<option>Recently Updated</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-base">sort</span>
+</div>
+<button class="h-11 px-3 bg-surface-canvas hover:bg-surface-container-low rounded-xl text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center" title="Refresh Feed" type="button">
+<span class="material-symbols-outlined text-lg">refresh</span>
+</button>
+</div>
+</div>
+<!-- Category Filter Tabs (Pills) -->
+<div class="flex items-center gap-2 overflow-x-auto pt-2 pb-1 text-nowrap">
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-all flex items-center gap-1.5" type="button">
+<span>All Reports</span>
+<span class="px-1.5 py-0.2 bg-on-primary/20 rounded-full font-label-sm text-label-sm font-semibold">8</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-canvas hover:bg-surface-container-low text-secondary hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5" type="button">
+<span class="w-2 h-2 rounded-full bg-status-pending"></span>
+<span>Under Review</span>
+<span class="px-1.5 py-0.2 bg-surface-card rounded-full font-label-sm text-label-sm text-secondary font-semibold">2</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-canvas hover:bg-surface-container-low text-secondary hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5" type="button">
+<span class="w-2 h-2 rounded-full bg-status-info"></span>
+<span>In Progress</span>
+<span class="px-1.5 py-0.2 bg-surface-card rounded-full font-label-sm text-label-sm text-secondary font-semibold">3</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-canvas hover:bg-surface-container-low text-secondary hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5" type="button">
+<span class="w-2 h-2 rounded-full bg-status-active"></span>
+<span>Resolved</span>
+<span class="px-1.5 py-0.2 bg-surface-card rounded-full font-label-sm text-label-sm text-secondary font-semibold">3</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-canvas hover:bg-surface-container-low text-secondary hover:text-on-surface font-label-md text-label-md transition-all flex items-center gap-1.5" type="button">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span>Drafts</span>
+<span class="px-1.5 py-0.2 bg-surface-card rounded-full font-label-sm text-label-sm text-secondary font-semibold">0</span>
+</button>
+</div>
+</section>
+<!-- Reports Table Container -->
+<section class="bg-surface-card rounded-2xl shadow-sm overflow-hidden flex flex-col">
+<!-- Desktop Table View -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[900px]">
+<thead>
+<tr class="bg-surface-canvas/60 text-secondary font-label-md text-label-md uppercase tracking-wider">
+<th class="py-4 px-6">Report ID &amp; Hazard</th>
+<th class="py-4 px-6">Location</th>
+<th class="py-4 px-6">Submitted</th>
+<th class="py-4 px-6">Resolution Status</th>
+<th class="py-4 px-6">SLA Window</th>
+<th class="py-4 px-6 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-canvas/40 transition-colors group">
+<td class="py-5 px-6">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">#UMCP-2024-884</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold bg-error-container text-on-error-container">
+                    Road Hazard
+                  </span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Pothole / Road Crater</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex items-start gap-2 max-w-xs">
+<span class="material-symbols-outlined text-outline text-base mt-0.5 shrink-0">pin_drop</span>
+<span class="font-body-sm text-body-sm text-on-surface">Shanti Nagar Main Rd, Opp. Gate 3, Sector 2</span>
+</div>
+</td>
+<td class="py-5 px-6 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Today, 09:40 AM</span>
+<span class="font-label-sm text-label-sm text-secondary">Verified Mobile Geo</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container-low text-status-pending">
+<span class="w-1.5 h-1.5 rounded-full bg-status-pending animate-pulse"></span>
+                  Under Review
+                </span>
+<span class="font-label-sm text-label-sm text-secondary">Pending Desk Dispatcher</span>
+</div>
+</td>
+<td class="py-5 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-12 h-1.5 bg-surface-container-low rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-status-pending rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Within 24h</span>
+</div>
+</td>
+<td class="py-5 px-6 text-right whitespace-nowrap">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-canvas hover:bg-surface-container-low text-primary font-label-md text-label-md transition-colors shadow-sm group-hover:shadow" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-canvas/40 transition-colors group bg-surface-canvas/10">
+<td class="py-5 px-6">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">#UMCP-2024-791</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container-high text-tertiary">
+                    Drainage / Water
+                  </span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Waterlogging &amp; Drainage</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex items-start gap-2 max-w-xs">
+<span class="material-symbols-outlined text-outline text-base mt-0.5 shrink-0">pin_drop</span>
+<span class="font-body-sm text-body-sm text-on-surface">Kanakia Road Flyover, Near Metro Pier #12</span>
+</div>
+</td>
+<td class="py-5 px-6 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Yesterday, 04:15 PM</span>
+<span class="font-label-sm text-label-sm text-secondary">Photo Verified (2)</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container-low text-status-info">
+<span class="w-1.5 h-1.5 rounded-full bg-status-info"></span>
+                  In Progress
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Crew 02 Silt Siphon Assigned</span>
+</div>
+</td>
+<td class="py-5 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-12 h-1.5 bg-surface-container-low rounded-full overflow-hidden">
+<div class="w-1/2 h-full bg-status-info rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-status-info font-medium">Est. 6h left</span>
+</div>
+</td>
+<td class="py-5 px-6 text-right whitespace-nowrap">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-canvas hover:bg-surface-container-low text-primary font-label-md text-label-md transition-colors shadow-sm group-hover:shadow" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-canvas/40 transition-colors group">
+<td class="py-5 px-6">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">#UMCP-2024-632</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold bg-secondary-container text-on-secondary-fixed">
+                    Electrical / Lighting
+                  </span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Streetlight Outage</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex items-start gap-2 max-w-xs">
+<span class="material-symbols-outlined text-outline text-base mt-0.5 shrink-0">pin_drop</span>
+<span class="font-body-sm text-body-sm text-on-surface">Beverly Park 5th Lane, Pole #BVP-88</span>
+</div>
+</td>
+<td class="py-5 px-6 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Nov 08, 2024</span>
+<span class="font-label-sm text-label-sm text-secondary">Automated Grid Flag</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container-low text-status-active">
+<span class="w-1.5 h-1.5 rounded-full bg-status-active"></span>
+                  Resolved
+                </span>
+<span class="font-label-sm text-label-sm text-status-active font-semibold">Citizen Verified</span>
+</div>
+</td>
+<td class="py-5 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2 text-status-active">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span class="font-label-sm text-label-sm font-medium">Resolved in 28h</span>
+</div>
+</td>
+<td class="py-5 px-6 text-right whitespace-nowrap">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-canvas hover:bg-surface-container-low text-primary font-label-md text-label-md transition-colors shadow-sm group-hover:shadow" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-canvas/40 transition-colors group bg-surface-canvas/10">
+<td class="py-5 px-6">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">#UMCP-2024-519</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container-highest text-tertiary">
+                    Transit Signal
+                  </span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Traffic Signal Malfunction</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex items-start gap-2 max-w-xs">
+<span class="material-symbols-outlined text-outline text-base mt-0.5 shrink-0">pin_drop</span>
+<span class="font-body-sm text-body-sm text-on-surface">Golden Nest Circle, Northbound</span>
+</div>
+</td>
+<td class="py-5 px-6 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Oct 29, 2024</span>
+<span class="font-label-sm text-label-sm text-secondary">High Priority Lane</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container-low text-status-active">
+<span class="w-1.5 h-1.5 rounded-full bg-status-active"></span>
+                  Resolved
+                </span>
+<span class="font-label-sm text-label-sm text-secondary">Control Center Sync</span>
+</div>
+</td>
+<td class="py-5 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2 text-status-active">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span class="font-label-sm text-label-sm font-medium">Resolved in 4h</span>
+</div>
+</td>
+<td class="py-5 px-6 text-right whitespace-nowrap">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-canvas hover:bg-surface-container-low text-primary font-label-md text-label-md transition-colors shadow-sm group-hover:shadow" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-canvas/40 transition-colors group">
+<td class="py-5 px-6">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">#UMCP-2024-410</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container-low text-secondary">
+                    Sanitation &amp; Waste
+                  </span>
+</div>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">Illegal Rubble Dumping</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex items-start gap-2 max-w-xs">
+<span class="material-symbols-outlined text-outline text-base mt-0.5 shrink-0">pin_drop</span>
+<span class="font-body-sm text-body-sm text-on-surface">Station Road West, Near Auto Stand</span>
+</div>
+</td>
+<td class="py-5 px-6 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Oct 14, 2024</span>
+<span class="font-label-sm text-label-sm text-secondary">Field Inspector Logged</span>
+</div>
+</td>
+<td class="py-5 px-6">
+<div class="flex flex-col gap-1 items-start">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-sm text-label-sm font-semibold bg-surface-container-low text-status-active">
+<span class="w-1.5 h-1.5 rounded-full bg-status-active"></span>
+                  Resolved
+                </span>
+<span class="font-label-sm text-label-sm text-secondary">Cleared by Zone 4</span>
+</div>
+</td>
+<td class="py-5 px-6 whitespace-nowrap">
+<div class="flex items-center gap-2 text-status-active">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span class="font-label-sm text-label-sm font-medium">Resolved in 18h</span>
+</div>
+</td>
+<td class="py-5 px-6 text-right whitespace-nowrap">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-canvas hover:bg-surface-container-low text-primary font-label-md text-label-md transition-colors shadow-sm group-hover:shadow" type="button">
+<span>View Details</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Action Footer -->
+<div class="py-4 px-6 bg-surface-canvas/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-secondary">
+<span>Showing <span class="font-semibold text-on-surface">1</span> to <span class="font-semibold text-on-surface">5</span> of <span class="font-semibold text-on-surface">8</span> reports</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="h-9 px-3 rounded-lg bg-surface-card hover:bg-surface-container-low text-secondary font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm disabled:opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-base">chevron_left</span>
+<span class="hidden sm:inline">Previous</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-sm transition-all" type="button">
+            1
+          </button>
+<button class="w-9 h-9 rounded-lg bg-surface-card hover:bg-surface-container-low text-on-surface font-label-md text-label-md font-medium shadow-sm transition-all" type="button">
+            2
+          </button>
+</div>
+<button class="h-9 px-3 rounded-lg bg-surface-card hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1 shadow-sm" type="button">
+<span class="hidden sm:inline">Next</span>
+<span class="material-symbols-outlined text-base">chevron_right</span>
+</button>
+</div>
+<div class="sm:hidden w-full pt-2">
+<button class="w-full h-10 rounded-lg bg-surface-card text-primary font-label-md text-label-md shadow-sm flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">picture_as_pdf</span>
+<span>Download PDF Statement</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Visual Evidence & Civic Context Mosaic (AdminMart clean aesthetics) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Milestone Tracker Preview -->
+<div class="bg-surface-card rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">timeline</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Active Live SLA</h3>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-semibold">Track #791</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-6">Real-time status updates from MBMC Ward 4 engineering dispatch for Flyover Siphon works.</p>
+<!-- Vertical Stepper -->
+<div class="space-y-4 relative pl-6 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<div class="relative">
+<span class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-status-active ring-4 ring-surface-card"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Incident Logged &amp; Geocoded</span>
+<span class="font-label-sm text-label-sm text-secondary">Yesterday, 04:15 PM</span>
+</div>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-status-active ring-4 ring-surface-card"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Inspection Officer Approved</span>
+<span class="font-label-sm text-label-sm text-secondary">Yesterday, 07:30 PM</span>
+</div>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-status-info ring-4 ring-surface-card animate-pulse"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-status-info">Drainage Clear Unit Dispatched</span>
+<span class="font-label-sm text-label-sm text-secondary">Today, 08:00 AM • ETA 40m</span>
+</div>
+</div>
+<div class="relative">
+<span class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-surface-container-high ring-4 ring-surface-card"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-outline">Citizen Final Quality Sign-off</span>
+<span class="font-label-sm text-label-sm text-secondary">Pending completion</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 bg-surface-canvas/50 -mx-6 -mb-6 p-4 rounded-b-2xl flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Assigned Lead: Inspector R. Kulkarni</span>
+<button class="text-primary font-label-sm text-label-sm font-semibold hover:underline" type="button">Full Log</button>
+</div>
+</div>
+<!-- Attached Evidence Gallery -->
+<div class="bg-surface-card rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">photo_library</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Recent Uploads</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Camera &amp; Geo-tags</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mb-4">Inspection media automatically timestamped for fast verification.</p>
+<div class="grid grid-cols-2 gap-3">
+<div class="group relative rounded-xl overflow-hidden h-28 bg-surface-canvas">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Close up photograph of deep roadway pothole on an urban asphalt street with hazard cones around it under daylight, crisp civic municipal inspection style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAatd8osecZfdjhOLXiaKUhrEFCFTkbXzZpd2SvrVAzmS2tZRAJ-P0PGIYOEMR4ak4iPyEv29nn_SAu_LYMa71sAlQuysKQBsnxQNUUOma1W97aYWvLg1DRxEXvir4l6exdSlCSJaTYTh22ZUyetTdpkHJmIJhUQzDojVyYZLJhogl9lvHOTXADpIH6fYVW7OzFHkFEQnBxi9nOt3W2xx_ec9-u322huASEW2V6ZbmobPc6P2VAPSjnBA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-2">
+<span class="font-label-sm text-label-sm text-on-primary font-medium truncate">#UMCP-2024-884</span>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden h-28 bg-surface-canvas">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Photograph of urban road flyover pillar with moderate water puddle pooling after heavy rains, municipal public works documentary photograph" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiVdJ6vvGd5u2LvNsWkhCmrueLQ1DJSrbuPD9tz2Emknl4TmZi-eJdpbm8a1p0rH7iqMlp6FgK2WgcxSxADw2moYiEAVR9eG2lmcMyLl_qzseQ9M0HRozJWWiz_tYtYqBAfiDXSxEiayI92lB6RYGjkARch_7TPehxUYfVAgE1cQG5lS6ZBzY4jYXZc3dqqKvvfsHrylWhEbspljvAn-NmH1GKQKJXvK4j6u2vIrofvPjCWR_c9NNoYw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-2">
+<span class="font-label-sm text-label-sm text-on-primary font-medium truncate">#UMCP-2024-791</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">All images protected with EXIF hash</span>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline flex items-center gap-1" type="button">
+<span>Upload more</span>
+<span class="material-symbols-outlined text-sm">attach_file</span>
+</button>
+</div>
+</div>
+<!-- Civic Impact & Citizen Verification Prompt -->
+<div class="bg-gradient-to-br from-primary-container to-primary rounded-2xl p-6 text-on-primary shadow-md flex flex-col justify-between relative overflow-hidden">
+<!-- Decorative circle shape -->
+<div class="absolute -right-8 -bottom-8 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 text-on-primary font-label-sm text-label-sm font-semibold backdrop-blur-sm mb-4">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span>Citizen Co-Governance</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tight mb-2">Need to verify a completed fix?</h3>
+<p class="font-body-sm text-body-sm text-on-primary/90 leading-relaxed">
+          Municipal crews marked 3 of your reports resolved. Submit your verification to release contractor performance scores and earn civic contributor credits.
+        </p>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-3">
+<button class="px-4 py-2 bg-white text-primary rounded-xl font-label-md text-label-md font-semibold hover:bg-surface-canvas shadow-sm transition-all flex items-center gap-1.5" type="button">
+<span>Verify Milestones</span>
+<span class="material-symbols-outlined text-base">task_alt</span>
+</button>
+<button class="px-3 py-2 text-on-primary hover:bg-white/10 rounded-xl font-label-md text-label-md transition-colors" type="button">
+          Dismiss
+        </button>
+</div>
+</div>
+</section>
+</div></main></div></body></html>

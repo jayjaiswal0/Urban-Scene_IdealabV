@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>UMCP - Urban Mobility Coordination Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {"darkMode":"class","theme":{"extend":{"colors":{"on-primary-container":"#eeefff","surface-dim":"#cbdbf5","primary":"#004ac6","status-info":"#0284C7","surface-canvas":"#F8FAFC","error-container":"#ffdad6","secondary-container":"#dae2fd","background":"#f8f9ff","status-pending":"#F59E0B","surface-bright":"#f8f9ff","tertiary-fixed-dim":"#93ccff","on-secondary-fixed":"#131b2e","on-tertiary":"#ffffff","primary-fixed-dim":"#b4c5ff","on-secondary":"#ffffff","surface-card":"#FFFFFF","primary-fixed":"#dbe1ff","on-tertiary-fixed":"#001d31","inverse-surface":"#213145","status-urgent":"#EF4444","on-secondary-fixed-variant":"#3f465c","secondary-fixed":"#dae2fd","border-default":"#E2E8F0","surface-container":"#e5eeff","tertiary":"#005a89","on-tertiary-container":"#e7f2ff","surface-tint":"#0053db","tertiary-fixed":"#cce5ff","on-surface":"#0b1c30","status-active":"#10B981","outline-variant":"#c3c6d7","primary-container":"#2563eb","on-tertiary-fixed-variant":"#004b73","on-error":"#ffffff","on-secondary-container":"#5c647a","inverse-on-surface":"#eaf1ff","on-error-container":"#93000a","outline":"#737686","on-background":"#0b1c30","surface-variant":"#d3e4fe","secondary":"#565e74","on-surface-variant":"#434655","surface-container-high":"#dce9ff","on-primary-fixed":"#00174b","on-primary":"#ffffff","surface-container-lowest":"#ffffff","surface-container-highest":"#d3e4fe","secondary-fixed-dim":"#bec6e0","tertiary-container":"#0073ae","error":"#ba1a1a","inverse-primary":"#b4c5ff","surface-container-low":"#eff4ff","border-subtle":"#EDF2F7","on-primary-fixed-variant":"#003ea8","surface":"#f8f9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-md":"1rem","space-2xl":"3rem","margin":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1rem","gutter":"1.5rem","gutter-mobile":"1rem","space-lg":"1.5rem"},"fontFamily":{"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"body-md":["0.9375rem",{"lineHeight":"1.5rem","fontWeight":"400"}],"label-md":["0.75rem",{"lineHeight":"1rem","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["1.25rem",{"lineHeight":"1.75rem","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["0.875rem",{"lineHeight":"1.25rem","letterSpacing":"0.01em","fontWeight":"600"}],"label-sm":["0.6875rem",{"lineHeight":"0.875rem","letterSpacing":"0.03em","fontWeight":"600"}],"body-lg":["1.125rem",{"lineHeight":"1.75rem","fontWeight":"400"}],"display-lg-mobile":["2.25rem",{"lineHeight":"2.75rem","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-md":["1.5rem",{"lineHeight":"2rem","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["0.8125rem",{"lineHeight":"1.25rem","fontWeight":"400"}],"display-lg":["3.5rem",{"lineHeight":"4.25rem","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg":["2rem",{"lineHeight":"2.5rem","letterSpacing":"-0.02em","fontWeight":"600"}]}}}};</script></head><body class="bg-surface-canvas font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-card z-50 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-6 flex items-center justify-between border-b border-border-subtle"><div class="flex items-center gap-3"><img alt="UMCP Brand Mark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UZW6pmxdik_y1YDjEVfSYFSDmxthAF7ZPJ44RQ3yAzgmr2rKoS8fIe7etOHFwzaps66MpCYMrmQYBCgIgEc9aGd07ka_7nLodUXUPpqqQfjJmPgfhcAOIsuQaJzfB7vf4BA9p6BcNGtc18U6hIoLgV6RRaFeCirnHV6TqlpAQpbqWR7M1aBQte2QM3nV010d2AJpt_gr9miR18gyWTRfX8tt8dQN6fh2HzLOBrvA1Ee1Kh0KYdjxfbdkkg"/><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-surface font-bold tracking-tight leading-tight">UMCP</span><span class="font-label-sm text-label-sm text-secondary tracking-normal">Mira-Bhayandar</span></div></div><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-4 py-4 space-y-6"><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Public &amp; Common</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a aria-current="page" class="flex items-center gap-3 px-3.5 py-2.5 transition-colors bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]" data-path="public-portal" href="#"><span class="material-symbols-outlined text-xl">public</span><span>Public Portal</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="mobility-map" href="#"><span class="material-symbols-outlined text-xl">map</span><span>Mobility Map</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="parking-directory" href="#"><span class="material-symbols-outlined text-xl">local_parking</span><span>Parking Directory</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Citizen Portal</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="citizen-overview" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span>Citizen Overview</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="report-an-issue" href="#"><span class="material-symbols-outlined text-xl">campaign</span><span>Report an Issue</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-reports" href="#"><span class="material-symbols-outlined text-xl">assignment</span><span>My Reports</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Authority Portals</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="municipal-works" href="#"><span class="material-symbols-outlined text-xl">domain</span><span>Municipal Works</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="traffic-coordination" href="#"><span class="material-symbols-outlined text-xl">traffic</span><span>Traffic Coordination</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="incident-verification" href="#"><span class="material-symbols-outlined text-xl">verified</span><span>Incident Verification</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-secondary uppercase tracking-wider">Account</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-on-primary font-semibold rounded-xl shadow-[0_4px_12px_rgba(37,99,235,0.2)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings-security" href="#"><span class="material-symbols-outlined text-xl">settings</span><span>Settings &amp; Security</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-colors font-label-md text-label-md" data-path="sign-out" href="#"><span class="material-symbols-outlined text-xl">logout</span><span>Sign Out</span></a></nav></div></div><div class="p-4 border-t border-border-subtle bg-surface-container-lowest"><div class="flex items-center gap-3 p-2 rounded-xl bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-status-active"></span><div class="flex-1 min-w-0"><p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">MBMC Transit Hub Live</p><p class="font-label-sm text-label-sm text-secondary truncate">System Online 99.8%</p></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-card/90 backdrop-blur-xl border-b border-border-subtle z-40 px-6 flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-6 flex-1 max-w-xl"><div class="relative w-full max-w-xs"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">search</span><input class="w-full h-10 pl-9 pr-4 rounded-lg bg-surface-canvas border border-border-default font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search routes, transit wards, notices..." type="text"/></div><div class="hidden xl:flex items-center p-1 bg-surface-canvas rounded-lg border border-border-subtle"><button class="px-2.5 py-1 rounded bg-surface-card shadow-sm text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Desktop view" type="button"><span class="material-symbols-outlined text-base">desktop_windows</span><span class="hidden 2xl:inline">Desktop</span></button><button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Tablet view" type="button"><span class="material-symbols-outlined text-base">tablet_mac</span><span class="hidden 2xl:inline">Tablet</span></button><button class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Mobile view" type="button"><span class="material-symbols-outlined text-base">smartphone</span><span class="hidden 2xl:inline">Mobile</span></button></div></div><div class="flex items-center gap-3"><button class="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-[0_2px_8px_rgba(37,99,235,0.2)]" type="button"><span class="material-symbols-outlined text-lg">add_circle</span><span>Report Issue</span></button><div class="relative"><button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-urgent ring-2 ring-surface-card"></span></button></div><div class="h-6 w-px bg-border-subtle"></div><div class="flex items-center gap-3 pl-1"><div class="flex items-center gap-2 cursor-pointer p-1 rounded-lg hover:bg-surface-canvas transition-colors"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-default" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ0YOXttYssDW66-eOBkrVyw4Ii3Uom0c6fWRwaasxPd5zVASDGmkF-VBsEqON8gCI2CHfBuXdIAmMKJ-CGwFyjVp8DNdbZiq9fKpBmn6kWiLJdfFRRMNTbi8W5Vv9KKA6k1rJC-TNo98cQDusQlACvBIu2D_hwVD9yiDcXH8m4xps_bUFH9Pl9hE3DCrJzBJ_7UsyfqVV5rD0DwdkkAji-URRKS4aBsHfgFVkY2CcpZ_nQmZlXhPWxQ"/><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md text-on-surface font-semibold">Aditya Patil</span><span class="material-symbols-outlined text-sm text-outline">expand_more</span></div><span class="font-label-sm text-label-sm text-primary font-medium">Municipal Authority</span></div></div></div></div></header><main class="relative pt-16 w-full min-h-screen bg-surface-canvas px-gutter py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Hero & Key Metric Strip -->
+<section class="relative w-full rounded-3xl bg-surface-card p-space-xl lg:p-space-2xl shadow-sm overflow-hidden mb-space-xl">
+<div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-surface-container-high/40 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/4 -bottom-24 w-80 h-80 rounded-full bg-secondary-container/30 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 flex flex-col space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low w-fit shadow-sm">
+<span class="w-2 h-2 rounded-full bg-status-active animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary font-bold tracking-wide uppercase">Mira-Bhayandar Smart Transit Grid</span>
+</div>
+<div class="space-y-3">
+<h1 class="font-display-lg text-headline-lg lg:text-display-lg text-on-surface font-extrabold tracking-tight leading-tight">
+            Smarter Mobility.<br/>
+<span class="text-primary-container bg-clip-text text-transparent bg-gradient-to-r from-primary-container via-primary to-tertiary">Better Connected</span> Communities.
+          </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl leading-relaxed">
+            A unified municipal coordination platform to report road hazards, inspect live transit corridors, and bridge citizen feedback directly with field response units across Mira-Bhayandar.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-xl">campaign</span>
+<span>Report an Issue</span>
+</a>
+<a class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-surface-container-low text-on-surface font-label-lg text-label-lg hover:bg-surface-container transition-all duration-200 shadow-sm" href="#">
+<span class="material-symbols-outlined text-xl text-primary">near_me</span>
+<span>Explore Live Mobility Map</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-2xl overflow-hidden shadow-lg bg-surface-container-low p-2">
+<img class="w-full h-80 object-cover rounded-xl" data-alt="High angle architectural view of a sunlit contemporary urban road transit flyover in Mira-Bhayandar India with clean lanes, low-emission buses, lush median landscaping, and subtle smart mobility street sensors beneath a crisp sky in soft blue and slate tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK8ChKQk4jZN5K8dtLNTM_9BR3I8FaB5JxCWB-FNzv3GTQUzZCXspXdFDN9ETycW-6ENGDxIGwhAZ_veNESuFB5XXHPLIkCckcs47VYvqSRDpTyLq2Y6D02kuVFjcU0rmdh3BfM6Q5C7UBV2VFJayuQ_KRjpF7-8h35WTUX-s6qWV_MnGknAi_cwKXiHm0C07LeWJGTP8M-8InCRjZ86eUxwTBaQnndX7_ZHsBgjmzkTiAaoy0j20Elw"/>
+<div class="absolute inset-0 rounded-xl bg-gradient-to-t from-on-surface/60 via-transparent to-transparent flex items-end p-5">
+<div class="bg-surface-card/95 backdrop-blur-md p-3.5 rounded-xl shadow-md w-full flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-2xl">traffic</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Western Express Feeder</div>
+<div class="font-body-sm text-body-sm text-secondary">Flow: Optimal (42 km/h avg)</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-low text-status-active font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-status-active"></span> Normal
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick City Status Pill Strip -->
+<div class="mt-8 pt-8 border-t-0 bg-surface-container-low/70 rounded-2xl p-4 lg:p-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="flex items-center gap-3.5 px-3 py-2 bg-surface-card rounded-xl shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">engineering</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">42 Teams</div>
+<div class="font-label-sm text-label-sm text-secondary truncate">Active Road Units</div>
+</div>
+</div>
+<div class="flex items-center gap-3.5 px-3 py-2 bg-surface-card rounded-xl shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-status-active shrink-0">
+<span class="material-symbols-outlined text-xl">verified</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">94.2%</div>
+<div class="font-label-sm text-label-sm text-secondary truncate">Verified Resolution</div>
+</div>
+</div>
+<div class="flex items-center gap-3.5 px-3 py-2 bg-surface-card rounded-xl shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-xl">alt_route</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">12 Corridors</div>
+<div class="font-label-sm text-label-sm text-secondary truncate">Low-Congestion Paths</div>
+</div>
+</div>
+<div class="flex items-center gap-3.5 px-3 py-2 bg-surface-card rounded-xl shadow-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-xl">ev_station</span>
+</div>
+<div class="min-w-0">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">8 Hubs</div>
+<div class="font-label-sm text-label-sm text-secondary truncate">EV &amp; Parking Points</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: How UMCP Works -->
+<section class="w-full mb-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<div class="font-label-md text-label-md text-primary uppercase font-bold tracking-wider mb-2">Streamlined Citizen Workflow</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">How UMCP Coordinates Resolution</h2>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-md">
+        Every citizen report directly dispatches into the municipal task queue with automated telemetry, live geolocation, and trackable milestones.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Step 1 -->
+<div class="relative bg-surface-card p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors duration-200">
+<span class="material-symbols-outlined text-2xl">add_location_alt</span>
+</div>
+<span class="font-display-lg text-headline-lg text-surface-dim font-black">01</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Spot &amp; Pin Issue</h3>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-4">
+            Citizens snap a quick geotagged photo of potholes, signal faults, waterlogging, or blocked curb spaces via mobile or web portal.
+          </p>
+</div>
+<div class="pt-4 bg-surface-canvas rounded-xl p-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-status-active">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Auto-captures Ward &amp; GPS coordinates</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative bg-surface-card p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors duration-200">
+<span class="material-symbols-outlined text-2xl">hub</span>
+</div>
+<span class="font-display-lg text-headline-lg text-surface-dim font-black">02</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Unified Triage</h3>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-4">
+            Municipal engineering desks and Traffic Branch personnel triage reports in minutes, merging duplicates and assigning field rapid-response squads.
+          </p>
+</div>
+<div class="pt-4 bg-surface-canvas rounded-xl p-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-status-active">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Cross-department SLA verification</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative bg-surface-card p-space-lg rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary transition-colors duration-200">
+<span class="material-symbols-outlined text-2xl">task_alt</span>
+</div>
+<span class="font-display-lg text-headline-lg text-surface-dim font-black">03</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-2">Track to Resolution</h3>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-4">
+            Follow repair status updates in real-time. Transparent closure receipts include time-stamped inspection photos and instant SMS notifications.
+          </p>
+</div>
+<div class="pt-4 bg-surface-canvas rounded-xl p-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-status-active">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Public closure log &amp; audit trail</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Live Civic Pulse & Resolved Work -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-space-xl">
+<!-- Live Transit Pulse Card (7 cols) -->
+<div class="lg:col-span-7 bg-surface-card rounded-2xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-4 mb-4 bg-surface-canvas p-3 rounded-xl">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-xl">sensors</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Live Mira Road – Bhayandar Corridor Status</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Updated 2m ago</span>
+</div>
+<div class="space-y-3.5">
+<!-- Corridor 1 -->
+<div class="p-4 rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-10 rounded-full bg-status-active shrink-0"></div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold">Western Express Highway Link Road</div>
+<div class="font-body-sm text-body-sm text-secondary">Ward 3 Feeder • Transit Speed 38-44 km/h</div>
+</div>
+</div>
+<div class="flex items-center gap-2 sm:self-center">
+<span class="px-3 py-1 rounded-full bg-surface-card text-status-active font-label-sm text-label-sm font-bold shadow-sm">
+                Normal Flow
+              </span>
+</div>
+</div>
+<!-- Corridor 2 -->
+<div class="p-4 rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-10 rounded-full bg-status-pending shrink-0"></div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold">Bhayandar West Station Road</div>
+<div class="font-body-sm text-body-sm text-secondary">Commuter Peak • Shared auto stand lane backlog</div>
+</div>
+</div>
+<div class="flex items-center gap-2 sm:self-center">
+<span class="px-3 py-1 rounded-full bg-surface-card text-status-pending font-label-sm text-label-sm font-bold shadow-sm">
+                Moderate (8m delay)
+              </span>
+</div>
+</div>
+<!-- Corridor 3 -->
+<div class="p-4 rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-10 rounded-full bg-status-info shrink-0"></div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold">Maxus Mall Flyover Junction</div>
+<div class="font-body-sm text-body-sm text-secondary">Signal retimed for southbound bus rapid corridor</div>
+</div>
+</div>
+<div class="flex items-center gap-2 sm:self-center">
+<span class="px-3 py-1 rounded-full bg-surface-card text-status-info font-label-sm text-label-sm font-bold shadow-sm">
+                Optimized Signal
+              </span>
+</div>
+</div>
+<!-- Corridor 4 -->
+<div class="p-4 rounded-xl bg-surface-canvas hover:bg-surface-container-low transition-colors duration-150 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-10 rounded-full bg-status-active shrink-0"></div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold">Kanakia Road – Beverley Park Spine</div>
+<div class="font-body-sm text-body-sm text-secondary">Ward 7 Transit • Green wave active</div>
+</div>
+</div>
+<div class="flex items-center gap-2 sm:self-center">
+<span class="px-3 py-1 rounded-full bg-surface-card text-status-active font-label-sm text-label-sm font-bold shadow-sm">
+                Free Flowing
+              </span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-5 mt-4 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-secondary">Connected to MBMC Central Telematics Feed</span>
+<button class="font-label-sm text-label-sm text-primary font-bold hover:underline inline-flex items-center gap-1" type="button">
+          View full corridor index <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Resolved Works Showcase (5 cols) -->
+<div class="lg:col-span-5 bg-surface-card rounded-2xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div>
+<div class="font-label-md text-label-md text-primary font-bold uppercase">Public Accountability</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Recently Resolved Works</h3>
+</div>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-low text-primary font-label-sm text-label-sm font-bold">
+            24h Log
+          </span>
+</div>
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="p-3.5 rounded-xl bg-surface-canvas flex gap-3.5 items-start">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Close-up documentary photograph showing freshly paved asphalt repair on a municipal road bridge in Mira-Bhayandar, clean geometric curb line, civic road repair completed with crisp white thermoplastic lane markers under morning daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlpzmcb2ti5CGcEU7Xah-qdt7rqny2ob6bhhEvBA0gLlX_SWZnRHSYthmA4_1GYl5Bl6SIfJWFUg1Cbj4oUtE8fND9W4kG7pN8VN5O2HQ8vpokmPr7mbOd87Edm1AEjJxYLpRGBshbFFQTiEv2eG0ES5-W2LDFl10DMqTBdQWOwRlwey6lObL9_VjWIf9iWU-ux6GarmEM9Kx8wsiSWfxfT7k81nojGupKvz90tUwLvc6o7IBBI1s6bQ"/>
+<span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-on-surface/80 text-surface font-label-sm text-label-sm text-[10px]">FIXED</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">#REP-8831</span>
+<span class="font-label-sm text-label-sm text-status-active font-bold">Resolved in 4h</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold truncate mt-0.5">Asphalt Patch at Station Flyover</h4>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-1 mt-0.5">Deep pothole filled and compacted on northbound incline.</p>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-status-active">done_all</span> By Ward 4 PWD Squad
+              </div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-3.5 rounded-xl bg-surface-canvas flex gap-3.5 items-start">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="Well maintained bright modern LED traffic signal at an Indian suburban city intersection near Golden Nest Mira Road with clear blue sky background, clean utility box and visible road signage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPLc-P9AuRjYlm4Hwxv5S-LReHuVenxjaHZoC2rT05FOmHSV2jGvVkM1FA_SkOW8j8yHEPYiFHM9mzxwfvMRrrZ2ctnUAcn90SmOmQ4avshRfWfoz3suAnByNY3KbhZMlJYKkFHQNx_uj9LS1f0lTcdd0op29OgBm586X_cYK4mZAdspdQOYjt0cbCXbspZ7HbP4BbjFpiZo-hSE2y3_gFOOW7EG5png2nFm3UuY6-31IdGosouLllEQ"/>
+<span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-on-surface/80 text-surface font-label-sm text-label-sm text-[10px]">FIXED</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">#REP-8790</span>
+<span class="font-label-sm text-label-sm text-status-active font-bold">Resolved in 1.5h</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold truncate mt-0.5">Signal Repair: Golden Nest Circle</h4>
+<p class="font-body-sm text-body-sm text-secondary line-clamp-1 mt-0.5">Amber cycle relay recalibrated following circuit trip.</p>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-status-active">done_all</span> MBMC Traffic Control Division
+              </div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 mt-2">
+<a class="w-full py-2.5 px-4 rounded-xl bg-surface-container-low text-primary font-label-md text-label-md font-bold text-center block hover:bg-surface-container transition-colors" href="#">
+          Browse Citizen Verification Archive
+        </a>
+</div>
+</div>
+</section>
+<!-- Section 4: Quick Access Civic Grid & Prototype Banner -->
+<section class="w-full mb-space-xl">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">City Mobility Services</h2>
+<p class="font-body-sm text-body-sm text-secondary">Direct gateways to essential urban navigation and civic reporting utilities</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Action 1 -->
+<a class="p-5 rounded-2xl bg-surface-card shadow-sm hover:shadow-md transition-all group flex flex-col justify-between" href="#">
+<div class="w-12 h-12 rounded-xl bg-error-container text-on-error-container flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">warning</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mb-1">Report a Road Hazard</h3>
+<p class="font-body-sm text-body-sm text-secondary">Fallen branches, sinkholes, spills or open storm manholes.</p>
+</div>
+<div class="pt-4 flex items-center text-primary font-label-sm text-label-sm font-bold gap-1 mt-2">
+          File report now <span class="material-symbols-outlined text-sm">chevron_right</span>
+</div>
+</a>
+<!-- Action 2 -->
+<a class="p-5 rounded-2xl bg-surface-card shadow-sm hover:shadow-md transition-all group flex flex-col justify-between" href="#">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-primary flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">local_parking</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mb-1">Find Safe Parking</h3>
+<p class="font-body-sm text-body-sm text-secondary">Real-time authorized bays, hourly fees, and multi-level slots.</p>
+</div>
+<div class="pt-4 flex items-center text-primary font-label-sm text-label-sm font-bold gap-1 mt-2">
+          View bay availability <span class="material-symbols-outlined text-sm">chevron_right</span>
+</div>
+</a>
+<!-- Action 3 -->
+<a class="p-5 rounded-2xl bg-surface-card shadow-sm hover:shadow-md transition-all group flex flex-col justify-between" href="#">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-primary-container flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">directions_bus</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold mb-1">Transit Feeder Times</h3>
+<p class="font-body-sm text-body-sm text-secondary">MBMT municipal bus schedules, EV shuttles, and metro feeders.</p>
+</div>
+<div class="pt-4 flex items-center text-primary font-label-sm text-label-sm font-bold gap-1 mt-2">
+          Check live timetables <span class="material-symbols-outlined text-sm">chevron_right</span>
+</div>
+</a>
+<!-- Action 4: Emergency Helpline -->
+<div class="p-5 rounded-2xl bg-primary text-on-primary shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div class="w-12 h-12 rounded-xl bg-on-primary/10 text-on-primary flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-2xl">support_agent</span>
+</div>
+<div>
+<span class="px-2 py-0.5 rounded bg-on-primary/20 text-on-primary font-label-sm text-label-sm text-[10px] uppercase font-bold tracking-wider inline-block mb-1">24/7 Road Helpline</span>
+<h3 class="font-label-lg text-label-lg font-bold mb-1">1800-UMCP-HELP</h3>
+<p class="font-body-sm text-body-sm text-on-primary/80">Immediate towing, breakdown towing, and critical crash triage.</p>
+</div>
+<div class="pt-4 flex items-center text-on-primary font-label-sm text-label-sm font-bold gap-1 mt-2">
+          Call Control Desk <span class="material-symbols-outlined text-sm">call</span>
+</div>
+</div>
+</div>
+<!-- Prototype Callout Banner -->
+<div class="mt-6 p-4 rounded-2xl bg-surface-card flex items-center justify-between gap-4 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-bold text-on-surface">Engineering Prototype:</span> Mira-Bhayandar Mobility Coordination Platform (UMCP) is operating in civic Demonstration Mode. All telemetry simulates actual municipal ward divisions.
+        </div>
+</div>
+<span class="hidden sm:inline-flex px-3 py-1 rounded-full bg-surface-container-low text-primary font-label-sm text-label-sm font-semibold whitespace-nowrap">
+        Build v2.4-MBMC
+      </span>
+</div>
+</section>
+<!-- Section 5: Clean Footer -->
+<footer class="w-full bg-surface-card rounded-2xl p-space-lg shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8">
+<div class="md:col-span-5 space-y-3">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-2xl">swap_calls</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">UMCP Mira-Bhayandar</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary max-w-sm leading-relaxed">
+          The Urban Mobility Coordination Platform promotes transparent, fast-track infrastructure management in joint collaboration with the Mira Bhayandar Municipal Corporation and Traffic Police Branch.
+        </p>
+</div>
+<div class="md:col-span-2 space-y-2">
+<div class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wide">Civic Portals</div>
+<ul class="space-y-1.5 font-body-sm text-body-sm text-secondary">
+<li><a class="hover:text-primary transition-colors" href="#">Incident Reporter</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Corridor Analytics</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">EV Charging Registry</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Ward Engineering Desk</a></li>
+</ul>
+</div>
+<div class="md:col-span-2 space-y-2">
+<div class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wide">Transparency</div>
+<ul class="space-y-1.5 font-body-sm text-body-sm text-secondary">
+<li><a class="hover:text-primary transition-colors" href="#">Citizen Charter</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">SLA Performance</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Open Data Portal</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy &amp; Data Ethics</a></li>
+</ul>
+</div>
+<div class="md:col-span-3 space-y-2">
+<div class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wide">Accessibility &amp; Support</div>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+          Complies with GIGW 2.0 Web Accessibility Guidelines. Available in Marathi, Hindi, and English.
+        </p>
+<div class="pt-2 flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface-canvas text-secondary font-label-sm text-label-sm">WCAG 2.1 AA</span>
+<span class="px-2.5 py-1 rounded bg-surface-canvas text-secondary font-label-sm text-label-sm">SSL 256-Bit</span>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t-0 bg-surface-canvas rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between text-secondary gap-3">
+<div class="font-body-sm text-body-sm text-center sm:text-left">
+        © 2025 Urban Mobility Coordination Platform. Civic Tech for Mira-Bhayandar.
+      </div>
+<div class="flex items-center gap-4 font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors" href="#">Accessibility Statement</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">Municipal Terms</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">Security Audit</a>
+</div>
+</div>
+</footer>
+</div></main></div></body></html>

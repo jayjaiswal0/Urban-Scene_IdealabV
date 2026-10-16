@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html class="h-full dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>UMCP - Urban Mobility Coordination Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "background": "#0b1326",
+          "on-secondary-fixed": "#002113",
+          "outline": "#8c909f",
+          "secondary-fixed-dim": "#4edea3",
+          "on-primary": "#002e6a",
+          "secondary-fixed": "#6ffbbe",
+          "primary-container": "#3b82f6",
+          "tertiary": "#ffb95f",
+          "on-error-container": "#ffdad6",
+          "on-primary-container": "#dbeafe",
+          "surface-container": "#171f33",
+          "on-secondary-container": "#00311f",
+          "on-error": "#690005",
+          "on-tertiary-fixed": "#2a1700",
+          "on-tertiary-fixed-variant": "#653e00",
+          "surface-container-high": "#222a3d",
+          "surface-container-highest": "#2d3449",
+          "surface-tint": "#adc6ff",
+          "primary-fixed": "#d8e2ff",
+          "inverse-surface": "#dae2fd",
+          "error-container": "#93000a",
+          "on-secondary-fixed-variant": "#005236",
+          "tertiary-fixed-dim": "#ffb95f",
+          "secondary": "#94a3b8",
+          "surface-bright": "#31394d",
+          "inverse-primary": "#005ac2",
+          "primary": "#60a5fa",
+          "surface-dim": "#0b1326",
+          "on-background": "#f1f5f9",
+          "on-surface": "#f8fafc",
+          "tertiary-fixed": "#ffddb8",
+          "error": "#f87171",
+          "surface-container-lowest": "#060e20",
+          "surface-container-low": "#131b2e",
+          "on-tertiary-container": "#3e2400",
+          "on-secondary": "#003824",
+          "on-primary-fixed-variant": "#004395",
+          "outline-variant": "#334155",
+          "on-tertiary": "#472a00",
+          "inverse-on-surface": "#283044",
+          "secondary-container": "#00a572",
+          "surface-variant": "#1e293b",
+          "primary-fixed-dim": "#adc6ff",
+          "on-surface-variant": "#cbd5e1",
+          "surface": "#0f172a",
+          "surface-card": "#131c31",
+          "surface-canvas": "#0b1120",
+          "border-default": "#1e293b",
+          "border-subtle": "#1e293b",
+          "status-active": "#10b981",
+          "status-pending": "#f59e0b",
+          "status-urgent": "#ef4444",
+          "status-info": "#38bdf8",
+          "on-primary-fixed": "#001a42",
+          "tertiary-container": "#ca8100"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "gutter": "1rem",
+          "margin": "1rem",
+          "margin-desktop": "2rem",
+          "gutter-desktop": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-md": "1rem",
+          "space-xl": "2.5rem"
+        },
+        "fontFamily": {
+          "headline-sm": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "display-lg-mobile": ["Plus Jakarta Sans"],
+          "body-md": ["Plus Jakarta Sans"],
+          "headline-xl": ["Plus Jakarta Sans"],
+          "label-xs": ["Plus Jakarta Sans"],
+          "label-md": ["Plus Jakarta Sans"],
+          "display-lg": ["Plus Jakarta Sans"],
+          "headline-xl-mobile": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "title-md": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "label-xs": ["10px", {"lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0", "fontWeight": "400"}],
+          "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+          "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.005em", "fontWeight": "600"}],
+          "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "600"}],
+          "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+        }
+      }
+    }
+  }
+</script></head><body class="bg-surface-canvas font-body-md text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-white"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-card border-r border-border-default z-50 flex flex-col shadow-[0_4px_24px_rgba(0,0,0,0.5)]"><div class="h-16 px-6 flex items-center justify-between border-b border-border-default"><div class="flex items-center gap-3"><img alt="UMCP Brand Mark" class="h-8 w-auto object-contain brightness-110" src="https://lh3.googleusercontent.com/aida/AEtjO1UZW6pmxdik_y1YDjEVfSYFSDmxthAF7ZPJ44RQ3yAzgmr2rKoS8fIe7etOHFwzaps66MpCYMrmQYBCgIgEc9aGd07ka_7nLodUXUPpqqQfjJmPgfhcAOIsuQaJzfB7vf4BA9p6BcNGtc18U6hIoLgV6RRaFeCirnHV6TqlpAQpbqWR7M1aBQte2QM3nV010d2AJpt_gr9miR18gyWTRfX8tt8dQN6fh2HzLOBrvA1Ee1Kh0KYdjxfbdkkg"/><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-surface font-bold tracking-tight leading-tight">UMCP</span><span class="font-label-sm text-label-sm text-secondary tracking-normal">Mira-Bhayandar</span></div></div><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">menu_open</span></button></div><div class="flex-1 overflow-y-auto px-4 py-4 space-y-6"><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-outline uppercase tracking-wider">Public &amp; Common</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-white font-semibold rounded-xl shadow-[0_4px_16px_rgba(59,130,246,0.3)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="public-portal" href="#"><span class="material-symbols-outlined text-xl">public</span><span>Public Portal</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="mobility-map" href="#"><span class="material-symbols-outlined text-xl">map</span><span>Mobility Map</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="parking-directory" href="#"><span class="material-symbols-outlined text-xl">local_parking</span><span>Parking Directory</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-outline uppercase tracking-wider">Citizen Portal</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-white font-semibold rounded-xl shadow-[0_4px_16px_rgba(59,130,246,0.3)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="citizen-overview" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span>Citizen Overview</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="report-an-issue" href="#"><span class="material-symbols-outlined text-xl">campaign</span><span>Report an Issue</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-reports" href="#"><span class="material-symbols-outlined text-xl">assignment</span><span>My Reports</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-outline uppercase tracking-wider">Authority Portals</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-white font-semibold rounded-xl shadow-[0_4px_16px_rgba(59,130,246,0.3)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="municipal-works" href="#"><span class="material-symbols-outlined text-xl">domain</span><span>Municipal Works</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="traffic-coordination" href="#"><span class="material-symbols-outlined text-xl">traffic</span><span>Traffic Coordination</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="incident-verification" href="#"><span class="material-symbols-outlined text-xl">verified</span><span>Incident Verification</span></a></nav></div><div class="space-y-1"><div class="px-3 pb-1 text-label-sm font-label-sm text-outline uppercase tracking-wider">Account</div><nav class="space-y-0.5" data-active-classes="bg-primary-container text-white font-semibold rounded-xl shadow-[0_4px_16px_rgba(59,130,246,0.3)]"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="settings-security" href="#"><span class="material-symbols-outlined text-xl">settings</span><span>Settings &amp; Security</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-error-container/30 hover:text-error transition-colors font-label-md text-label-md" data-path="sign-out" href="#"><span class="material-symbols-outlined text-xl">logout</span><span>Sign Out</span></a></nav></div></div><div class="p-4 border-t border-border-default bg-surface-container-lowest"><div class="flex items-center gap-3 p-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40"><span class="w-2.5 h-2.5 rounded-full bg-status-active shadow-[0_0_8px_rgba(16,185,129,0.7)]"></span><div class="flex-1 min-w-0"><p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">MBMC Transit Hub Live</p><p class="font-label-sm text-label-sm text-secondary truncate">System Online 99.8%</p></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-card/90 backdrop-blur-xl border-b border-border-default z-40 px-6 flex items-center justify-between shadow-[0_4px_20px_rgba(0,0,0,0.35)]"><div class="flex items-center gap-6 flex-1 max-w-xl"><div class="relative w-full max-w-xs"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">search</span><input class="w-full h-10 pl-9 pr-4 rounded-xl bg-surface-container-low border border-border-default font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Search routes, transit wards, notices..." type="text"/></div><div class="hidden xl:flex items-center p-1 bg-surface-container-low rounded-xl border border-border-default"><button class="px-2.5 py-1 rounded-lg bg-surface-container-high text-primary shadow-sm font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Desktop view" type="button"><span class="material-symbols-outlined text-base">desktop_windows</span><span class="hidden 2xl:inline">Desktop</span></button><button class="px-2.5 py-1 rounded-lg text-secondary hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Tablet view" type="button"><span class="material-symbols-outlined text-base">tablet_mac</span><span class="hidden 2xl:inline">Tablet</span></button><button class="px-2.5 py-1 rounded-lg text-secondary hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-all" title="Mobile view" type="button"><span class="material-symbols-outlined text-base">smartphone</span><span class="hidden 2xl:inline">Mobile</span></button></div></div><div class="flex items-center gap-3"><button class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-container text-white font-label-md text-label-md hover:bg-blue-600 transition-all shadow-[0_0_16px_rgba(59,130,246,0.4)]" onclick="document.getElementById('reportModal').classList.remove('hidden')" type="button"><span class="material-symbols-outlined text-lg">add_circle</span><span>Report Issue</span></button><div class="relative"><button aria-label="Notifications" class="relative p-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-status-urgent ring-2 ring-surface-card"></span></button></div><div class="h-6 w-px bg-border-default"></div><div class="flex items-center gap-3 pl-1"><div class="flex items-center gap-2 cursor-pointer p-1.5 rounded-xl hover:bg-surface-container transition-colors"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-default" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ0YOXttYssDW66-eOBkrVyw4Ii3Uom0c6fWRwaasxPd5zVASDGmkF-VBsEqON8gCI2CHfBuXdIAmMKJ-CGwFyjVp8DNdbZiq9fKpBmn6kWiLJdfFRRMNTbi8W5Vv9KKA6k1rJC-TNo98cQDusQlACvBIu2D_hwVD9yiDcXH8m4xps_bUFH9Pl9hE3DCrJzBJ_7UsyfqVV5rD0DwdkkAji-URRKS4aBsHfgFVkY2CcpZ_nQmZlXhPWxQ"/><div class="hidden md:flex flex-col text-left"><div class="flex items-center gap-1.5"><span class="font-label-md text-label-md text-on-surface font-semibold">Aditya Patil</span><span class="material-symbols-outlined text-sm text-outline">expand_more</span></div><span class="font-label-sm text-label-sm text-primary font-medium">Municipal Authority</span></div></div></div></div></header><main class="relative pt-16 w-full min-h-screen bg-surface-canvas px-gutter-desktop py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- Top Command Header -->
+<section class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md p-space-lg bg-surface-container-low rounded-xl shadow-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-primary px-space-sm py-0.5 rounded-full bg-primary/10">Ward Operations</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-xs text-label-xs font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          Pilot Telemetry Active
+        </span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Municipal Parking &amp; Smart Bays Directory</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Real-time sensor telemetry across Mira-Bhayandar civic parking assets, automated vehicle guidance, and regulated toll-free charging corridors.
+      </p>
+</div>
+<!-- Actions & Filter Search -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<div class="relative min-w-[260px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg pointer-events-none">search</span>
+<input class="w-full h-10 pl-9 pr-4 rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container" id="facilityFilterInput" placeholder="Filter facility, ward, or street..." type="text"/>
+</div>
+<button class="flex items-center justify-center gap-2 px-4 h-10 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-bright transition-colors shadow-sm" onclick="alert('Municipal Parking Bylaws: Res. No. MBMC/TRF/2024/71. Flat capped rates &amp; zero surge mandate active.')" type="button">
+<span class="material-symbols-outlined text-base text-primary">policy</span>
+<span>Civic Bylaws</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 h-10 rounded-xl bg-primary-container text-white font-label-md text-label-md hover:bg-blue-600 transition-all shadow-sm" id="syncSensorsBtn" type="button">
+<span class="material-symbols-outlined text-base">sync</span>
+<span>Sync Sensor Hub</span>
+</button>
+</div>
+</section>
+<!-- Top KPI Metric Strip -->
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Metric 1: Total Bays -->
+<div class="p-space-lg bg-surface-container rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-semibold">Total City Bays</span>
+<span class="p-2 rounded-lg bg-surface-container-high text-primary material-symbols-outlined text-xl">local_parking</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight">1,450</span>
+<span class="font-label-md text-label-md text-outline">Spots</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">12 Locations across 6 municipal wards</p>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-high/40 rounded-lg p-2 flex items-center justify-between font-label-xs text-label-xs text-outline">
+<span>Ward 1-3: 840 spots</span>
+<span class="text-primary font-semibold">Ward 4-6: 610 spots</span>
+</div>
+</div>
+<!-- Metric 2: Live Available Bays -->
+<div class="p-space-lg bg-surface-container rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-semibold">Live Available</span>
+<span class="p-2 rounded-lg bg-surface-container-high text-secondary material-symbols-outlined text-xl">sensors</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-secondary font-bold tracking-tight" id="liveVacantCount">412</span>
+<span class="font-label-md text-label-md text-secondary">Free</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">28% Vacant (Active Telemetry)</p>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="w-full bg-surface-container-lowest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 28.4%"></div>
+</div>
+<span class="font-label-xs text-label-xs text-secondary font-semibold">28.4%</span>
+</div>
+</div>
+<!-- Metric 3: EV Fast Chargers -->
+<div class="p-space-lg bg-surface-container rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-semibold">EV Fast Chargers</span>
+<span class="p-2 rounded-lg bg-surface-container-high text-tertiary material-symbols-outlined text-xl">electric_bolt</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-tertiary font-bold tracking-tight">24</span>
+<span class="font-label-md text-label-md text-outline">/ 30 Ready</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">CCS-2 DC 60kW Civic Gun Hubs</p>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-high/40 rounded-lg p-2 flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-secondary font-semibold">6 Guns Active Charging</span>
+<span class="text-outline">avg. ₹14 / kWh</span>
+</div>
+</div>
+<!-- Metric 4: Standard Civic Tariff -->
+<div class="p-space-lg bg-surface-container rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-semibold">Regulated Civic Tariff</span>
+<span class="p-2 rounded-lg bg-surface-container-high text-primary-fixed-dim material-symbols-outlined text-xl">payments</span>
+</div>
+<div class="mt-4">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">₹20</span>
+<span class="font-label-md text-label-md text-outline">/ hr (4-Wheeler)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">₹10 / hr for 2-Wheelers · Zero Night Surge</p>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-high/40 rounded-lg p-2 flex items-center justify-between font-label-xs text-label-xs text-outline">
+<span class="text-secondary">First 15-min Free</span>
+<span class="text-on-surface font-medium">Digital UPI Only</span>
+</div>
+</div>
+</section>
+<!-- Filter Navigation Tabs -->
+<nav class="flex items-center gap-2 p-1 bg-surface-container-lowest rounded-xl max-w-fit overflow-x-auto">
+<button class="filter-tab px-4 py-2 rounded-lg bg-primary-container text-white font-label-md text-label-md flex items-center gap-2 shadow-sm" data-category="all">
+<span class="material-symbols-outlined text-sm">grid_view</span>
+<span>All Facilities (12)</span>
+</button>
+<button class="filter-tab px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-2 transition-colors" data-category="mlcp">
+<span class="material-symbols-outlined text-sm">domain</span>
+<span>Multi-Level MLCP (4)</span>
+</button>
+<button class="filter-tab px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-2 transition-colors" data-category="two-wheeler">
+<span class="material-symbols-outlined text-sm">two_wheeler</span>
+<span>Two-Wheeler Hubs (6)</span>
+</button>
+<button class="filter-tab px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md flex items-center gap-2 transition-colors" data-category="ev">
+<span class="material-symbols-outlined text-sm">ev_station</span>
+<span>EV Charging (5)</span>
+</button>
+</nav>
+<!-- Main 12-Column Operations Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Left Column: Facility Directory Listing (8 Columns) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Card 1: Mira Road MLCP -->
+<article class="facility-card p-space-lg bg-surface-container rounded-xl shadow-md flex flex-col gap-space-md relative overflow-hidden group hover:bg-surface-container-high transition-all" data-type="mlcp ev">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<div class="p-3 rounded-xl bg-surface-container-lowest text-primary">
+<span class="material-symbols-outlined text-2xl">garage_home</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Mira Road Railway Station West Multi-Level Car Park</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-xs text-label-xs font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Normal Availability
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Station Transit Bay Road, Ward 2 · Geofence ID: MLCP-02W</p>
+</div>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">68</span>
+<span class="font-label-md text-label-md text-outline">/ 250 available</span>
+</div>
+</div>
+<!-- Occupancy Bar & Live Metric -->
+<div class="space-y-1.5 bg-surface-container-lowest p-3 rounded-xl">
+<div class="flex justify-between items-center font-label-xs text-label-xs">
+<span class="text-outline">Occupancy Rate: 182 / 250 Occupied</span>
+<span class="text-on-surface font-semibold">72.8% Capacity</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 72.8%"></div>
+</div>
+</div>
+<!-- Tariff Details & Amenities -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-1">
+<div class="flex flex-col gap-1 p-2.5 bg-surface-container-low rounded-lg">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Tariff Matrix</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">4-Wheelers: ₹30 / first 2 hrs · Addl ₹15/hr</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2-Wheelers: ₹15 / first 4 hrs · FastTag auto-debit</p>
+</div>
+<div class="flex flex-col gap-1 p-2.5 bg-surface-container-low rounded-lg">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Facility Amenities</span>
+<div class="flex flex-wrap gap-1.5 mt-0.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-xs text-label-xs">CCTV 24x7</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-xs text-label-xs">FastTag Tollgate</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-xs text-label-xs font-semibold">6x EV Guns (CCS-2)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-xs text-label-xs">Wheelchair Ramp</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-2">
+<div class="flex items-center gap-2 font-label-xs text-label-xs text-outline">
+<span class="material-symbols-outlined text-sm text-secondary">update</span>
+<span>Telemetry updated 18 secs ago</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright font-label-md text-label-md transition-colors" onclick="alert('Viewing MLCP-02W Full Schedule: Overnight safe-stay available at ₹150 flat.')">
+              View Tariff Matrix
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-white font-label-md text-label-md hover:bg-blue-600 transition-colors flex items-center gap-1.5 shadow-sm" onclick="alert('Redirecting to GPS transit corridor navigation for Mira Road West MLCP.')">
+<span class="material-symbols-outlined text-base">near_me</span>
+<span>Navigate via Maps</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Kanakia Cinemax Lot -->
+<article class="facility-card p-space-lg bg-surface-container rounded-xl shadow-md flex flex-col gap-space-md relative overflow-hidden group hover:bg-surface-container-high transition-all" data-type="two-wheeler">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<div class="p-3 rounded-xl bg-surface-container-lowest text-tertiary">
+<span class="material-symbols-outlined text-2xl">local_convenience_store</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Kanakia Cinemax Commercial Zone Civic Parking</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary/15 text-tertiary font-label-xs text-label-xs font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Filling Fast (82% Occupied)
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Mira-Bhayandar Link Road, Ward 4 · Geofence ID: SUR-04K</p>
+</div>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-headline-sm text-headline-sm font-bold text-tertiary">14</span>
+<span class="font-label-md text-label-md text-outline">/ 80 available</span>
+</div>
+</div>
+<!-- Occupancy Bar -->
+<div class="space-y-1.5 bg-surface-container-lowest p-3 rounded-xl">
+<div class="flex justify-between items-center font-label-xs text-label-xs">
+<span class="text-outline">Occupancy Rate: 66 / 80 Occupied</span>
+<span class="text-tertiary font-semibold">82.5% Capacity</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 82.5%"></div>
+</div>
+</div>
+<!-- Tariff Details & Amenities -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-1">
+<div class="flex flex-col gap-1 p-2.5 bg-surface-container-low rounded-lg">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Tariff Details</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">Flat ₹20/hr · Quick Turnaround Bay</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tap-and-Go UPI QR at automated boom barrier</p>
+</div>
+<div class="flex flex-col gap-1 p-2.5 bg-surface-container-low rounded-lg">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Features</span>
+<div class="flex flex-wrap gap-1.5 mt-0.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-xs text-label-xs">UPI Tap-and-Go</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-xs text-label-xs">Automated Barrier</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-xs text-label-xs">Shaded 2-Wheeler Canopy</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-2">
+<div class="flex items-center gap-2 font-label-xs text-label-xs text-outline">
+<span class="material-symbols-outlined text-sm text-tertiary">warning</span>
+<span>Expected full within 25 minutes (Rush hour peak)</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright font-label-md text-label-md transition-colors" onclick="alert('Flat rate: ₹20/hr. No surge fees apply under MBMC code.')">
+              Tariff Details
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-white font-label-md text-label-md hover:bg-blue-600 transition-colors flex items-center gap-1.5 shadow-sm" onclick="alert('Navigating to Kanakia Cinemax Parking...')">
+<span class="material-symbols-outlined text-base">near_me</span>
+<span>Navigate</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Bhayandar East Transit Hub Lot -->
+<article class="facility-card p-space-lg bg-surface-container rounded-xl shadow-md flex flex-col gap-space-md relative overflow-hidden group hover:bg-surface-container-high transition-all" data-type="mlcp ev two-wheeler">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<div class="p-3 rounded-xl bg-surface-container-lowest text-secondary">
+<span class="material-symbols-outlined text-2xl">hub</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Bhayandar East Municipal Market &amp; Transit Hub Lot</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary/15 text-secondary font-label-xs text-label-xs font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Ample Capacity
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Station Perimeter Road, Ward 1 · Geofence ID: HUB-01E</p>
+</div>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-headline-sm text-headline-sm font-bold text-secondary">112</span>
+<span class="font-label-md text-label-md text-outline">/ 320 available</span>
+</div>
+</div>
+<!-- Occupancy Bar -->
+<div class="space-y-1.5 bg-surface-container-lowest p-3 rounded-xl">
+<div class="flex justify-between items-center font-label-xs text-label-xs">
+<span class="text-outline">Occupancy Rate: 208 / 320 Occupied</span>
+<span class="text-secondary font-semibold">65.0% Capacity</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<!-- Tariff Details & Amenities -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-1">
+<div class="flex flex-col gap-1 p-2.5 bg-surface-container-low rounded-lg">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Regulated Tariffs</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">4-Wheelers: ₹20 / hr · Monthly Pass ₹1,800</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">2-Wheelers: ₹10 / hr · Monthly Pass ₹650</p>
+</div>
+<div class="flex flex-col gap-1 p-2.5 bg-surface-container-low rounded-lg">
+<span class="font-label-xs text-label-xs text-outline uppercase font-semibold">Special Equipment</span>
+<div class="flex flex-wrap gap-1.5 mt-0.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-xs text-label-xs">ANPR Recognition</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-xs text-label-xs font-semibold">8x EV Supercharger</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-xs text-label-xs">Security Marshall 24x7</span>
+</div>
+</div>
+</div>
+<!-- Action Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-2">
+<div class="flex items-center gap-2 font-label-xs text-label-xs text-secondary">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Multi-modal connectivity: Direct foot-over bridge to Railway Platform 1</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-bright font-label-md text-label-md transition-colors" onclick="alert('Transit Hub details: ANPR automated barrier scans license plate for paperless billing.')">
+              View Tariff Matrix
+            </button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-white font-label-md text-label-md hover:bg-blue-600 transition-colors flex items-center gap-1.5 shadow-sm" onclick="alert('Navigating to Bhayandar East Transit Hub Lot...')">
+<span class="material-symbols-outlined text-base">near_me</span>
+<span>Navigate</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4: Maxus Mall Vicinity Parking -->
+<article class="facility-card p-space-lg bg-surface-container rounded-xl shadow-md flex flex-col gap-space-md relative overflow-hidden group hover:bg-surface-container-high transition-all" data-type="two-wheeler">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<div class="p-3 rounded-xl bg-surface-container-lowest text-error">
+<span class="material-symbols-outlined text-2xl">error_outline</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Maxus Mall Vicinity Municipal Public Parking</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-error-container/30 text-error font-label-xs text-label-xs font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+                  Congestion High (93% Occupied)
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">150 Feet Road, Bhayandar West, Ward 5 · Geofence ID: SUR-05M</p>
+</div>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-headline-sm text-headline-sm font-bold text-error">4</span>
+<span class="font-label-md text-label-md text-outline">/ 60 available</span>
+</div>
+</div>
+<!-- Occupancy Bar -->
+<div class="space-y-1.5 bg-surface-container-lowest p-3 rounded-xl">
+<div class="flex justify-between items-center font-label-xs text-label-xs">
+<span class="text-outline">Occupancy Rate: 56 / 60 Occupied</span>
+<span class="text-error font-semibold">93.3% Capacity</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 93.3%"></div>
+</div>
+</div>
+<!-- Diversion suggestion banner -->
+<div class="p-3 rounded-lg bg-error-container/20 border-none flex items-start gap-3">
+<span class="material-symbols-outlined text-error text-xl shrink-0 mt-0.5">alt_route</span>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-error font-semibold">Diversion Advisory Active</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              High queue delay (&gt;15 min). Recommended diversion to <strong>Netaji Subhash Chandra Ground Facility</strong> (420m away, 48 spots free).
+            </p>
+</div>
+<button class="px-3 py-1 bg-surface-container text-primary font-label-xs text-label-xs rounded-lg hover:bg-surface-bright shrink-0" onclick="alert('Rerouting to Netaji Subhash Chandra Ground Facility...')">
+            Reroute
+          </button>
+</div>
+<!-- Action Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-2">
+<div class="flex items-center gap-2 font-label-xs text-label-xs text-outline">
+<span class="material-symbols-outlined text-sm">local_gas_station</span>
+<span>Standard municipal rates apply: ₹20/hr 4-wheelers</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-bright transition-colors" onclick="alert('Viewing telemetry log for Maxus Mall Lot.')">
+              View Status
+            </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Right Column: Policy, Telemetry Pilot & EV Widgets (4 Columns) -->
+<aside class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Simulated Telemetry Notice Card -->
+<div class="p-space-lg bg-surface-container-low rounded-xl shadow-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">satellite_alt</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">IoT Sensor Stream</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-label-xs text-label-xs font-semibold">Active Mesh</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          In-ground geomagnetic magnetometer nodes relay bay statuses every 30 seconds to the MBMC Central Mobility Server.
+        </p>
+<div class="flex items-center justify-between pt-2 text-outline font-label-xs text-label-xs">
+<span>Latency: 142ms</span>
+<span class="text-secondary font-semibold">Packet Loss: 0.02%</span>
+</div>
+</div>
+<!-- Civic Parking Bylaws Safeguard Box -->
+<div class="p-space-lg bg-surface-container rounded-xl shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-xl">gavel</span>
+<span class="font-title-md text-title-md font-bold">Authorized Civic Policy</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Know your rights under Mira-Bhayandar Municipal Parking Code:
+        </p>
+<ul class="flex flex-col gap-2 mt-1">
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Digital Receipts Mandated:</strong> Physical cash requires printed QR receipt.</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Anti-Towing Safeguard:</strong> Vehicles properly slotted in marked bays cannot be towed.</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>Zero Night Surcharge:</strong> Standard flat hourly rates apply round-the-clock.</span>
+</li>
+<li class="flex items-start gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">check_circle</span>
+<span><strong>15-Minute Grace:</strong> Free pickup/drop within 15 minutes of entry.</span>
+</li>
+</ul>
+</div>
+<!-- EV Fast-Charge Grid Widget -->
+<div class="p-space-lg bg-surface-container rounded-xl shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-xl">battery_charging_full</span>
+<span class="font-title-md text-title-md font-bold">High-Speed Civic EV</span>
+</div>
+<span class="font-label-xs text-label-xs text-secondary font-semibold">80% Ready</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Public-private charging network in collaboration with MSEDCL. Flat civic energy rate of ₹14/kWh.
+        </p>
+<!-- Mini Charge Stations list -->
+<div class="flex flex-col gap-2 mt-2">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high/60">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Mira Rd West MLCP (G-Floor)</span>
+<span class="font-label-xs text-label-xs text-outline">6x 60kW DC Guns</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary font-label-xs text-label-xs font-bold">4 FREE</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high/60">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Bhayandar East Hub</span>
+<span class="font-label-xs text-label-xs text-outline">8x 120kW Super Guns</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary/10 text-secondary font-label-xs text-label-xs font-bold">7 FREE</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high/60">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Seven Square Sector Lot</span>
+<span class="font-label-xs text-label-xs text-outline">4x 30kW AC Guns</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary/10 text-tertiary font-label-xs text-label-xs font-bold">1 FREE</span>
+</div>
+</div>
+<button class="w-full mt-2 py-2 rounded-xl bg-surface-container-high hover:bg-surface-bright text-primary font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1.5" onclick="alert('Opening Civic EV Booking portal: Reserve slot up to 20 minutes in advance.')">
+<span class="material-symbols-outlined text-base">bolt</span>
+<span>Reserve Charging Gun</span>
+</button>
+</div>
+<!-- Report Overcharging or Fraud Banner -->
+<div class="p-space-lg bg-error-container/20 rounded-xl shadow-md flex flex-col gap-space-sm relative">
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-2xl">campaign</span>
+<span class="font-title-md text-title-md font-bold">Report Unauthorized Overcharging</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          If an operator demands cash without a valid computerized civic QR ticket, report immediately with bay location.
+        </p>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">Helpline: 1800-22-3844</span>
+<button class="px-3 py-1.5 rounded-lg bg-error text-on-error font-label-md text-label-md font-semibold hover:opacity-90 transition-opacity" onclick="alert('Opening Overcharging Vigilance Complaint Form...')">
+            File Report
+          </button>
+</div>
+</div>
+</aside>
+</div>
+<!-- Interactive Zone Map Preview -->
+<section class="p-space-lg bg-surface-container rounded-xl shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3">
+<div class="p-2.5 rounded-xl bg-surface-container-lowest text-primary">
+<span class="material-symbols-outlined text-2xl">map</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-bold">Spatial Smart Bay GIS Corridors</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Active coordinate distribution of multi-level garages and street surface sensors.</p>
+</div>
+</div>
+<!-- Map Filter Pills -->
+<div class="flex items-center gap-2 flex-wrap">
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface font-label-xs text-label-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+          &gt;20% Free (Normal)
+        </span>
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface font-label-xs text-label-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+          &lt;15% Free (Filling)
+        </span>
+<span class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface font-label-xs text-label-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+          &lt;5% Free (Congested)
+        </span>
+</div>
+</div>
+<!-- Map Viewport -->
+<div class="relative w-full h-80 rounded-xl overflow-hidden shadow-inner">
+<div class="w-full h-full bg-cover bg-center" data-location="Mira Bhayandar Municipal Corporation, Maharashtra, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBg8g-tszjmhj1mUNrsoVEcdteh9csnwuI1HgRunPaGb8cSLASc6DCAOvdcUUW8Wuq7XyQf40KAlxGAjStADKjTrUoW7GGsa-xs5a_HddLd_uu9GxYl1Jx1f1_jW6MdEpzI5wtVLy6R_k7Ob6fmSlk9krJ8VjQuw_eWGpDW1t5gcq_0Vil11qQiuiUFO3b--muVvlzNL-ms5bciK08pDDp6IiOOKK1CTSxBt0SeY44JXhT1z7QAuuBxfQ')"></div>
+<!-- Overlay Telemetry Controls -->
+<div class="absolute top-4 left-4 p-3 bg-surface/90 backdrop-blur-md rounded-xl shadow-lg flex flex-col gap-1 max-w-xs">
+<span class="font-label-xs text-label-xs uppercase text-primary font-bold">Interactive Telemetry Overlay</span>
+<p class="font-body-sm text-body-sm text-on-surface">Click any pinpoint coordinate on the GIS screen to inspect spot-level magnetometer states.</p>
+</div>
+<div class="absolute bottom-4 right-4 flex items-center gap-2">
+<button class="p-2.5 rounded-xl bg-surface/90 backdrop-blur-md text-on-surface hover:text-primary transition-colors shadow-lg" onclick="alert('Zoom In')" title="Zoom In">
+<span class="material-symbols-outlined text-lg">zoom_in</span>
+</button>
+<button class="p-2.5 rounded-xl bg-surface/90 backdrop-blur-md text-on-surface hover:text-primary transition-colors shadow-lg" onclick="alert('Zoom Out')" title="Zoom Out">
+<span class="material-symbols-outlined text-lg">zoom_out</span>
+</button>
+<button class="px-3.5 py-2 rounded-xl bg-primary-container text-white font-label-md text-label-md flex items-center gap-1.5 shadow-lg hover:bg-blue-600 transition-colors" onclick="alert('Opening Fullscreen Dynamic Geospatial Sensor Map...')">
+<span class="material-symbols-outlined text-base">fullscreen</span>
+<span>Expand GIS Layer</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript -->
+<script>
+    (function () {
+      // Sync sensor button simulation
+      const syncBtn = document.getElementById('syncSensorsBtn');
+      const liveVacantCount = document.getElementById('liveVacantCount');
+      if (syncBtn && liveVacantCount) {
+        syncBtn.addEventListener('click', function () {
+          const originalText = syncBtn.innerHTML;
+          syncBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span><span>Syncing...</span>';
+          syncBtn.disabled = true;
+
+          setTimeout(() => {
+            // Simulated live fluctuation
+            const randomOffset = Math.floor(Math.random() * 9) - 4;
+            const updated = Math.max(380, Math.min(440, 412 + randomOffset));
+            liveVacantCount.textContent = updated;
+            syncBtn.innerHTML = originalText;
+            syncBtn.disabled = false;
+          }, 800);
+        });
+      }
+
+      // Facility Category Filtering
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const facilityCards = document.querySelectorAll('.facility-card');
+
+      filterTabs.forEach((tab) => {
+        tab.addEventListener('click', function () {
+          filterTabs.forEach((t) => {
+            t.classList.remove('bg-primary-container', 'text-white', 'shadow-sm');
+            t.classList.add('text-on-surface-variant');
+          });
+          this.classList.add('bg-primary-container', 'text-white', 'shadow-sm');
+          this.classList.remove('text-on-surface-variant');
+
+          const category = this.getAttribute('data-category');
+          facilityCards.forEach((card) => {
+            const types = card.getAttribute('data-type') || '';
+            if (category === 'all' || types.includes(category)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Search bar filter simulation
+      const searchInput = document.getElementById('facilityFilterInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', function (e) {
+          const term = e.target.value.toLowerCase();
+          facilityCards.forEach((card) => {
+            const text = card.innerText.toLowerCase();
+            if (text.includes(term)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>

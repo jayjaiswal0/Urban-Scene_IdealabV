@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-fixed-variant":"#005236","inverse-on-surface":"#283044","on-surface-variant":"#c2c6d6","surface-bright":"#31394d","on-secondary-fixed":"#002113","outline":"#8c909f","secondary":"#4edea3","primary-fixed-dim":"#adc6ff","on-primary":"#002e6a","on-tertiary-fixed":"#2a1700","surface-variant":"#2d3449","surface-tint":"#adc6ff","primary":"#adc6ff","secondary-fixed":"#6ffbbe","surface-container-lowest":"#060e20","surface-container-highest":"#2d3449","secondary-fixed-dim":"#4edea3","surface-container-low":"#131b2e","secondary-container":"#00a572","on-tertiary-fixed-variant":"#653e00","surface":"#0b1326","tertiary":"#ffb95f","inverse-primary":"#005ac2","surface-container":"#171f33","inverse-surface":"#dae2fd","tertiary-container":"#ca8100","on-primary-fixed":"#001a42","primary-container":"#4d8eff","surface-container-high":"#222a3d","on-background":"#dae2fd","on-surface":"#dae2fd","on-tertiary-container":"#3e2400","primary-fixed":"#d8e2ff","on-primary-fixed-variant":"#004395","tertiary-fixed-dim":"#ffb95f","on-tertiary":"#472a00","on-error":"#690005","error":"#ffb4ab","outline-variant":"#424754","on-secondary-container":"#00311f","error-container":"#93000a","on-primary-container":"#00285d","tertiary-fixed":"#ffddb8","on-secondary":"#003824","background":"#0b1326","on-error-container":"#ffdad6","surface-dim":"#0b1326"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"gutter-desktop":"1.5rem","margin-desktop":"2rem","space-md":"1rem","space-xl":"2.5rem",margin:"1rem","space-lg":"1.5rem","space-xs":"0.25rem",gutter:"1rem","space-sm":"0.5rem"},fontFamily:{"title-md":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"label-xs":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"]},fontSize:{"title-md":["16px",{lineHeight:"24px",letterSpacing:"0.005em",fontWeight:"600"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-xl-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-xl":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-xs":["10px",{lineHeight:"14px",letterSpacing:"0.06em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"0",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between overflow-y-auto"><div class="p-space-lg flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded bg-primary-container flex items-center justify-center text-on-primary-container shadow-md"><span class="material-symbols-outlined text-[20px]">hub</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">UMCP</span><span class="font-label-xs text-label-xs uppercase tracking-wider text-primary mt-space-xs">Operations Console</span></div></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><div class="px-space-sm pt-space-sm pb-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">Public &amp; Common</div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="public-portal" href="#"><span class="material-symbols-outlined text-[18px]">public</span><span class="font-body-md text-body-md">Public Portal</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mobility-map" href="#"><span class="material-symbols-outlined text-[18px]">map</span><span class="font-body-md text-body-md">Mobility Map</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="parking-directory" href="#"><span class="material-symbols-outlined text-[18px]">local_parking</span><span class="font-body-md text-body-md">Parking Directory</span></a><div class="px-space-sm pt-space-md pb-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">Citizen Portal</div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="citizen-overview" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Citizen Overview</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="report-an-issue" href="#"><span class="material-symbols-outlined text-[18px]">report_problem</span><span class="font-body-md text-body-md">Report an Issue</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="my-reports" href="#"><span class="material-symbols-outlined text-[18px]">assignment</span><span class="font-body-md text-body-md">My Reports</span></a><div class="px-space-sm pt-space-md pb-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">Authority Portals</div><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm" data-path="municipal-works" href="#"><span class="material-symbols-outlined text-[18px]">engineering</span><span class="font-body-md text-body-md">Municipal Works</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="traffic-coordination" href="#"><span class="material-symbols-outlined text-[18px]">traffic</span><span class="font-body-md text-body-md">Traffic Coordination</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="incident-verification" href="#"><span class="material-symbols-outlined text-[18px]">verified</span><span class="font-body-md text-body-md">Incident Verification</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="emergency-services" href="#"><span class="material-symbols-outlined text-[18px]">e911_emergency</span><span class="font-body-md text-body-md">Emergency Services</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics" href="#"><span class="material-symbols-outlined text-[18px]">insights</span><span class="font-body-md text-body-md">Analytics</span></a></nav></div><div class="p-space-lg flex flex-col gap-space-xs bg-surface-container-lowest"><div class="px-space-sm pb-space-xs font-label-xs text-label-xs uppercase tracking-wider text-outline">Account</div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings-security" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-body-md text-body-md">Settings &amp; Security</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-error transition-colors" data-path="sign-out" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span class="font-body-md text-body-md">Sign Out</span></a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center gap-space-sm w-full bg-surface-container-low px-space-md py-1.5 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined text-[20px] text-outline">search</span><input class="bg-transparent border-0 outline-none w-full text-on-surface placeholder:text-outline font-body-md text-body-md" placeholder="Search telemetry nodes, alerts, route corridors..." type="text"/></div></div><div class="flex items-center gap-space-lg"><div class="hidden lg:flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-high text-secondary"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">System Live</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary"></span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="text-right hidden sm:block"><div class="font-title-md text-body-md font-semibold text-on-surface leading-tight">Aditya Patil</div><div class="font-label-xs text-label-xs text-primary">Municipal Authority</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen w-full px-space-lg py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- Top Context Header & Actions -->
+<div class="flex flex-col xl:flex-row xl:items-start justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-4xl min-w-0">
+<!-- Breadcrumbs & Status Tags -->
+<div class="flex flex-wrap items-center gap-space-sm text-outline font-label-md text-label-md">
+<span class="hover:text-on-surface transition-colors cursor-pointer">Authority</span>
+<span>/</span>
+<span class="hover:text-on-surface transition-colors cursor-pointer">Municipal Works</span>
+<span>/</span>
+<span class="hover:text-on-surface transition-colors cursor-pointer">Tasks</span>
+<span>/</span>
+<span class="text-primary font-semibold">Task #TSK-2024-0418</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm mt-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-tertiary/15 text-tertiary font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          In Progress (Live SLA: 3h 15m remaining)
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error/15 text-error font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+          Priority: High
+        </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary/15 text-primary font-label-md text-label-md font-medium">
+<span class="material-symbols-outlined text-[14px]">domain</span>
+          Ward 7 (Mira Road Central)
+        </span>
+</div>
+<!-- Main Title & Location Summary -->
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mt-space-xs">
+        Task #TSK-2024-0418: Deep Asphalt Resurfacing &amp; Crater Remediation
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">pin_drop</span>
+<span>Station Road Junction outer carriage, Mira Bhayandar, Western Express Corridor feed. Initiated for arterial bus route stabilization.</span>
+</p>
+</div>
+<!-- Quick Action Toolset -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0 self-start mt-space-sm xl:mt-0">
+<button class="flex items-center gap-space-xs px-3 py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-title-md text-body-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">group_add</span>
+<span>Reassign Squad</span>
+</button>
+<button class="flex items-center gap-space-xs px-3 py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-title-md text-body-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">inventory</span>
+<span>Log Material Usage</span>
+</button>
+<button class="flex items-center gap-space-xs px-3 py-2 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-title-md text-body-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Update Status</span>
+</button>
+<button class="flex items-center gap-space-xs px-4 py-2 rounded-lg bg-primary-container text-on-primary-container hover:brightness-110 font-title-md text-body-md shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Mark Completed &amp; Sign-off</span>
+</button>
+</div>
+</div>
+<!-- Primary 12-Column Operations Viewport -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg w-full items-start">
+<!-- Left Column: Operations, Machinery, Timeline & Feed (8 Cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg w-full min-w-0">
+<!-- Associated Incident Context & Citizen Report -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm bg-surface-container/30 px-space-md py-space-sm rounded-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">assignment_turned_in</span>
+<span class="font-title-md text-title-md text-on-surface">Associated Incident &amp; Citizen Dossier</span>
+</div>
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md">
+<span>Linked Ticket:</span>
+<span class="font-mono bg-surface-container-lowest px-2 py-0.5 rounded text-on-surface font-semibold tracking-wide">#MBMC-2024-884</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<div class="md:col-span-4 rounded-lg overflow-hidden bg-surface-container-lowest relative aspect-video md:aspect-[4/3] group shadow-inner">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="High contrast photograph of severe asphalt depression and pothole crater along an urban Indian asphalt road during daylight with municipal survey spray markings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFciYJla7Twrl7Bva3B_0F0GsMUDn5M_3l71uw36JMSX-OBC0O3lIkmxUvItwXYszfCm27tc1rWgDz3xvcxNxPiacJ6h5nS6lRazmet3S3JeeG_2giU6Xq_6EvdT1gj2KXDMtrB6gARkyCjmYAYLUXkdbB1i0UyfaWJZmAhnsWJgZSfZDWrmHgciNIu0IuoTCO88x5Dur8-ALu0RtmuJ0G0oLbmOD0ZNe8WoB75OgCl_YUkfsq4DRH2A"/>
+<div class="absolute bottom-2 left-2 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded text-on-surface font-label-xs text-label-xs uppercase">
+              Citizen Photo Attachment
+            </div>
+</div>
+<div class="md:col-span-8 flex flex-col gap-space-sm">
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="text-outline font-label-xs text-label-xs uppercase">Verified Telemetry Coordinates</span>
+<p class="font-title-md text-body-md text-on-surface font-mono mt-0.5">19.2812° N, 72.8561° E</p>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="text-outline font-label-xs text-label-xs uppercase">Road Classification</span>
+<p class="font-title-md text-body-md text-on-surface mt-0.5 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                  Major Arterial (Corridor A)
+                </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest/70 p-space-sm rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between text-outline font-label-xs text-label-xs uppercase">
+<span>Citizen Impact Statement</span>
+<span class="text-on-surface-variant font-mono">Reported: 08:42 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+                “Deep trench-like depression across the mid-lane right outside the city transit depot exit. Buses are violently bottoming out and swerving into oncoming two-wheeler traffic.”
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Field Squad Operations & Machinery Allocation -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">engineering</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Field Squad Operations &amp; Machinery</h2>
+<span class="font-label-xs text-label-xs text-outline uppercase tracking-wider">Zonal Rapid Remediation Fleet</span>
+</div>
+</div>
+<span class="font-label-md text-label-md bg-secondary/15 text-secondary px-2.5 py-1 rounded-full font-semibold">
+            Active On-Premise
+          </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Personnel Breakdown -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between gap-space-sm">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-title-md text-body-md text-on-surface font-semibold">Squad 01 (Asphalt Division)</span>
+<span class="font-label-xs text-label-xs font-mono text-primary bg-primary/10 px-1.5 py-0.5 rounded">DIV-RD-01</span>
+</div>
+<div class="mt-space-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-bold">
+                  RS
+                </div>
+<div>
+<p class="font-title-md text-body-md text-on-surface font-semibold">R. K. Shinde</p>
+<p class="font-label-xs text-label-xs text-outline">Lead Site Foreman • +91 98765 24119</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md pt-space-xs text-on-surface-variant font-body-md text-body-md bg-surface-container-lowest/50 px-space-sm py-1.5 rounded">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">groups</span>
+<span class="font-semibold text-on-surface">6</span> Technicians
+              </div>
+<span class="text-outline">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">traffic</span>
+<span class="font-semibold text-on-surface">2</span> Marshals (Traffic Safety)
+              </div>
+</div>
+</div>
+<!-- Heavy Machinery & Materials -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col justify-between gap-space-sm">
+<span class="text-outline font-label-xs text-label-xs uppercase tracking-wider">Dispatched Plant &amp; Supplies</span>
+<div class="flex flex-wrap gap-space-xs">
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-2.5 py-1.5 rounded-lg text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[16px]">forklift</span>
+<span>Vibratory Roller #VR-04</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-2.5 py-1.5 rounded-lg text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary text-[16px]">local_shipping</span>
+<span>Bitumen Sprayer #BS-02</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-lowest px-2.5 py-1.5 rounded-lg text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">scale</span>
+<span>VG-30 Hot Bitumen Mix (1.8 MT)</span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-outline font-label-xs text-label-xs">Depot Dispatch Clearance: 09:12 AM IST</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Milestones & Progress Flow (Step 4 of 5 Active) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">alt_route</span>
+<h2 class="font-title-md text-title-md text-on-surface">Statutory Execution Milestones</h2>
+</div>
+<span class="font-label-md text-label-md bg-surface-container px-2.5 py-1 rounded text-primary font-semibold">
+            Stage 4 of 5 (Active Phase)
+          </span>
+</div>
+<div class="flex flex-col gap-space-md relative pl-4 mt-space-xs">
+<!-- Timeline Vertical Track -->
+<div class="absolute left-7 top-4 bottom-4 w-0.5 bg-surface-variant"></div>
+<!-- Step 1 -->
+<div class="flex items-start gap-space-md relative">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 shadow-md">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 bg-surface-container p-space-sm rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div>
+<p class="font-title-md text-body-md text-on-surface font-semibold">1. Work Order Generated &amp; Zonal Routing</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Automated task routing triggered by transit telemetry alert.</p>
+</div>
+<span class="font-mono font-label-xs text-label-xs text-secondary shrink-0">08:55 AM • Logged</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-space-md relative">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 shadow-md">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 bg-surface-container p-space-sm rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div>
+<p class="font-title-md text-body-md text-on-surface font-semibold">2. On-Site Optical Inspection Verification</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Foreman logged 1.4m x 2.2m cavity depth profile.</p>
+</div>
+<span class="font-mono font-label-xs text-label-xs text-secondary shrink-0">09:34 AM • Logged</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-space-md relative">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 shadow-md">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 bg-surface-container p-space-sm rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<div>
+<p class="font-title-md text-body-md text-on-surface font-semibold">3. Cold-Milling &amp; Perimeter Cutting</p>
+<p class="font-label-xs text-label-xs text-on-surface-variant">Edges leveled and prepared with emulsion tack coat.</p>
+</div>
+<span class="font-mono font-label-xs text-label-xs text-secondary shrink-0">10:45 AM • Logged</span>
+</div>
+</div>
+<!-- Step 4 (Current) -->
+<div class="flex items-start gap-space-md relative">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 z-10 shadow-lg ring-4 ring-primary/20">
+<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span>
+</div>
+<div class="flex-1 bg-surface-container-high p-space-md rounded-lg flex flex-col gap-space-xs shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<p class="font-title-md text-body-md text-primary font-bold">4. Hot Bitumen Compaction Underway (Active Now)</p>
+<span class="font-mono font-label-xs text-label-xs text-primary bg-primary/10 px-2 py-0.5 rounded">Running Phase • Pass 3 of 4</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">Vibratory roller compaction of grade VG-30 dense mix. Surface temperature verified at 138°C.</p>
+<div class="w-full bg-surface-container-lowest h-2 rounded-full overflow-hidden mt-1">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 75%;"></div>
+</div>
+</div>
+</div>
+<!-- Step 5 (Upcoming) -->
+<div class="flex items-start gap-space-md relative">
+<div class="w-7 h-7 rounded-full bg-surface-variant text-outline flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-[16px]">pending</span>
+</div>
+<div class="flex-1 bg-surface-container/60 p-space-sm rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-1 opacity-75">
+<div>
+<p class="font-title-md text-body-md text-on-surface">5. Quality Control Audit &amp; Citizen Sign-off</p>
+<p class="font-label-xs text-label-xs text-outline">Surface roughness index test and road reopening clearance.</p>
+</div>
+<span class="font-mono font-label-xs text-label-xs text-outline shrink-0">Est. ~01:30 PM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Foreman Field Updates & Remarks Thread -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">forum</span>
+<h2 class="font-title-md text-title-md text-on-surface">Foreman Field Updates &amp; Site Notes</h2>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-mono">LIVE DISPATCH FEED</span>
+</div>
+<div class="flex flex-col gap-space-sm" id="notesFeed">
+<!-- Feed Item 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between text-label-xs font-label-xs">
+<span class="text-secondary font-semibold">Foreman R. K. Shinde</span>
+<span class="text-outline font-mono">11:15 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+              Initial asphalt batch laid. Tack coat bonded completely. Ambient humidity low, curing process progressing at optimal rate. Single lane closure retained with safe bypass corridor for heavy vehicles.
+            </p>
+</div>
+<!-- Feed Item 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between text-label-xs font-label-xs">
+<span class="text-tertiary font-semibold">Marshal S. More (Traffic Safety)</span>
+<span class="text-outline font-mono">10:20 AM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+              Diverted Route 14B municipal city buses to the inner bypass. Minor vehicle queue of 60 meters dissipates quickly; local traffic control wardens deployed at northern junction feeder.
+            </p>
+</div>
+</div>
+<!-- Add Remark Form -->
+<div class="flex flex-col sm:flex-row gap-space-sm mt-space-xs">
+<input class="flex-1 bg-surface-container px-space-md py-2.5 rounded-lg text-on-surface font-body-md text-body-md placeholder:text-outline outline-none focus:bg-surface-container-high transition-colors" id="remarkInput" placeholder="Type supervisor instruction or inspection remark..." type="text"/>
+<button class="px-4 py-2.5 rounded-lg bg-surface-variant hover:bg-surface-bright text-on-surface font-title-md text-body-md flex items-center justify-center gap-1.5 transition-colors shrink-0" onclick="addRemark()" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Post Remark</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: SLA Ring, Visual Audit & Procurement (4 Cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg w-full">
+<!-- Statutory SLA Compliance Widget with Progress Ring -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface">Statutory SLA Compliance</span>
+<span class="material-symbols-outlined text-outline text-[20px]">timer</span>
+</div>
+<div class="flex items-center justify-center gap-space-lg py-space-sm">
+<!-- Circular Progress Ring (62% Elapsed) -->
+<div class="relative w-28 h-28 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-variant" cx="50" cy="50" fill="none" r="42" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="50" cy="50" fill="none" r="42" stroke="currentColor" stroke-dasharray="263.89" stroke-dashoffset="100.27" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">62%</span>
+<span class="font-label-xs text-label-xs text-outline uppercase">Elapsed</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-secondary font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>On Track for SLA</span>
+</div>
+<p class="font-label-xs text-label-xs text-outline">Resolution window: 8 Hours</p>
+<p class="font-title-md text-body-md text-on-surface font-mono font-bold mt-1">3h 15m remaining</p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-space-xs pt-space-xs">
+<div class="bg-surface-container p-space-sm rounded-lg flex items-center justify-between">
+<span class="text-outline font-label-xs text-label-xs uppercase">First Response Velocity</span>
+<span class="font-mono font-semibold text-on-surface text-body-md">32 mins</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex items-center justify-between">
+<span class="text-outline font-label-xs text-label-xs uppercase">Target Clear Time</span>
+<span class="font-mono font-semibold text-primary text-body-md">Today, 02:30 PM</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex items-center justify-between">
+<span class="text-outline font-label-xs text-label-xs uppercase">Zonal Auditor</span>
+<span class="font-semibold text-on-surface text-body-md">Ward 7 Inspectorate</span>
+</div>
+</div>
+</div>
+<!-- Site Visual Audit (Photo Verification) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">photo_camera</span>
+<span class="font-title-md text-title-md text-on-surface">Site Visual Audit</span>
+</div>
+<span class="font-label-xs text-label-xs text-outline">2 Logged Captures</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Photo 1: Pre-Work -->
+<div class="flex flex-col gap-1.5">
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-lowest relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Initial site audit photograph showing deep damaged pothole asphalt on metropolitan roadway before civil maintenance intervention." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDccFYH4oTgrf3nuqlk1G8d3KAouaOyuNSYAukXRYRaFrhW95Sq94EDigSpjnl7TTs1jFQqlpQLzXCj39ZVwPgc-ANZdpdynefNdxnBez6L5_EZRbg5gAJvzG8YsumnaEceRyevl35gNw_SMhsYvzrwhTkwAhpI5tSufOQkhM1gq-8iuG055w030k6Hs4XSpviDT16xUWM_NlGnRZ4XSULWdO-84rcBVlW4YptOGzuF3WiNF_yLZOpqQQ"/>
+<div class="absolute top-1.5 left-1.5 bg-surface-container-lowest/80 backdrop-blur px-1.5 py-0.5 rounded text-[10px] text-on-surface font-mono">
+                09:35 AM
+              </div>
+</div>
+<span class="font-label-xs text-label-xs text-on-surface-variant text-center font-medium">Pre-Work State</span>
+</div>
+<!-- Photo 2: In-Progress -->
+<div class="flex flex-col gap-1.5">
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-container-lowest relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Urban road repair operations photograph showing road rollers and fresh dark steaming bitumen being applied by municipal workers in high-visibility vests." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMrZPR0YiPwud5zsFBQF5hcVeNRlWT-Ob1Q2507eoevoECiolQWih6ix5X69BDuZqRi52JQxk9-0fexGhoAoah9_F8HaE42X-kCH7NEmlIo6ZKMF3iGHMRkt8JwnzgK7pNiCc97U0CS_sEM0WNvYup1-URav6RA5kXHBCwgRkCIC2S-05tSX0eZdpWCvwRKJEKqGnnnOyJraW0z8NOJbZ19bmM4Z_1hSfNCJsESDewTkrmym6KvQgeFQ"/>
+<div class="absolute top-1.5 left-1.5 bg-surface-container-lowest/80 backdrop-blur px-1.5 py-0.5 rounded text-[10px] text-secondary font-mono">
+                11:10 AM
+              </div>
+</div>
+<span class="font-label-xs text-label-xs text-primary text-center font-medium">In-Progress Compaction</span>
+</div>
+</div>
+<button class="w-full py-2.5 px-3 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-title-md text-body-md flex items-center justify-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+<span>Upload Post-Work Capture</span>
+</button>
+</div>
+<!-- Budget, Allocation & Location Geometry -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-md flex flex-col gap-space-md">
+<span class="font-title-md text-title-md text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">payments</span>
+          Budget &amp; Procurement Code
+        </span>
+<div class="flex flex-col gap-space-xs">
+<div class="p-space-sm bg-surface-container rounded-lg flex items-center justify-between">
+<span class="text-outline font-label-xs text-label-xs uppercase">Budget Head</span>
+<span class="font-mono font-semibold text-on-surface text-body-md">MBMC-ROADS-2024-Q3</span>
+</div>
+<div class="p-space-sm bg-surface-container rounded-lg flex items-center justify-between">
+<span class="text-outline font-label-xs text-label-xs uppercase">Allocated Budget Cap</span>
+<span class="font-mono font-bold text-secondary text-body-md">$1,420.00</span>
+</div>
+<div class="p-space-sm bg-surface-container rounded-lg flex items-center justify-between">
+<span class="text-outline font-label-xs text-label-xs uppercase">Contractor Vendor</span>
+<span class="font-semibold text-on-surface text-body-md">Metro InfraWorks Ltd</span>
+</div>
+</div>
+<!-- Geographic Pin Location View -->
+<div class="flex flex-col gap-1.5 mt-space-xs">
+<div class="flex items-center justify-between text-outline font-label-xs text-label-xs uppercase">
+<span>Location Geospatial Node</span>
+<span class="text-primary font-mono">Sector 7-C</span>
+</div>
+<div class="w-full h-36 bg-cover bg-center rounded-lg overflow-hidden shadow-inner relative flex items-end p-space-sm" data-location="Station Road Junction, Mira Bhayandar, Maharashtra" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqhFBoCbhqhkoImPQ7elfSKG9yDkb0DOomMuZDLhcdal4Ne9VuIEXrDEOKTiX_0BWqjGvGP3LAzxF8IAiddGXZ0UtaF8TsmVO4E8B0ZwttbGYjMjIpsENeMmnrTQdCLALVHT0zawmyI-imTBWXsfkRzm4r2thOQzCUGRQNcOqAx8LuCVs6lvmqrpNRc25Ofe70qs4lBS6QKmIiUwX_8HSrcEDtz7Pk5gS81durcwmV8NLyU0B01gfdOg')">
+<div class="bg-surface-container-lowest/85 backdrop-blur-md px-2.5 py-1 rounded text-on-surface font-label-xs text-label-xs flex items-center gap-1.5 shadow">
+<span class="material-symbols-outlined text-primary text-[14px]">my_location</span>
+<span>Station Rd Jn • Mira Bhayandar</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function addRemark() {
+    const input = document.getElementById('remarkInput');
+    const text = input ? input.value.trim() : '';
+    if (!text) return;
+
+    const feed = document.getElementById('notesFeed');
+    if (!feed) return;
+
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12;
+    const timeString = `${hours.toString().padStart(2, '0')}:${minutes} ${ampm}`;
+
+    const newNote = document.createElement('div');
+    newNote.className = 'p-space-sm rounded-lg bg-surface-container flex flex-col gap-1 border-l-2 border-primary animate-fade-in';
+    newNote.innerHTML = `
+      <div class="flex items-center justify-between text-label-xs font-label-xs">
+        <span class="text-primary font-semibold">Aditya Patil (Municipal Authority)</span>
+        <span class="text-outline font-mono">${timeString} (Just now)</span>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface">${escapeHtml(text)}</p>
+    `;
+
+    feed.prepend(newNote);
+    input.value = '';
+  }
+
+  function escapeHtml(string) {
+    const div = document.createElement('div');
+    div.innerText = string;
+    return div.innerHTML;
+  }
+</script></main></div></body></html>
