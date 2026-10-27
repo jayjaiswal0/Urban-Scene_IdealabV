@@ -16,6 +16,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
 import { useSocket } from '../../context/SocketContext';
 import api from '../../services/api';
+import BrandLogo from '../common/BrandLogo';
 
 export const Header = ({ onToggleSidebar }) => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -100,7 +101,7 @@ export const Header = ({ onToggleSidebar }) => {
   return (
     <header className="sticky top-0 z-40 w-full bg-white/90 dark:bg-[#131b2e]/90 backdrop-blur-md border-b border-slate-200 dark:border-white/10 transition-colors">
       <div className="flex items-center justify-between px-4 lg:px-6 h-16">
-        {/* Left: Mobile hamburger & Municipal brand */}
+        {/* Left: Mobile hamburger & Urban Scene Brand */}
         <div className="flex items-center gap-3">
           <button
             onClick={onToggleSidebar}
@@ -110,22 +111,15 @@ export const Header = ({ onToggleSidebar }) => {
             <Menu className="w-5 h-5" />
           </button>
 
-          <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-600/30">
-              <Layers className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-base tracking-tight text-slate-900 dark:text-white">
-                  UMCP
-                </span>
-                <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
-                  MBMC
-                </span>
-              </div>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-none hidden md:block">
-                Urban Mobility Coordination Platform
-              </p>
+          <Link to="/" className="flex items-center gap-3 group">
+            <BrandLogo variant="header" />
+            <div className="hidden xl:flex flex-col border-l border-slate-200 dark:border-white/10 pl-2.5">
+              <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest leading-none">
+                MBMC Civic Grid
+              </span>
+              <span className="text-[9px] text-slate-400 dark:text-slate-500 leading-tight mt-0.5">
+                Mira-Bhayandar Ward 14
+              </span>
             </div>
           </Link>
         </div>

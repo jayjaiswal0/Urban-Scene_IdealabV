@@ -14,6 +14,7 @@ import {
   Lock,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import AuthBackdrop from '../components/common/AuthBackdrop';
 
 export const LoginPage = () => {
   const [selectedRole, setSelectedRole] = useState('CITIZEN');
@@ -94,18 +95,11 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-120px)] flex items-center justify-center p-4 sm:p-6">
-      <div className="w-full max-w-md rounded-3xl bg-white dark:bg-[#131b2e] border border-slate-200 dark:border-white/10 shadow-2xl p-6 sm:p-8">
-        {/* Header */}
-        <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-600/30">
-            <Lock className="w-6 h-6" />
-          </div>
-          <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white">Sign In to UMCP</h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400">
-            Municipal Transit & Civil Incident Coordination Portal
-          </p>
-        </div>
+    <AuthBackdrop
+      maxWidth="max-w-md"
+      title="Sign In to Urban Scene"
+      subtitle="Know what’s moving &bull; Municipal Transit & Incident Coordination"
+    >
 
         {/* Role Selector Tabs */}
         <div className="mt-6">
@@ -288,8 +282,7 @@ export const LoginPage = () => {
             </Link>
           </div>
         </div>
-      </div>
-    </div>
+    </AuthBackdrop>
   );
 };
 

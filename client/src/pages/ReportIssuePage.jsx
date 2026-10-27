@@ -161,12 +161,17 @@ export const ReportIssuePage = () => {
     <div className="max-w-4xl mx-auto space-y-8 pb-12">
       {/* Page Title & Breadcrumb */}
       <div>
-        <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2">
-          <Link to="/citizen/dashboard" className="hover:underline">
-            Citizen Dashboard
-          </Link>
-          <span>/</span>
-          <span className="text-slate-800 dark:text-slate-200 font-semibold">Report an Issue</span>
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <Link to="/citizen/dashboard" className="hover:underline">
+              Citizen Dashboard
+            </Link>
+            <span>/</span>
+            <span className="text-slate-800 dark:text-slate-200 font-semibold">Report an Issue</span>
+          </div>
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/10 text-[10px] font-bold text-blue-600 dark:text-blue-400">
+            <span>Urban Scene &bull; Know what’s moving.</span>
+          </div>
         </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
           File Civic Hazard Report

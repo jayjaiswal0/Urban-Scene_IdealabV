@@ -18,6 +18,7 @@ import {
   BellRing,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import BrandLogo from '../common/BrandLogo';
 
 export const Sidebar = ({ isOpen, onClose }) => {
   const { user, isAuthenticated } = useAuth();
@@ -80,20 +81,17 @@ export const Sidebar = ({ isOpen, onClose }) => {
 
       {/* Sidebar Container */}
       <aside
-        className={`fixed top-0 bottom-0 left-0 z-50 w-64 bg-white dark:bg-[#0f172a] border-r border-slate-200 dark:border-white/10 flex flex-col transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 ${
+        className={`fixed top-0 bottom-0 left-0 z-50 w-64 bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-xl border-r border-slate-200 dark:border-white/10 flex flex-col transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Sidebar Header */}
-        <div className="flex items-center justify-between px-6 h-16 border-b border-slate-100 dark:border-white/10">
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-              Navigation Menu
-            </span>
-          </div>
+        <div className="flex items-center justify-between px-5 h-16 border-b border-slate-100 dark:border-white/10">
+          <BrandLogo variant="sidebar" />
           <button
             onClick={onClose}
             className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 lg:hidden"
+            aria-label="Close sidebar"
           >
             <X className="w-5 h-5" />
           </button>

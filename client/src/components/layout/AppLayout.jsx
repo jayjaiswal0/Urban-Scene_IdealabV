@@ -3,12 +3,14 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
+import AppBackground from '../common/AppBackground';
 
 export const AppLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8f9ff] dark:bg-[#0b1326] text-slate-900 dark:text-slate-100 transition-colors">
+    <div className="relative min-h-screen flex flex-col text-slate-900 dark:text-slate-100 transition-colors">
+      <AppBackground />
       <Header onToggleSidebar={() => setSidebarOpen((prev) => !prev)} />
 
       <div className="flex-1 flex overflow-hidden">

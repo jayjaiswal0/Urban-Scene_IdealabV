@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ShieldCheck, Eye, EyeOff, AlertCircle, CheckCircle2, ArrowRight, Lock } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import Modal from '../components/common/Modal';
+import AuthBackdrop from '../components/common/AuthBackdrop';
 
 export const RegisterPage = () => {
   const [formData, setFormData] = useState({
@@ -100,20 +101,12 @@ export const RegisterPage = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-120px)] flex items-center justify-center p-4 sm:p-6">
-      <div className="w-full max-w-lg rounded-3xl bg-white dark:bg-[#131b2e] border border-slate-200 dark:border-white/10 shadow-2xl p-6 sm:p-8">
-        {/* Header */}
-        <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-600/30">
-            <ShieldCheck className="w-6 h-6" />
-          </div>
-          <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white">
-            Create Citizen Account
-          </h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400">
-            Official registration with Mira-Bhayandar Municipal Corporation
-          </p>
-        </div>
+    <>
+      <AuthBackdrop
+        maxWidth="max-w-lg"
+        title="Create Urban Scene Citizen Account"
+        subtitle="Official civic registration with Mira-Bhayandar Municipal Corporation"
+      >
 
         {/* Error Alert */}
         {error && (
@@ -309,7 +302,7 @@ export const RegisterPage = () => {
             </Link>
           </p>
         </div>
-      </div>
+      </AuthBackdrop>
 
       {/* Simulated OTP Modal */}
       <Modal
@@ -346,7 +339,7 @@ export const RegisterPage = () => {
           </button>
         </form>
       </Modal>
-    </div>
+    </>
   );
 };
 

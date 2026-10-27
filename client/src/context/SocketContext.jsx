@@ -10,7 +10,8 @@ export const SocketProvider = ({ children }) => {
   const { user } = useAuth();
 
   useEffect(() => {
-    const socketUrl = window.location.hostname === 'localhost' ? 'http://localhost:5000' : '/';
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const socketUrl = isLocal ? `http://${window.location.hostname}:5000` : '/';
     const newSocket = io(socketUrl, {
       transports: ['websocket', 'polling'],
       reconnectionAttempts: 10,

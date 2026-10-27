@@ -38,9 +38,18 @@ const createCustomIcon = (type, severity) => {
   } else if (type === 'TRAFFIC_SIGNAL') {
     bgColor = '#f97316';
     iconHtml = '🚦';
-  } else if (type === 'PARKING') {
+  } else if (type === 'STREETLIGHT') {
+    bgColor = '#eab308';
+    iconHtml = '💡';
+  } else if (type === 'GARBAGE') {
     bgColor = '#10b981';
+    iconHtml = '🗑️';
+  } else if (type === 'PARKING') {
+    bgColor = '#3b82f6';
     iconHtml = '🅿️';
+  } else {
+    bgColor = severity === 'URGENT' ? '#ef4444' : '#6366f1';
+    iconHtml = '📍';
   }
 
   const isUrgent = severity === 'URGENT';
@@ -130,6 +139,8 @@ export const MobilityMap = ({
   isPickerMode = false,
   height = 'h-[600px]',
   showLayers = true,
+  focusCoords = null,
+  onNewReport = null,
 }) => {
   const [activeLayer, setActiveLayer] = useState('ALL');
   const [center, setCenter] = useState([19.2812, 72.8561]); // MMR / Mira Road Center
@@ -139,6 +150,12 @@ export const MobilityMap = ({
   useEffect(() => {
     setLiveReports(reports);
   }, [reports]);
+
+  useEffect(() => {
+    if (focusCoords && Array.isArray(focusCoords) && focusCoords.length >= 2) {
+      setCenter(focusCoords);
+    }
+  }, [focusCoords]);
 
   // Real-time Socket ingestion for instant marker insertion without reload
   useEffect(() => {
@@ -153,8 +170,10 @@ export const MobilityMap = ({
             : null;
 
         if (coords) {
+          const markerId = r._id || r.id;
           const newMarker = {
-            id: r._id,
+            id: markerId,
+            _id: markerId,
             referenceId: r.referenceId,
             title: r.title,
             category: r.category,
@@ -168,16 +187,20 @@ export const MobilityMap = ({
 
           setLiveReports((prev) => {
             // Prevent duplicate markers
-            const exists = prev.some((item) => item.id === newMarker.id || item.referenceId === newMarker.referenceId);
+            const exists = prev.some((item) => (item.id && item.id === newMarker.id) || item.referenceId === newMarker.referenceId);
             if (exists) return prev;
             return [newMarker, ...prev];
           });
+
+          if (onNewReport) {
+            onNewReport(newMarker);
+          }
         }
       };
 
       const handleStatusChange = (data) => {
         setLiveReports((prev) =>
-          prev.map((r) => (r.id === data.reportId ? { ...r, status: data.status } : r))
+          prev.map((r) => ((r.id === data.reportId || r._id === data.reportId) ? { ...r, status: data.status } : r))
         );
       };
 
@@ -191,7 +214,7 @@ export const MobilityMap = ({
         socket.off('report:statusChanged', handleStatusChange);
       };
     }
-  }, [socket]);
+  }, [socket, onNewReport]);
 
   // Filter markers according to active layer
   const filteredReports = liveReports.filter((r) => {
@@ -199,6 +222,8 @@ export const MobilityMap = ({
     if (activeLayer === 'WATERLOGGING') return r.category === 'WATERLOGGING';
     if (activeLayer === 'ROADWORK') return r.category === 'POTHOLE' || r.category === 'ROAD_HAZARD';
     if (activeLayer === 'SIGNALS') return r.category === 'TRAFFIC_SIGNAL';
+    if (activeLayer === 'LIGHTS') return r.category === 'STREETLIGHT';
+    if (activeLayer === 'GARBAGE') return r.category === 'GARBAGE';
     return true;
   });
 
@@ -227,17 +252,20 @@ export const MobilityMap = ({
       {showLayers && (
         <div className="absolute top-4 left-4 z-[1000] flex flex-wrap items-center gap-2">
           {/* Layer Selector */}
-          <div className="flex items-center gap-1 p-1 rounded-xl bg-white/95 dark:bg-[#171f33]/95 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-md">
+          <div className="flex flex-wrap items-center gap-1 p-1 rounded-xl bg-white/95 dark:bg-[#171f33]/95 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-md">
             {[
               { id: 'ALL', label: 'All Hazards' },
               { id: 'WATERLOGGING', label: '💧 Waterlogging' },
               { id: 'ROADWORK', label: '⚠️ Roadwork' },
+              { id: 'SIGNALS', label: '🚦 Signals' },
+              { id: 'LIGHTS', label: '💡 Streetlights' },
+              { id: 'GARBAGE', label: '🗑️ Sanitation' },
               { id: 'PARKING', label: '🅿️ Parking Bays' },
             ].map((layer) => (
               <button
                 key={layer.id}
                 onClick={() => setActiveLayer(layer.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   activeLayer === layer.id
                     ? 'bg-blue-600 text-white shadow-sm'
                     : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5'

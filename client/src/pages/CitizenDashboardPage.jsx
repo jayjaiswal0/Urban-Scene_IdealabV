@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Shield,
   Layers,
+  Compass,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useSocket } from '../context/SocketContext';
@@ -88,25 +89,39 @@ export const CitizenDashboardPage = () => {
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 text-white shadow-xl shadow-blue-600/20">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/15 text-[11px] font-bold tracking-wide backdrop-blur-md mb-2">
-            <Shield className="w-3.5 h-3.5 text-blue-200" />
-            <span>Ward {user?.ward || 14} &bull; Kanakia Jurisdiction</span>
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] font-black uppercase tracking-wider backdrop-blur-md text-white">
+              Urban Scene &bull; Know what’s moving.
+            </span>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/15 text-[11px] font-bold tracking-wide backdrop-blur-md">
+              <Shield className="w-3.5 h-3.5 text-blue-200" />
+              <span>Ward {user?.ward || 14} &bull; Kanakia Jurisdiction</span>
+            </div>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
             Welcome back, {user?.fullName || 'Resident'}
           </h1>
           <p className="text-xs sm:text-sm text-blue-100 mt-1 max-w-xl">
-            Track your civic reports, monitor road repairs, and explore live MBMT transit in real-time.
+            Track your civic reports, monitor road repairs, and explore live MBMT transit on Urban Scene.
           </p>
         </div>
 
-        <Link
-          to="/citizen/report"
-          className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-white text-blue-700 hover:bg-blue-50 font-bold text-xs shadow-lg transition-all self-start sm:self-auto shrink-0 hover:scale-[1.02] active:scale-[0.98]"
-        >
-          <PlusCircle className="w-4 h-4" />
-          <span>+ Report New Issue</span>
-        </Link>
+        <div className="flex flex-wrap items-center gap-2.5 self-start sm:self-auto shrink-0">
+          <Link
+            to="/map"
+            className="flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/15 hover:bg-white/25 text-white font-bold text-xs backdrop-blur-md transition-all border border-white/20"
+          >
+            <Compass className="w-4 h-4 text-blue-200" />
+            <span>Live Mobility Map</span>
+          </Link>
+          <Link
+            to="/citizen/report"
+            className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-white text-blue-700 hover:bg-blue-50 font-bold text-xs shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98]"
+          >
+            <PlusCircle className="w-4 h-4" />
+            <span>+ Report New Issue</span>
+          </Link>
+        </div>
       </div>
 
       {/* 4 KPI Summary Cards */}
@@ -175,6 +190,32 @@ export const CitizenDashboardPage = () => {
             </Link>
           ))}
         </div>
+      </div>
+
+      {/* Live Mobility Map GIS Spotlight */}
+      <div className="p-6 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-white/10">
+        <div className="space-y-1">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400">
+              Live GIS Mobility Telemetry Active
+            </span>
+          </div>
+          <h3 className="text-xl font-extrabold text-white">
+            Mira-Bhayandar Ward 14 Real-Time Telemetry Map
+          </h3>
+          <p className="text-xs text-slate-300 max-w-xl">
+            Track all active municipal hazard pins, road craters, drainage clogs, streetlight outages, and smart parking vacancy in real-time.
+          </p>
+        </div>
+
+        <Link
+          to="/map"
+          className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg shadow-blue-600/30 transition-all self-start md:self-auto hover:scale-[1.02] shrink-0"
+        >
+          <Compass className="w-4 h-4" />
+          <span>Open Full Interactive Map &rarr;</span>
+        </Link>
       </div>
 
       {/* Recent Reports Table */}

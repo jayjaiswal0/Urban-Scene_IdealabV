@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { ShieldAlert, ArrowLeft, LogOut, Map, Home } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import AuthBackdrop from '../components/common/AuthBackdrop';
 
 export const Forbidden403Page = () => {
   const { user, logout } = useAuth();
@@ -17,8 +18,12 @@ export const Forbidden403Page = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-140px)] flex items-center justify-center p-4 sm:p-6">
-      <div className="w-full max-w-lg rounded-3xl bg-white dark:bg-[#131b2e] border border-slate-200 dark:border-white/10 shadow-2xl p-6 sm:p-8 text-center space-y-6">
+    <AuthBackdrop
+      maxWidth="max-w-lg"
+      title="Role Tier Authorization Denied"
+      subtitle="Urban Scene Platform Governance & Security Enforcement"
+    >
+      <div className="text-center space-y-6">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 mx-auto">
           <ShieldAlert className="w-8 h-8" />
         </div>
@@ -82,7 +87,7 @@ export const Forbidden403Page = () => {
           </button>
         </div>
       </div>
-    </div>
+    </AuthBackdrop>
   );
 };
 

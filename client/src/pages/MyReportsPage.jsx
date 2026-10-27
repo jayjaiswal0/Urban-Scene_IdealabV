@@ -100,7 +100,7 @@ export const MyReportsPage = () => {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `umcp_citizen_reports_${Date.now()}.csv`);
+    link.setAttribute('download', `urban_scene_citizen_reports_${Date.now()}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -119,6 +119,9 @@ export const MyReportsPage = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/10 text-[10px] font-bold text-blue-600 dark:text-blue-400 mb-1">
+            <span>Urban Scene &bull; Know what’s moving.</span>
+          </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             My Civic Submissions
           </h1>
@@ -145,6 +148,32 @@ export const MyReportsPage = () => {
           </Link>
         </div>
       </div>
+
+      {/* Newly Filed Report Live Synchronized Notice */}
+      {searchParams.get('new') && (
+        <div className="p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-sm shrink-0">
+              ✓
+            </div>
+            <div>
+              <div className="text-xs font-bold text-emerald-900 dark:text-emerald-200">
+                Civic Report #{searchParams.get('new')} Filed & Persisted Successfully
+              </div>
+              <div className="text-[11px] text-emerald-700 dark:text-emerald-400 mt-0.5">
+                Dispatched to municipal operations queue and broadcast live to the GIS mobility map.
+              </div>
+            </div>
+          </div>
+          <Link
+            to="/map"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md shadow-emerald-600/20 self-start sm:self-auto transition-all shrink-0"
+          >
+            <span>View on Live Map</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      )}
 
       {/* Filter Toolbar */}
       <div className="p-4 rounded-3xl bg-white dark:bg-[#131b2e] border border-slate-200 dark:border-white/10 shadow-sm space-y-4">

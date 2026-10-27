@@ -1,5 +1,9 @@
-# Urban Mobility Coordination Platform (UMCP)
+# Urban Scene — Know what’s moving.
 
+> **Academic & Architectural Traceability Note**: Formerly developed as the **Urban Mobility Coordination Platform (UMCP)**. All underlying schemas, RBAC tiers, geospatial APIs, and Socket.IO events maintain 100% backward compatibility under the Urban Scene civic brand.
+
+[![Brand](https://img.shields.io/badge/Brand-Urban%20Scene-0066FF.svg)](#)
+[![Tagline](https://img.shields.io/badge/Tagline-Know%20what's%20moving-8A2BE2.svg)](#)
 [![Node.js](https://img.shields.io/badge/Node.js-v18.0%2B-green.svg)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-v18.3-blue.svg)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-v6.0-purple.svg)](https://vitejs.dev/)
@@ -7,7 +11,7 @@
 [![Socket.IO](https://img.shields.io/badge/Socket.IO-Real--Time-black.svg)](https://socket.io/)
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v3.4-38B2AC.svg)](https://tailwindcss.com/)
 
-An enterprise-grade civic mobility and municipal coordination platform built for the **Mira-Bhayandar Municipal Corporation (MBMC)** urban sector. The platform preserves the high-density municipal telemetry visual design of the original Stitch UI export across 25 functional screens (Light and Dark variants) backed by an authoritative full-stack architecture with Node.js, Express, MongoDB, and Socket.IO.
+**Urban Scene** is an enterprise-grade civic mobility and municipal coordination platform built for the **Mira-Bhayandar Municipal Corporation (MBMC)** urban sector. Featuring custom light- and dark-mode brand assets, live telemetry maps, and real-time civic synchronization, Urban Scene bridges citizens, municipal triage squads, traffic police enforcement, and emergency green corridors.
 
 ---
 

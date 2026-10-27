@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { KeyRound, ArrowLeft, CheckCircle2, AlertCircle, Send } from 'lucide-react';
 import api from '../services/api';
+import AuthBackdrop from '../components/common/AuthBackdrop';
 
 export const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');
@@ -27,17 +28,11 @@ export const ForgotPasswordPage = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-120px)] flex items-center justify-center p-4 sm:p-6">
-      <div className="w-full max-w-md rounded-3xl bg-white dark:bg-[#131b2e] border border-slate-200 dark:border-white/10 shadow-2xl p-6 sm:p-8">
-        <div className="text-center space-y-2">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-600/30">
-            <KeyRound className="w-6 h-6" />
-          </div>
-          <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white">Recover Password</h2>
-          <p className="text-xs text-slate-500 dark:text-slate-400">
-            Enter your registered official email to receive authorization credentials
-          </p>
-        </div>
+    <AuthBackdrop
+      maxWidth="max-w-md"
+      title="Recover Account Access"
+      subtitle="Enter your registered official email to receive Urban Scene authorization credentials"
+    >
 
         {error && (
           <div className="mt-4 p-3 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/50 text-xs text-rose-600 dark:text-rose-400 flex items-center gap-2">
@@ -132,8 +127,7 @@ export const ForgotPasswordPage = () => {
             <span>Return to Sign In</span>
           </Link>
         </div>
-      </div>
-    </div>
+    </AuthBackdrop>
   );
 };
 

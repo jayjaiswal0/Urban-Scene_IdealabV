@@ -98,10 +98,25 @@ const incidentReportSchema = new mongoose.Schema(
       comment: String,
       submittedAt: Date,
     },
+    citizenRemarks: {
+      type: String,
+      trim: true,
+      default: '',
+    },
+    resolutionNotes: {
+      type: String,
+      trim: true,
+      default: '',
+    },
+    resolutionDate: {
+      type: Date,
+      default: null,
+    },
     notes: [
       {
         author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
         note: { type: String, required: true },
+        isInternal: { type: Boolean, default: false },
         createdAt: { type: Date, default: Date.now },
       },
     ],

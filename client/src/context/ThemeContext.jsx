@@ -11,11 +11,26 @@ export const ThemeProvider = ({ children }) => {
     return localStorage.getItem('umcp_high_contrast') === 'true';
   });
 
+  const getIsDark = (currentTheme) => {
+    if (currentTheme === 'dark') return true;
+    if (currentTheme === 'light') return false;
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    return false;
+  };
+
+  const [isDark, setIsDark] = useState(() => {
+    const saved = typeof window !== 'undefined' ? localStorage.getItem('umcp_theme') || 'system' : 'system';
+    return getIsDark(saved);
+  });
+
   useEffect(() => {
     const root = document.documentElement;
 
-    const applyTheme = (isDark) => {
-      if (isDark) {
+    const applyTheme = (darkState) => {
+      setIsDark(darkState);
+      if (darkState) {
         root.classList.add('dark');
       } else {
         root.classList.remove('dark');
@@ -23,10 +38,9 @@ export const ThemeProvider = ({ children }) => {
     };
 
     if (theme === 'system') {
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      applyTheme(systemDark);
-
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      applyTheme(mediaQuery.matches);
+
       const listener = (e) => applyTheme(e.matches);
       mediaQuery.addEventListener('change', listener);
       return () => mediaQuery.removeEventListener('change', listener);
@@ -52,7 +66,16 @@ export const ThemeProvider = ({ children }) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, highContrast, setHighContrast }}>
+    <ThemeContext.Provider
+      value={{
+        theme,
+        setTheme,
+        toggleTheme,
+        isDark,
+        highContrast,
+        setHighContrast,
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );

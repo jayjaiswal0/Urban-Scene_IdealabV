@@ -72,9 +72,14 @@ export const MunicipalDashboardPage = () => {
       {/* Operational Dispatch Banner */}
       <div className="p-6 rounded-3xl bg-gradient-to-r from-blue-700 via-indigo-800 to-slate-900 text-white shadow-xl shadow-blue-700/20 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/15 text-[11px] font-bold tracking-wide backdrop-blur-md mb-2">
-            <Shield className="w-3.5 h-3.5 text-blue-200" />
-            <span>Ward 14 Engineering & Public Works Division</span>
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] font-black uppercase tracking-wider backdrop-blur-md text-white">
+              Urban Scene &bull; Know what’s moving.
+            </span>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/15 text-[11px] font-bold tracking-wide backdrop-blur-md">
+              <Shield className="w-3.5 h-3.5 text-blue-200" />
+              <span>Ward 14 Engineering & Public Works Division</span>
+            </div>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
             Municipal Operations & Squad Dispatch

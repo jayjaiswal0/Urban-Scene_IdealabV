@@ -1,4 +1,5 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import { IncidentReport } from '../models/IncidentReport.js';
 import { ReportStatusHistory } from '../models/ReportStatusHistory.js';
 import { Evidence } from '../models/Evidence.js';
@@ -36,10 +37,12 @@ router.get('/map', optionalAuth, async (req, res, next) => {
 
     const reports = await IncidentReport.find(filter)
       .select('referenceId title category severity status location address ward createdAt')
+      .sort({ createdAt: -1 })
       .lean();
 
     const sanitizedMarkers = reports.map((r) => ({
-      id: r._id,
+      id: r._id.toString(),
+      _id: r._id.toString(),
       referenceId: r.referenceId,
       title: r.title,
       category: r.category,
@@ -260,7 +263,10 @@ router.post('/', authenticateToken, upload.array('photos', 3), async (req, res, 
 // Get Single Report Details with Timeline
 router.get('/:id', authenticateToken, async (req, res, next) => {
   try {
-    const report = await IncidentReport.findById(req.params.id)
+    const isObjectId = mongoose.Types.ObjectId.isValid(req.params.id);
+    const query = isObjectId ? { _id: req.params.id } : { referenceId: req.params.id };
+
+    const report = await IncidentReport.findOne(query)
       .populate('reporter', 'fullName email phone ward avatarUrl')
       .populate('evidence')
       .populate('activeTask')
@@ -274,11 +280,18 @@ router.get('/:id', authenticateToken, async (req, res, next) => {
     }
 
     // Role check: citizens can only view their own reports unless public or authorized
-    if (req.user.role === 'CITIZEN' && report.reporter._id.toString() !== req.user._id.toString()) {
+    const reporterId = report.reporter?._id ? report.reporter._id.toString() : report.reporter?.toString();
+    if (req.user.role === 'CITIZEN' && reporterId && reporterId !== req.user._id.toString()) {
       return res.status(403).json({
         success: false,
         error: { code: 'FORBIDDEN', message: 'You do not have permission to view this report' },
       });
+    }
+
+    const reportObj = report.toObject();
+    // If requesting user is a citizen, hide internal notes
+    if (req.user.role === 'CITIZEN' && Array.isArray(reportObj.notes)) {
+      reportObj.notes = reportObj.notes.filter((n) => !n.isInternal);
     }
 
     const history = await ReportStatusHistory.find({ report: report._id })
@@ -289,7 +302,7 @@ router.get('/:id', authenticateToken, async (req, res, next) => {
     res.json({
       success: true,
       data: {
-        report,
+        report: reportObj,
         history,
       },
     });
@@ -305,8 +318,10 @@ router.patch(
   requireRole('MUNICIPAL_AUTHORITY', 'TRAFFIC_AUTHORITY', 'ADMIN'),
   async (req, res, next) => {
     try {
-      const { status, remarks, department } = req.body;
-      const report = await IncidentReport.findById(req.params.id);
+      const { status, remarks, internalNotes, department, resolutionNotes } = req.body;
+      const isObjectId = mongoose.Types.ObjectId.isValid(req.params.id);
+      const query = isObjectId ? { _id: req.params.id } : { referenceId: req.params.id };
+      const report = await IncidentReport.findOne(query);
 
       if (!report) {
         return res.status(404).json({
@@ -342,6 +357,21 @@ router.patch(
       if (department) {
         report.assignedDepartment = department;
       }
+      if (remarks) {
+        report.citizenRemarks = remarks;
+      }
+      if (status === 'RESOLVED') {
+        report.resolutionNotes = resolutionNotes || remarks || 'Work completed and verified by municipal authority.';
+        report.resolutionDate = new Date();
+      }
+      if (internalNotes && internalNotes.trim()) {
+        report.notes.push({
+          author: req.user._id,
+          note: internalNotes.trim(),
+          isInternal: true,
+          createdAt: new Date(),
+        });
+      }
       await report.save();
 
       // Create status history entry
@@ -350,18 +380,20 @@ router.patch(
         fromStatus,
         toStatus: status,
         changedBy: req.user._id,
-        remarks: remarks || `Status transitioned to ${status}`,
+        remarks: remarks || internalNotes || `Status transitioned to ${status}`,
       });
 
       // Notify citizen
-      await Notification.create({
-        recipient: report.reporter,
-        title: `Report Status Updated: ${status.replace('_', ' ')}`,
-        message: `Your report #${report.referenceId} has been updated to ${status}. ${remarks ? `Note: ${remarks}` : ''}`,
-        type: 'REPORT_UPDATE',
-        relatedReport: report._id,
-        actionUrl: `/citizen/reports/${report._id}`,
-      });
+      if (report.reporter) {
+        await Notification.create({
+          recipient: report.reporter,
+          title: `Report Status Updated: ${status.replace('_', ' ')}`,
+          message: `Your report #${report.referenceId} has been updated to ${status}. ${remarks ? `Note: ${remarks}` : ''}`,
+          type: 'REPORT_UPDATE',
+          relatedReport: report._id,
+          actionUrl: `/citizen/reports/${report._id}`,
+        });
+      }
 
       // Write audit log
       await AuditLog.create({
@@ -370,7 +402,7 @@ router.patch(
         action: 'REPORT_STATUS_CHANGED',
         targetEntity: 'IncidentReport',
         targetId: report._id.toString(),
-        changes: { fromStatus, toStatus: status, remarks },
+        changes: { fromStatus, toStatus: status, remarks, department, internalNotes },
         ipAddress: req.ip,
       });
 
@@ -391,7 +423,7 @@ router.patch(
 // Append Note
 router.post('/:id/notes', authenticateToken, async (req, res, next) => {
   try {
-    const { note } = req.body;
+    const { note, isInternal } = req.body;
     if (!note || note.trim().length === 0) {
       return res.status(400).json({
         success: false,
@@ -399,7 +431,10 @@ router.post('/:id/notes', authenticateToken, async (req, res, next) => {
       });
     }
 
-    const report = await IncidentReport.findById(req.params.id);
+    const isObjectId = mongoose.Types.ObjectId.isValid(req.params.id);
+    const query = isObjectId ? { _id: req.params.id } : { referenceId: req.params.id };
+    const report = await IncidentReport.findOne(query);
+
     if (!report) {
       return res.status(404).json({
         success: false,
@@ -407,9 +442,21 @@ router.post('/:id/notes', authenticateToken, async (req, res, next) => {
       });
     }
 
+    // Role check: citizens can only add notes to their own reports
+    const reporterId = report.reporter?._id ? report.reporter._id.toString() : report.reporter?.toString();
+    if (req.user.role === 'CITIZEN' && reporterId && reporterId !== req.user._id.toString()) {
+      return res.status(403).json({
+        success: false,
+        error: { code: 'FORBIDDEN', message: 'You do not have permission to append notes to this report' },
+      });
+    }
+
+    const flagInternal = req.user.role !== 'CITIZEN' && Boolean(isInternal);
+
     report.notes.push({
       author: req.user._id,
-      note,
+      note: note.trim(),
+      isInternal: flagInternal,
       createdAt: new Date(),
     });
     await report.save();
@@ -428,7 +475,9 @@ router.post('/:id/notes', authenticateToken, async (req, res, next) => {
 router.post('/:id/feedback', authenticateToken, async (req, res, next) => {
   try {
     const { rating, comment } = req.body;
-    const report = await IncidentReport.findById(req.params.id);
+    const isObjectId = mongoose.Types.ObjectId.isValid(req.params.id);
+    const query = isObjectId ? { _id: req.params.id } : { referenceId: req.params.id };
+    const report = await IncidentReport.findOne(query);
 
     if (!report) {
       return res.status(404).json({
@@ -437,7 +486,8 @@ router.post('/:id/feedback', authenticateToken, async (req, res, next) => {
       });
     }
 
-    if (report.reporter.toString() !== req.user._id.toString()) {
+    const reporterId = report.reporter?._id ? report.reporter._id.toString() : report.reporter?.toString();
+    if (reporterId && reporterId !== req.user._id.toString()) {
       return res.status(403).json({
         success: false,
         error: { code: 'FORBIDDEN', message: 'Only the reporter can provide feedback' },

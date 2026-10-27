@@ -43,9 +43,10 @@ export const getIO = () => {
 export const broadcastReportCreated = (report) => {
   if (!ioInstance) return;
 
-  // Sanitized report for public map clients (strictly NO citizen PII: no phone, email, or private details)
+  const reportIdStr = report._id ? report._id.toString() : '';
   const sanitizedReport = {
-    _id: report._id,
+    _id: reportIdStr,
+    id: reportIdStr,
     referenceId: report.referenceId,
     title: report.title,
     category: report.category,

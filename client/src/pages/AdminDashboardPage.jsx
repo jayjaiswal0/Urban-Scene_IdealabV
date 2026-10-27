@@ -61,9 +61,14 @@ export const AdminDashboardPage = () => {
       {/* Governance Banner */}
       <div className="p-6 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-white/10">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 text-[11px] font-bold tracking-wide backdrop-blur-md mb-2">
-            <Server className="w-3.5 h-3.5 text-blue-400" />
-            <span>Platform Governance & Infrastructure Cluster</span>
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] font-black uppercase tracking-wider backdrop-blur-md text-white">
+              Urban Scene &bull; Know what’s moving.
+            </span>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 text-[11px] font-bold tracking-wide backdrop-blur-md">
+              <Server className="w-3.5 h-3.5 text-blue-400" />
+              <span>Platform Governance & Infrastructure Cluster</span>
+            </div>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
             System Administration & RBAC

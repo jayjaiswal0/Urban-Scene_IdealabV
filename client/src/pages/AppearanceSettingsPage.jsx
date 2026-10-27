@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Sun, Moon, Monitor, Eye, CheckCircle2, Save } from 'lucide-react';
+import { Sun, Moon, Monitor, Eye, CheckCircle2, Save, Sparkles } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import BrandLogo from '../components/common/BrandLogo';
 
 export const AppearanceSettingsPage = () => {
-  const { theme, setTheme, highContrast, setHighContrast } = useTheme();
+  const { theme, setTheme, isDark, highContrast, setHighContrast } = useTheme();
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
@@ -15,11 +16,14 @@ export const AppearanceSettingsPage = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-8 pb-16">
       <div>
+        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/10 text-[10px] font-bold text-blue-600 dark:text-blue-400 mb-1">
+          <span>Urban Scene &bull; Know what’s moving.</span>
+        </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
           Appearance & Theme Settings
         </h1>
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-          Customize UI contrast, obsidian mission control dark mode, and typography scaling.
+          Customize UI contrast, obsidian mission control dark mode, and dynamic brand assets.
         </p>
       </div>
 
@@ -121,6 +125,24 @@ export const AppearanceSettingsPage = () => {
               Automatically track your operating system dark mode schedule.
             </div>
           </button>
+        </div>
+
+        {/* Live Brandmark & Theme Asset Synchronizer Display */}
+        <div className="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200/60 dark:border-white/5 space-y-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+              <span className="text-xs font-bold text-slate-900 dark:text-white">
+                Urban Scene Live Asset Synchronizer
+              </span>
+            </div>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 uppercase">
+              Active: {isDark ? 'Dark Mode Asset Pipeline' : 'Light Mode Asset Pipeline'}
+            </span>
+          </div>
+          <div className="p-4 rounded-xl bg-white dark:bg-[#0b1326] border border-slate-200 dark:border-white/10 flex flex-col items-center justify-center min-h-[90px] transition-colors">
+            <BrandLogo variant="hero" showTagline animated />
+          </div>
         </div>
 
         {/* High Contrast Mode Toggle */}
